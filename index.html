@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,37 +11,77 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:         #0c0e12;
-    --bg-card:    #13161c;
-    --bg-hover:   #1a1e27;
-    --bg-code:    #0a0c10;
+    /* Light mode (default) */
+    --bg:         #f5f6fa;
+    --bg-card:    #ffffff;
+    --bg-hover:   #f0f2f8;
+    --bg-code:    #1a1d27;
+    --border:     rgba(0,0,0,0.07);
+    --border-md:  rgba(0,0,0,0.13);
+    --text:       #111318;
+    --text-sub:   #4a5068;
+    --text-dim:   #9097b0;
+    --accent:     #2563eb;
+    --accent-dim: rgba(37,99,235,0.09);
+    --accent-glow:rgba(37,99,235,0.22);
+    --html:       #e85d1a;
+    --html-dim:   rgba(232,93,26,0.10);
+    --css:        #1e6fd9;
+    --css-dim:    rgba(30,111,217,0.10);
+    --js:         #c89b10;
+    --js-dim:     rgba(200,155,16,0.10);
+    --react:      #0794b8;
+    --react-dim:  rgba(7,148,184,0.10);
+    --ts:         #2563eb;
+    --ts-dim:     rgba(37,99,235,0.10);
+    --easy:       #16a34a;
+    --easy-dim:   rgba(22,163,74,0.10);
+    --med:        #d97706;
+    --med-dim:    rgba(217,119,6,0.10);
+    --hard:       #dc2626;
+    --hard-dim:   rgba(220,38,38,0.10);
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:  0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+    --radius:     14px;
+    --radius-sm:  9px;
+    --font-head:  'Syne', sans-serif;
+    --font-body:  'DM Sans', sans-serif;
+    --font-mono:  'DM Mono', monospace;
+    --grid-color: rgba(0,0,0,0.035);
+  }
+
+  [data-theme="dark"] {
+    --bg:         #0c0e13;
+    --bg-card:    #13161e;
+    --bg-hover:   #1a1e2a;
+    --bg-code:    #090b10;
     --border:     rgba(255,255,255,0.07);
-    --border-md:  rgba(255,255,255,0.12);
-    --text:       #eef0f5;
-    --text-sub:   #8891a4;
-    --text-dim:   #505566;
-    --accent:     #6c63ff;
-    --accent-dim: rgba(108,99,255,0.12);
-    --accent-glow:rgba(108,99,255,0.25);
-    --html:       #ff6b35;
-    --html-dim:   rgba(255,107,53,0.12);
-    --css:        #3b8af7;
-    --css-dim:    rgba(59,138,247,0.12);
-    --js:         #f7c948;
-    --js-dim:     rgba(247,201,72,0.12);
+    --border-md:  rgba(255,255,255,0.13);
+    --text:       #edf0f7;
+    --text-sub:   #8891aa;
+    --text-dim:   #4f576e;
+    --accent:     #5b8df5;
+    --accent-dim: rgba(91,141,245,0.12);
+    --accent-glow:rgba(91,141,245,0.28);
+    --html:       #ff7444;
+    --html-dim:   rgba(255,116,68,0.12);
+    --css:        #5b9cf5;
+    --css-dim:    rgba(91,156,245,0.12);
+    --js:         #f7ca48;
+    --js-dim:     rgba(247,202,72,0.12);
     --react:      #5dd3f3;
     --react-dim:  rgba(93,211,243,0.12);
+    --ts:         #5b8df5;
+    --ts-dim:     rgba(91,141,245,0.12);
     --easy:       #4ade80;
     --easy-dim:   rgba(74,222,128,0.12);
     --med:        #fb923c;
     --med-dim:    rgba(251,146,60,0.12);
     --hard:       #f87171;
     --hard-dim:   rgba(248,113,113,0.12);
-    --radius:     12px;
-    --radius-sm:  8px;
-    --font-head:  'Syne', sans-serif;
-    --font-body:  'DM Sans', sans-serif;
-    --font-mono:  'DM Mono', monospace;
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15);
+    --shadow-md:  0 4px 16px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.20);
+    --grid-color: rgba(255,255,255,0.025);
   }
 
   html { scroll-behavior: smooth; }
@@ -54,26 +94,30 @@
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background 0.25s, color 0.25s;
   }
 
-  /* ── Background grid ── */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
   }
 
-  /* ── Layout ── */
-  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
   /* ── Header ── */
-  header { padding: 56px 0 48px; }
+  header { padding: 52px 0 44px; }
+
+  .header-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
 
   .header-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
@@ -81,49 +125,69 @@
     border-radius: 20px; padding: 4px 14px;
     font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
     color: var(--accent); text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .header-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
 
-  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.75); } }
 
   h1 {
     font-family: var(--font-head);
-    font-size: clamp(36px, 6vw, 58px);
+    font-size: clamp(32px, 5.5vw, 54px);
     font-weight: 800;
     line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
   }
 
   h1 .gradient {
-    background: linear-gradient(135deg, #6c63ff 0%, #5dd3f3 50%, #f7c948 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--react) 55%, var(--js) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .header-desc { color: var(--text-sub); font-size: 16px; max-width: 520px; line-height: 1.7; margin-bottom: 36px; }
+  .header-desc { color: var(--text-sub); font-size: 15.5px; max-width: 500px; line-height: 1.7; margin-bottom: 32px; }
+
+  /* ── Theme toggle ── */
+  .theme-toggle {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 14px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 20px; cursor: pointer;
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-sub);
+    transition: all 0.18s; user-select: none; flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .theme-toggle:hover { border-color: var(--border-md); color: var(--text); }
+  .theme-toggle .toggle-icon { font-size: 14px; line-height: 1; }
 
   /* ── Stats bar ── */
   .stats {
-    display: flex; gap: 24px; flex-wrap: wrap;
-    padding: 20px 24px;
+    display: flex; gap: 0; flex-wrap: wrap;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    margin-bottom: 40px;
+    margin-bottom: 36px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
   }
-  .stat { display: flex; flex-direction: column; }
-  .stat-num { font-family: var(--font-head); font-size: 26px; font-weight: 700; line-height: 1; }
-  .stat-lbl { font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; }
-
-  /* ── Controls ── */
-  .controls { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
-
-  .search-box {
+  .stat {
+    display: flex; flex-direction: column;
+    padding: 18px 24px; flex: 1; min-width: 80px;
     position: relative;
   }
+  .stat + .stat::before {
+    content: ''; position: absolute; left: 0; top: 20%; bottom: 20%;
+    width: 1px; background: var(--border);
+  }
+  .stat-num { font-family: var(--font-head); font-size: 24px; font-weight: 700; line-height: 1; }
+  .stat-lbl { font-size: 10.5px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 5px; }
+
+  /* ── Controls ── */
+  .controls { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+
+  .search-box { position: relative; }
   .search-box svg {
     position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
     color: var(--text-dim); pointer-events: none;
@@ -134,34 +198,36 @@
     border-radius: var(--radius-sm); color: var(--text);
     font-family: var(--font-body); font-size: 14px;
     outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-sm);
   }
   .search-box input::placeholder { color: var(--text-dim); }
   .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
 
   /* ── Tabs ── */
-  .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tabs { display: flex; gap: 5px; flex-wrap: wrap; }
 
   .tab {
-    display: flex; align-items: center; gap: 8px;
-    padding: 9px 18px;
+    display: flex; align-items: center; gap: 7px;
+    padding: 8px 16px;
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: var(--radius-sm); cursor: pointer;
     font-family: var(--font-head); font-size: 13px; font-weight: 600;
-    color: var(--text-sub); transition: all 0.18s;
-    user-select: none;
+    color: var(--text-sub); transition: all 0.16s;
+    user-select: none; box-shadow: var(--shadow-sm);
   }
-  .tab:hover { border-color: var(--border-md); color: var(--text); }
-  .tab .dot { width: 8px; height: 8px; border-radius: 50%; }
-  .tab .cnt { font-family: var(--font-mono); font-size: 10px; opacity: 0.6; }
+  .tab:hover { border-color: var(--border-md); color: var(--text); background: var(--bg-hover); }
+  .tab .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .tab .cnt { font-family: var(--font-mono); font-size: 10px; opacity: 0.55; }
 
   .tab.active-html { border-color: var(--html); background: var(--html-dim); color: var(--html); }
   .tab.active-css  { border-color: var(--css);  background: var(--css-dim);  color: var(--css); }
   .tab.active-js   { border-color: var(--js);   background: var(--js-dim);   color: var(--js); }
   .tab.active-react{ border-color: var(--react);background: var(--react-dim);color: var(--react); }
+  .tab.active-ts   { border-color: var(--ts);   background: var(--ts-dim);   color: var(--ts); }
 
   /* ── Filter pills ── */
-  .filters { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .filter-lbl { font-size: 12px; color: var(--text-dim); font-family: var(--font-mono); }
+  .filters { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+  .filter-lbl { font-size: 11.5px; color: var(--text-dim); font-family: var(--font-mono); }
 
   .pill {
     padding: 4px 12px; border-radius: 20px;
@@ -169,37 +235,44 @@
     cursor: pointer; border: 1px solid transparent; transition: all 0.15s;
     user-select: none;
   }
-  .pill-all  { background: rgba(255,255,255,0.06); color: var(--text-sub); border-color: var(--border); }
+  .pill-all  { background: var(--bg-hover); color: var(--text-sub); border-color: var(--border-md); }
   .pill-easy { background: var(--easy-dim); color: var(--easy); border-color: rgba(74,222,128,0.25); }
   .pill-med  { background: var(--med-dim);  color: var(--med);  border-color: rgba(251,146,60,0.25); }
   .pill-hard { background: var(--hard-dim); color: var(--hard); border-color: rgba(248,113,113,0.25); }
-  .pill.inactive { opacity: 0.35; }
+  .pill.inactive { opacity: 0.3; }
   .pill:hover { opacity: 1 !important; }
 
   /* ── Question cards ── */
-  .cards { display: flex; flex-direction: column; gap: 8px; padding-bottom: 80px; }
+  .cards { display: flex; flex-direction: column; gap: 7px; padding-bottom: 80px; }
 
   .qcard {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: border-color 0.18s;
+    transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+    box-shadow: var(--shadow-sm);
   }
-  .qcard:hover { border-color: var(--border-md); }
-  .qcard.open-html  { border-color: rgba(255,107,53,0.35); }
-  .qcard.open-css   { border-color: rgba(59,138,247,0.35); }
-  .qcard.open-js    { border-color: rgba(247,201,72,0.35); }
-  .qcard.open-react { border-color: rgba(93,211,243,0.35); }
+  .qcard:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+  .qcard.expanded { transform: none; }
+  .qcard.open-html  { border-color: rgba(232,93,26,0.35); }
+  .qcard.open-css   { border-color: rgba(30,111,217,0.35); }
+  .qcard.open-js    { border-color: rgba(200,155,16,0.35); }
+  .qcard.open-react { border-color: rgba(7,148,184,0.35); }
+  .qcard.open-ts    { border-color: rgba(37,99,235,0.35); }
+  [data-theme="dark"] .qcard.open-html  { border-color: rgba(255,116,68,0.35); }
+  [data-theme="dark"] .qcard.open-css   { border-color: rgba(91,156,245,0.35); }
+  [data-theme="dark"] .qcard.open-js    { border-color: rgba(247,202,72,0.35); }
+  [data-theme="dark"] .qcard.open-react { border-color: rgba(93,211,243,0.35); }
 
   .qheader {
     display: flex; align-items: center; gap: 14px;
-    padding: 16px 20px; cursor: pointer; user-select: none;
+    padding: 15px 18px; cursor: pointer; user-select: none;
   }
 
   .qnum {
     min-width: 28px; height: 28px; border-radius: 8px;
-    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    background: var(--bg-hover); border: 1px solid var(--border);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
     flex-shrink: 0;
@@ -210,7 +283,7 @@
     color: var(--text);
   }
 
-  .qmeta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .qmeta { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
 
   .diff {
     padding: 3px 10px; border-radius: 20px;
@@ -221,24 +294,24 @@
   .diff-hard { background: var(--hard-dim); color: var(--hard); }
 
   .chevron {
-    width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
-    border-radius: 6px; color: var(--text-dim);
+    width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
+    border-radius: 7px; color: var(--text-dim);
     transition: transform 0.22s ease, background 0.15s;
   }
   .qcard.expanded .chevron { transform: rotate(180deg); }
-  .qheader:hover .chevron { background: rgba(255,255,255,0.06); color: var(--text-sub); }
+  .qheader:hover .chevron { background: var(--bg-hover); color: var(--text-sub); }
 
   /* ── Answer body ── */
   .qbody {
     display: none;
-    padding: 0 20px 20px 62px;
+    padding: 0 18px 18px 60px;
     border-top: 1px solid var(--border);
   }
   .qcard.expanded .qbody { display: block; }
 
   .answer-text {
-    padding-top: 16px;
-    font-size: 14px; color: var(--text-sub); line-height: 1.75;
+    padding-top: 14px;
+    font-size: 14px; color: var(--text-sub); line-height: 1.8;
   }
 
   .answer-text strong { color: var(--text); font-weight: 500; }
@@ -246,24 +319,26 @@
   .code-block {
     margin-top: 14px;
     background: var(--bg-code);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: var(--radius-sm);
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
   }
   .code-header {
     display: flex; align-items: center; justify-content: space-between;
     padding: 8px 14px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
   }
-  .code-lang { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; }
+  .code-lang { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.07em; text-transform: uppercase; }
   .copy-btn {
     display: flex; align-items: center; gap: 5px;
-    font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
-    background: none; border: none; cursor: pointer; padding: 2px 6px;
+    font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.3);
+    background: none; border: none; cursor: pointer; padding: 2px 7px;
     border-radius: 4px; transition: all 0.15s;
   }
-  .copy-btn:hover { background: rgba(255,255,255,0.06); color: var(--text-sub); }
-  .copy-btn.copied { color: var(--easy); }
+  .copy-btn:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65); }
+  .copy-btn.copied { color: #4ade80; }
 
   pre {
     padding: 14px 16px; overflow-x: auto;
@@ -272,13 +347,12 @@
     tab-size: 2;
   }
 
-  /* Syntax highlight classes */
-  .kw { color: #ff7b72; }       /* keywords */
-  .fn { color: #d2a8ff; }       /* functions */
-  .st { color: #a5d6ff; }       /* strings */
-  .cm { color: #8b949e; font-style: italic; }  /* comments */
-  .nm { color: #79c0ff; }       /* numbers */
-  .op { color: #ff7b72; }       /* operators */
+  .kw { color: #ff7b72; }
+  .fn { color: #d2a8ff; }
+  .st { color: #a5d6ff; }
+  .cm { color: #8b949e; font-style: italic; }
+  .nm { color: #79c0ff; }
+  .op { color: #ff7b72; }
 
   /* ── Empty state ── */
   .empty {
@@ -289,60 +363,73 @@
   .empty p { font-size: 14px; }
 
   /* ── Progress bar ── */
+  .progress-wrap {
+    margin-bottom: 24px;
+  }
+  .progress-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 7px;
+  }
+  .progress-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
   .progress-bar {
-    height: 2px; background: var(--border); border-radius: 2px;
-    margin-bottom: 28px; overflow: hidden;
+    height: 4px; background: var(--border); border-radius: 4px; overflow: hidden;
   }
   .progress-fill {
-    height: 100%; border-radius: 2px;
+    height: 100%; border-radius: 4px;
     background: linear-gradient(90deg, var(--accent), var(--react));
-    transition: width 0.3s ease;
+    transition: width 0.35s ease;
   }
 
   /* ── Section label ── */
   .section-label {
     display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .section-label-left {
     display: flex; align-items: center; gap: 10px;
-    font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--text-sub);
   }
-  .section-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .section-count { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+  .section-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .section-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
 
   /* ── Scrollbar ── */
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 3px; }
 
   /* ── Responsive ── */
   @media (max-width: 600px) {
-    .qbody { padding-left: 20px; }
-    .stats { gap: 16px; }
-    h1 { font-size: 32px; }
+    .qbody { padding-left: 18px; }
+    .stats { gap: 0; }
+    .stat { padding: 14px 16px; }
+    h1 { font-size: 30px; }
+    .header-top { flex-direction: column-reverse; }
+    .theme-toggle { align-self: flex-end; }
   }
 
   /* ── Fade-in animation ── */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-  .qcard { animation: fadeUp 0.2s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .qcard { animation: fadeUp 0.22s ease both; }
 </style>
 </head>
 <body>
 
 <div class="wrap">
   <header>
-    <div class="header-eyebrow"><span></span> Interview Prep Hub</div>
-    <h1>Frontend <span class="gradient">Interview</span><br>Questions</h1>
-    <p class="header-desc">Master the most asked questions across HTML, CSS, JavaScript, and React. Curated answers with real code examples.</p>
-
-    <div class="stats">
-      <div class="stat"><span class="stat-num" style="color:var(--html)">10</span><span class="stat-lbl">HTML</span></div>
-      <div class="stat"><span class="stat-num" style="color:var(--css)">10</span><span class="stat-lbl">CSS</span></div>
-      <div class="stat"><span class="stat-num" style="color:var(--js)">10</span><span class="stat-lbl">JavaScript</span></div>
-      <div class="stat"><span class="stat-num" style="color:var(--react)">12</span><span class="stat-lbl">React</span></div>
-      <div class="stat" style="margin-left:auto;"><span class="stat-num" id="viewed-count" style="color:var(--accent)">0</span><span class="stat-lbl">Viewed</span></div>
+    <div class="header-top">
+      <div>
+        <div class="header-eyebrow"><span></span> Interview Prep Hub</div>
+        <h1>Frontend <span class="gradient">Interview</span><br>Questions</h1>
+        <p class="header-desc">Master the most asked questions across HTML, CSS, JavaScript, React, and TypeScript. Curated answers with real code examples.</p>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+        <span class="toggle-icon" id="theme-icon">☀️</span>
+        <span id="theme-label">Light</span>
+      </button>
     </div>
+
+    <div class="stats" id="stats-bar"></div>
   </header>
 
   <div class="controls">
@@ -360,7 +447,13 @@
     </div>
   </div>
 
-  <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <span class="progress-label">Progress</span>
+      <span class="progress-label" id="progress-text">0 / 0 viewed</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+  </div>
 
   <div class="section-label">
     <div class="section-label-left">
@@ -378,8 +471,13 @@
 </div>
 
 <script>
-const TABS = ['HTML','CSS','JavaScript','React'];
-const COLORS = { HTML:'#ff6b35', CSS:'#3b8af7', JavaScript:'#f7c948', React:'#5dd3f3' };
+const TABS = ['HTML','CSS','JavaScript','React','TypeScript'];
+const COLORS = { HTML:'#e85d1a', CSS:'#1e6fd9', JavaScript:'#c89b10', React:'#0794b8', TypeScript:'#2563eb' };
+const DARK_COLORS = { HTML:'#ff7444', CSS:'#5b9cf5', JavaScript:'#f7ca48', React:'#5dd3f3', TypeScript:'#5b8df5' };
+
+function getColor(tab) {
+  return document.documentElement.getAttribute('data-theme') === 'dark' ? DARK_COLORS[tab] : COLORS[tab];
+}
 
 const DATA = {
 HTML: [
@@ -389,7 +487,7 @@ HTML: [
   { q:"What is semantic HTML and why does it matter?", d:"Easy",
     a:"Semantic HTML uses meaningful tags that describe the <strong>purpose</strong> of content — &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt; — rather than generic &lt;div&gt; and &lt;span&gt;. Benefits: accessibility (screen readers understand structure), SEO (search engines weight semantic content), and maintainability.",
     code:"&lt;!-- Non-semantic (avoid) --&gt;\n&lt;div class=\"header\"&gt;\n  &lt;div class=\"nav\"&gt;...&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;!-- Semantic (prefer) --&gt;\n&lt;header&gt;\n  &lt;nav&gt;...&lt;/nav&gt;\n&lt;/header&gt;\n&lt;main&gt;\n  &lt;article&gt;...&lt;/article&gt;\n  &lt;aside&gt;...&lt;/aside&gt;\n&lt;/main&gt;" },
-  { q:"What is the difference between <script>, <script async>, and <script defer>?", d:"Medium",
+  { q:"What is the difference between &lt;script&gt;, &lt;script async&gt;, and &lt;script defer&gt;?", d:"Medium",
     a:"<strong>&lt;script&gt;</strong> blocks HTML parsing until the script downloads and executes. <strong>async</strong> downloads in parallel and runs immediately when ready — order not guaranteed. <strong>defer</strong> downloads in parallel but waits until HTML is fully parsed — order is preserved. Use defer for most scripts.",
     code:"&lt;!-- Blocks rendering -- avoid --&gt;\n&lt;script src=\"app.js\"&gt;&lt;/script&gt;\n\n&lt;!-- Parallel download, runs immediately (unordered) --&gt;\n&lt;script src=\"analytics.js\" async&gt;&lt;/script&gt;\n\n&lt;!-- Parallel download, runs after DOM parsed (ordered) --&gt;\n&lt;script src=\"app.js\" defer&gt;&lt;/script&gt;" },
   { q:"What is the difference between id and class attributes?", d:"Easy",
@@ -398,7 +496,7 @@ HTML: [
   { q:"What are data-* attributes?", d:"Easy",
     a:"Custom attributes that store extra data on HTML elements without non-standard attributes. They're accessible in JS via <strong>element.dataset</strong> and can be styled in CSS with attribute selectors. Great for passing config to JS components without separate JS variables.",
     code:"&lt;button data-user-id=\"42\" data-role=\"admin\" data-confirm=\"true\"&gt;\n  Delete Account\n&lt;/button&gt;\n\n&lt;script&gt;\n  const btn = document.querySelector('button');\n  btn.dataset.userId   // '42'\n  btn.dataset.role     // 'admin'\n  btn.dataset.confirm  // 'true'\n&lt;/script&gt;" },
-  { q:"What is the difference between <strong>, <b>, <em>, and <i>?", d:"Easy",
+  { q:"What is the difference between &lt;strong&gt;, &lt;b&gt;, &lt;em&gt;, and &lt;i&gt;?", d:"Easy",
     a:"<strong>&lt;strong&gt;</strong> = important content (semantic — screen readers announce it). <strong>&lt;b&gt;</strong> = bold for stylistic reasons only (no semantic meaning). <strong>&lt;em&gt;</strong> = stressed emphasis that changes meaning (semantic). <strong>&lt;i&gt;</strong> = italic without emphasis — for technical terms, foreign words, thoughts.",
     code:"&lt;p&gt;This is &lt;strong&gt;critically important&lt;/strong&gt;.&lt;/p&gt;\n&lt;p&gt;The word &lt;em&gt;must&lt;/em&gt; be there.&lt;/p&gt;\n&lt;p&gt;Press the &lt;b&gt;Start&lt;/b&gt; button.&lt;/p&gt;\n&lt;p&gt;The genus &lt;i&gt;Homo sapiens&lt;/i&gt;.&lt;/p&gt;" },
   { q:"What are meta tags and why are they important?", d:"Medium",
@@ -407,12 +505,24 @@ HTML: [
   { q:"What is the purpose of the alt attribute on images?", d:"Easy",
     a:"Alt provides a <strong>text alternative</strong> when images fail to load, and is read aloud by screen readers. Empty alt (alt=\"\") tells screen readers the image is purely decorative. A missing alt attribute is an accessibility violation. Descriptive alt text also contributes to image SEO.",
     code:"&lt;!-- Informative image -- describe it --&gt;\n&lt;img src=\"chart.png\" alt=\"Bar chart showing 40% growth in Q4 2024\" /&gt;\n\n&lt;!-- Decorative image -- empty alt --&gt;\n&lt;img src=\"divider.png\" alt=\"\" /&gt;\n\n&lt;!-- Missing alt -- accessibility violation --&gt;\n&lt;img src=\"photo.jpg\" /&gt; ❌" },
-  { q:"What is the difference between <link> and @import for stylesheets?", d:"Medium",
+  { q:"What is the difference between &lt;link&gt; and @import for stylesheets?", d:"Medium",
     a:"<strong>&lt;link&gt;</strong> is an HTML tag that loads CSS in parallel with page parsing — always preferred. <strong>@import</strong> is a CSS rule that loads stylesheets sequentially and blocks rendering until each imported sheet is downloaded. Link is always faster and should be used for all external stylesheets.",
     code:"&lt;!-- Preferred: parallel, non-blocking --&gt;\n&lt;link rel=\"stylesheet\" href=\"style.css\" /&gt;\n\n&lt;!-- Avoid: sequential, blocks render --&gt;\n&lt;style&gt;\n  @import url('style.css'); /* slower */\n&lt;/style&gt;" },
   { q:"What is the difference between block, inline, and inline-block?", d:"Easy",
     a:"<strong>Block</strong> elements (&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;) start on a new line and stretch full width. <strong>Inline</strong> elements (&lt;span&gt;, &lt;a&gt;) flow within text and only take their content's width. <strong>Inline-block</strong> flows inline but accepts width, height, and vertical padding/margin like a block.",
     code:"/* Block: full width, new line */\ndiv { display: block; }\n\n/* Inline: content width, no height/top-bottom margin */\nspan { display: inline; }\n\n/* Inline-block: inline flow + block sizing */\n.badge { display: inline-block; width: 24px; height: 24px; }" },
+  { q:"What is the difference between &lt;section&gt; and &lt;article&gt;?", d:"Easy",
+    a:"<strong>&lt;article&gt;</strong> is a self-contained piece of content that makes sense on its own — a blog post, news article, forum post. <strong>&lt;section&gt;</strong> groups related content that's part of a larger whole. An article can contain sections; sections typically belong to a larger page context.",
+    code:"&lt;article&gt;\n  &lt;h2&gt;How to Use CSS Grid&lt;/h2&gt;\n  &lt;section&gt;\n    &lt;h3&gt;Basic Syntax&lt;/h3&gt;\n    &lt;p&gt;...&lt;/p&gt;\n  &lt;/section&gt;\n  &lt;section&gt;\n    &lt;h3&gt;Advanced Layouts&lt;/h3&gt;\n    &lt;p&gt;...&lt;/p&gt;\n  &lt;/section&gt;\n&lt;/article&gt;" },
+  { q:"What is ARIA and when should you use it?", d:"Medium",
+    a:"ARIA (Accessible Rich Internet Applications) adds semantic meaning to HTML for screen readers via roles, states, and properties. Use it only when native HTML semantics are insufficient — prefer native elements first. Key attributes: <strong>role</strong>, <strong>aria-label</strong>, <strong>aria-hidden</strong>, <strong>aria-expanded</strong>, <strong>aria-live</strong>.",
+    code:"&lt;!-- Native button has built-in semantics -- prefer this --&gt;\n&lt;button type=\"button\"&gt;Close&lt;/button&gt;\n\n&lt;!-- When you must use a div for interaction --&gt;\n&lt;div role=\"button\" tabindex=\"0\"\n     aria-label=\"Close modal\"\n     onkeydown=\"handleKey(event)\"&gt;\n  &times;\n&lt;/div&gt;\n\n&lt;!-- Live region for dynamic updates --&gt;\n&lt;div aria-live=\"polite\" aria-atomic=\"true\"&gt;\n  &lt;span id=\"status\"&gt;&lt;/span&gt;\n&lt;/div&gt;" },
+  { q:"What is the difference between &lt;input type='submit'&gt; and &lt;button&gt;?", d:"Easy",
+    a:"<strong>&lt;input type='submit'&gt;</strong> is a void element — it can't contain HTML. <strong>&lt;button&gt;</strong> can contain HTML (icons, spans). &lt;button&gt; without a type attribute inside a form defaults to type='submit'. Always set the type explicitly to avoid accidental form submissions.",
+    code:"&lt;!-- Limited -- text only --&gt;\n&lt;input type=\"submit\" value=\"Submit\" /&gt;\n\n&lt;!-- Flexible -- can contain HTML --&gt;\n&lt;button type=\"submit\"&gt;\n  &lt;svg&gt;...&lt;/svg&gt; Submit\n&lt;/button&gt;\n\n&lt;!-- Explicit type prevents accidental form submit --&gt;\n&lt;button type=\"button\" onclick=\"openModal()\"&gt;\n  Open\n&lt;/button&gt;" },
+  { q:"What is lazy loading and how do you implement it?", d:"Medium",
+    a:"Lazy loading defers loading of non-critical resources (images, iframes) until they're needed — typically when entering the viewport. The native <strong>loading=\"lazy\"</strong> attribute on &lt;img&gt; and &lt;iframe&gt; is supported by all modern browsers. Use the Intersection Observer API for custom lazy-loading behavior.",
+    code:"&lt;!-- Native lazy loading --&gt;\n&lt;img\n  src=\"photo.jpg\"\n  loading=\"lazy\"\n  alt=\"Description\"\n  width=\"800\" height=\"600\"\n/&gt;\n\n&lt;!-- Always include width/height to prevent layout shift --&gt;\n&lt;iframe\n  src=\"https://example.com\"\n  loading=\"lazy\"\n  width=\"600\" height=\"400\"\n&gt;&lt;/iframe&gt;" },
 ],
 CSS: [
   { q:"What is the CSS Box Model?", d:"Easy",
@@ -445,6 +555,18 @@ CSS: [
   { q:"What is a pseudo-class vs a pseudo-element?", d:"Medium",
     a:"<strong>Pseudo-classes</strong> (:hover, :focus, :nth-child, :checked) target elements in a specific state. <strong>Pseudo-elements</strong> (::before, ::after, ::first-line) style a specific part of an element's content. The double-colon (::) for pseudo-elements is the modern convention but single-colon still works for legacy support.",
     code:"/* Pseudo-class — element in a state */\n.btn:hover { background: #5a52e0; }\n.input:focus { outline: 2px solid blue; }\nli:nth-child(odd) { background: #f9f9f9; }\n\n/* Pseudo-element — virtual sub-element */\n.card::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  border-radius: inherit;\n}\n\np::first-line { font-weight: 500; }" },
+  { q:"What are CSS transitions vs CSS animations?", d:"Medium",
+    a:"<strong>Transitions</strong> animate between two states triggered by a state change (hover, focus, class toggle) — defined by property, duration, timing. <strong>Animations</strong> use @keyframes and run independently, can loop, alternate, and have multiple steps. Transitions are simpler; animations offer full control.",
+    code:"/* Transition: triggered by state change */\n.btn {\n  background: #2563eb;\n  transition: background 0.2s ease, transform 0.15s;\n}\n.btn:hover {\n  background: #1d4ed8;\n  transform: translateY(-2px);\n}\n\n/* Animation: runs independently */\n@keyframes spin {\n  from { transform: rotate(0deg); }\n  to   { transform: rotate(360deg); }\n}\n.loader {\n  animation: spin 1s linear infinite;\n}" },
+  { q:"How does CSS @media query work?", d:"Easy",
+    a:"Media queries apply CSS rules conditionally based on viewport size, device type, or user preferences. The <strong>mobile-first</strong> approach uses min-width breakpoints — base styles target mobile, larger screens progressively add complexity. <strong>prefers-color-scheme</strong> and <strong>prefers-reduced-motion</strong> target user system settings.",
+    code:"/* Mobile first */\n.grid {\n  display: block;        /* mobile: stacked */\n}\n@media (min-width: 640px) {\n  .grid { display: grid; grid-template-columns: 1fr 1fr; }\n}\n@media (min-width: 1024px) {\n  .grid { grid-template-columns: repeat(3, 1fr); }\n}\n\n/* System preference */\n@media (prefers-color-scheme: dark) {\n  :root { --bg: #0c0e13; }\n}\n@media (prefers-reduced-motion: reduce) {\n  * { animation-duration: 0.01ms !important; }\n}" },
+  { q:"What is the CSS cascade and how does it work?", d:"Medium",
+    a:"The cascade determines which CSS rule wins when multiple rules target the same element. Order of precedence: <strong>origin & importance</strong> (user-agent, author, user) > <strong>specificity</strong> > <strong>order of appearance</strong>. Understanding this hierarchy is key to writing predictable, maintainable CSS.",
+    code:"/* 1. Browser default styles (lowest priority) */\na { color: blue; text-decoration: underline; }\n\n/* 2. Author stylesheet */\n.link { color: #2563eb; }\n\n/* 3. Higher specificity wins over lower */\nnav .link { color: white; }  /* wins over .link */\n\n/* 4. Same specificity: last one wins */\n.btn { color: red; }\n.btn { color: blue; }  /* this wins */" },
+  { q:"What is the contain property and when is it useful?", d:"Hard",
+    a:"The <strong>contain</strong> property tells the browser a subtree is independent from the rest of the page — enabling rendering optimizations. <strong>layout</strong>: nothing inside affects outside layout. <strong>paint</strong>: contents don't paint outside the box. <strong>strict</strong>: both layout and paint. Useful for complex component lists where one card changing shouldn't relayout the whole page.",
+    code:"/* Contain layout and paint for performance */\n.card-list-item {\n  contain: layout paint;\n  /* Browser can skip relayout of siblings\n     when this item changes */\n}\n\n/* content-visibility for off-screen optimization */\n.off-screen-section {\n  content-visibility: auto;\n  contain-intrinsic-size: 0 500px;\n}" },
 ],
 JavaScript: [
   { q:"What is the difference between var, let, and const?", d:"Easy",
@@ -477,6 +599,18 @@ JavaScript: [
   { q:"What is prototypal inheritance?", d:"Hard",
     a:"Every JS object has an internal <strong>[[Prototype]]</strong> link to another object. Property lookups walk up the chain until found or null is reached. The class syntax is <strong>syntactic sugar</strong> over prototypal inheritance — no class-based OOP under the hood.",
     code:"// Prototypal\nconst animal = {\n  speak() { return `${this.name} makes a sound`; }\n};\nconst dog = Object.create(animal);\ndog.name = 'Rex';\ndog.bark = () => 'woof!';\n\ndog.speak(); // 'Rex makes a sound' (from prototype)\ndog.bark();  // 'woof!' (own property)\n\n// Class syntax (same thing underneath)\nclass Dog extends Animal {\n  bark() { return 'woof!'; }\n}" },
+  { q:"What are generators and iterators?", d:"Hard",
+    a:"An <strong>iterator</strong> is an object with a next() method that returns { value, done }. A <strong>generator</strong> is a function using function* that pauses with yield, resuming on next(). Generators enable lazy sequences, infinite streams, custom iteration, and are the foundation of async generators.",
+    code:"function* range(start, end, step = 1) {\n  for (let i = start; i < end; i += step) {\n    yield i;\n  }\n}\n\nfor (const n of range(0, 10, 2)) {\n  console.log(n); // 0, 2, 4, 6, 8\n}\n\n// Infinite sequence\nfunction* fibonacci() {\n  let [a, b] = [0, 1];\n  while (true) {\n    yield a;\n    [a, b] = [b, a + b];\n  }\n}\n\nconst fib = fibonacci();\nfib.next().value; // 0\nfib.next().value; // 1\nfib.next().value; // 1" },
+  { q:"What is destructuring in JavaScript?", d:"Easy",
+    a:"Destructuring extracts values from arrays or objects into variables in a concise syntax. Supports <strong>default values</strong>, <strong>renaming</strong>, <strong>rest patterns</strong>, and <strong>nested destructuring</strong>. Heavily used in function parameters, React props, and module imports.",
+    code:"// Object destructuring\nconst { name, age, role = 'user' } = user;\nconst { address: { city } } = user; // nested\nconst { id: userId } = user;         // rename\n\n// Array destructuring\nconst [first, second, ...rest] = [1, 2, 3, 4];\nconst [,, third] = arr; // skip elements\n\n// Function parameters\nfunction greet({ name, greeting = 'Hello' }) {\n  return `${greeting}, ${name}!`;\n}\n\n// Swap variables\n[a, b] = [b, a];" },
+  { q:"What is the difference between == and === in JavaScript?", d:"Easy",
+    a:"<strong>===</strong> (strict equality) compares value AND type — no conversions. <strong>==</strong> (loose equality) performs <strong>type coercion</strong> before comparing, leading to surprising results. Always use === in production code. The only common valid use of == is null checks: value == null catches both null and undefined.",
+    code:"// Loose equality surprises\n0 == false      // true (coercion)\n'' == false     // true\nnull == undefined // true\n'1' == 1        // true\n\n// Strict equality\n0 === false     // false\n'' === false    // false\nnull === undefined // false\n\n// The one valid use of ==\nif (value == null) {\n  // catches both null and undefined\n}" },
+  { q:"What are the array methods map, filter, and reduce?", d:"Easy",
+    a:"<strong>map</strong>: transforms each element, returns new array of same length. <strong>filter</strong>: keeps elements matching predicate, returns new array. <strong>reduce</strong>: accumulates elements into a single value (sum, object, nested structure). All three are pure — they don't mutate the original array.",
+    code:"const nums = [1, 2, 3, 4, 5];\n\n// map: transform each item\nconst doubled = nums.map(n => n * 2);\n// [2, 4, 6, 8, 10]\n\n// filter: keep matching items\nconst evens = nums.filter(n => n % 2 === 0);\n// [2, 4]\n\n// reduce: accumulate\nconst sum = nums.reduce((acc, n) => acc + n, 0);\n// 15\n\n// Chained\nconst result = nums\n  .filter(n => n > 2)\n  .map(n => n * n)\n  .reduce((acc, n) => acc + n, 0);\n// 9 + 16 + 25 = 50" },
 ],
 React: [
   { q:"What is the Virtual DOM and how does React use it?", d:"Medium",
@@ -496,7 +630,7 @@ React: [
     code:"// useMemo -- expensive calculation\nconst sortedList = useMemo(\n  () => [...items].sort((a, b) => a.score - b.score),\n  [items]  // only recalculates when items changes\n);\n\n// useCallback -- stable function reference\nconst handleDelete = useCallback(\n  (id) => dispatch({ type: 'DELETE', id }),\n  [dispatch]  // same fn reference unless dispatch changes\n);\n\n// Pair with React.memo on child\nconst Row = React.memo(({ onDelete }) => {\n  /* only re-renders if onDelete reference changes */\n});" },
   { q:"What is prop drilling and how do you solve it?", d:"Medium",
     a:"Prop drilling is threading props through multiple layers of components just to reach a distant child. Solutions: <strong>Context API</strong> for global data (theme, auth, locale), <strong>Zustand/Redux</strong> for complex app state, <strong>Component composition</strong> (passing children/JSX as props to skip intermediate layers).",
-    code:"// Context API solution\nconst AuthCtx = createContext(null);\n\nfunction App() {\n  const auth = useAuth(); // from your auth hook\n  return (\n    &lt;AuthCtx.Provider value={auth}&gt;\n      &lt;Router /&gt; {/* no need to pass auth down */}\n    &lt;/AuthCtx.Provider&gt;\n  );\n}\n\n// Any descendant can access it\nfunction UserMenu() {\n  const { user, logout } = useContext(AuthCtx);\n  return &lt;button onClick={logout}&gt;{user.name}&lt;/button&gt;;\n}" },
+    code:"// Context API solution\nconst AuthCtx = createContext(null);\n\nfunction App() {\n  const auth = useAuth();\n  return (\n    &lt;AuthCtx.Provider value={auth}&gt;\n      &lt;Router /&gt;\n    &lt;/AuthCtx.Provider&gt;\n  );\n}\n\n// Any descendant can access it\nfunction UserMenu() {\n  const { user, logout } = useContext(AuthCtx);\n  return &lt;button onClick={logout}&gt;{user.name}&lt;/button&gt;;\n}" },
   { q:"What is the key prop and why is it critical?", d:"Medium",
     a:"Keys help React identify which items in a list were added, removed, or reordered during reconciliation. Without stable keys, React reuses DOM nodes incorrectly — causing <strong>state bugs</strong> (inputs keeping wrong values, animations glitching). Never use array index as key when lists can be sorted or filtered.",
     code:"// ❌ Index as key -- causes bugs on reorder/delete\n{items.map((item, i) => &lt;Row key={i} {...item} /&gt;)}\n\n// ✅ Stable unique ID from data\n{items.map(item => &lt;Row key={item.id} {...item} /&gt;)}\n\n// ✅ Also good: stable string key\n{tabs.map(tab => &lt;Tab key={tab.slug} {...tab} /&gt;)}" },
@@ -505,7 +639,7 @@ React: [
     code:"// Basic usage\nconst Avatar = React.memo(function Avatar({ src, name }) {\n  return &lt;img src={src} alt={name} /&gt;;\n});\n\n// Custom comparison (return true to SKIP re-render)\nconst Row = React.memo(\n  function Row({ user }) { return &lt;tr&gt;{user.name}&lt;/tr&gt;; },\n  (prev, next) => prev.user.id === next.user.id\n);" },
   { q:"What are controlled vs uncontrolled form components?", d:"Medium",
     a:"<strong>Controlled</strong>: React state is the single source of truth — input value is bound to state, onChange updates state. Enables real-time validation and conditional logic. <strong>Uncontrolled</strong>: DOM manages state, accessed via ref. Simpler for basic forms. File inputs must be uncontrolled.",
-    code:"// Controlled -- React owns the state\nconst [email, setEmail] = useState('');\n&lt;input\n  value={email}\n  onChange={e => setEmail(e.target.value)}\n/&gt;\n\n// Uncontrolled -- DOM owns the state\nconst inputRef = useRef(null);\nconst handleSubmit = () =&gt; {\n  console.log(inputRef.current.value);\n};\n&lt;input ref={inputRef} defaultValue=\"initial\" /&gt;" },
+    code:"// Controlled -- React owns the state\nconst [email, setEmail] = useState('');\n&lt;input\n  value={email}\n  onChange={e => setEmail(e.target.value)}\n/&gt;\n\n// Uncontrolled -- DOM owns the state\nconst inputRef = useRef(null);\nconst handleSubmit = () => {\n  console.log(inputRef.current.value);\n};\n&lt;input ref={inputRef} defaultValue=\"initial\" /&gt;" },
   { q:"What is code splitting and React.lazy?", d:"Medium",
     a:"Code splitting breaks the JS bundle into smaller chunks loaded on demand — reducing initial bundle size and improving load time. <strong>React.lazy</strong> wraps a dynamic import and makes it work with <strong>Suspense</strong>. The component's code only downloads when first rendered.",
     code:"import { lazy, Suspense } from 'react';\n\n// Only downloaded when rendered\nconst Dashboard = lazy(() => import('./Dashboard'));\nconst Settings  = lazy(() => import('./Settings'));\n\nfunction App() {\n  return (\n    &lt;Suspense fallback={&lt;PageSpinner /&gt;}&gt;\n      {page === 'dashboard' && &lt;Dashboard /&gt;}\n      {page === 'settings'  && &lt;Settings  /&gt;}\n    &lt;/Suspense&gt;\n  );\n}" },
@@ -514,7 +648,45 @@ React: [
     code:"// React reconciles these efficiently:\n// Before:\n&lt;ul&gt;\n  &lt;li key=\"a\"&gt;A&lt;/li&gt;\n  &lt;li key=\"b\"&gt;B&lt;/li&gt;\n&lt;/ul&gt;\n\n// After (item added at top):\n&lt;ul&gt;\n  &lt;li key=\"c\"&gt;C&lt;/li&gt;  {/* new -- mounted */}\n  &lt;li key=\"a\"&gt;A&lt;/li&gt;  {/* moved -- not remounted */}\n  &lt;li key=\"b\"&gt;B&lt;/li&gt;  {/* moved -- not remounted */}\n&lt;/ul&gt;" },
   { q:"What are React Portals?", d:"Hard",
     a:"Portals render a component's output into a <strong>different DOM node</strong> than its parent — while keeping it in the React component tree (events still bubble through React tree). Essential for modals, tooltips, and dropdowns that need to escape overflow:hidden or z-index constraints.",
-    code:"import { createPortal } from 'react-dom';\n\nfunction Modal({ isOpen, children }) {\n  if (!isOpen) return null;\n  return createPortal(\n    &lt;div className=\"modal-overlay\"&gt;\n      &lt;div className=\"modal-box\"&gt;\n        {children}\n      &lt;/div&gt;\n    &lt;/div&gt;,\n    document.getElementById('modal-root') // renders here\n  );\n}\n// Even though it renders in #modal-root,\n// events bubble to App in the React tree" },
+    code:"import { createPortal } from 'react-dom';\n\nfunction Modal({ isOpen, children }) {\n  if (!isOpen) return null;\n  return createPortal(\n    &lt;div className=\"modal-overlay\"&gt;\n      &lt;div className=\"modal-box\"&gt;\n        {children}\n      &lt;/div&gt;\n    &lt;/div&gt;,\n    document.getElementById('modal-root')\n  );\n}\n// Events bubble to App in React tree\n// even though DOM renders in #modal-root" },
+  { q:"What is useRef and when would you use it?", d:"Medium",
+    a:"<strong>useRef</strong> returns a mutable object with a .current property that persists across renders without triggering re-renders. Two main use cases: <strong>DOM references</strong> (focus, scroll, measurements) and <strong>mutable values</strong> that shouldn't trigger renders (previous value, timer IDs, abort controllers).",
+    code:"function Form() {\n  const inputRef = useRef(null);\n\n  // DOM access\n  const focusInput = () => inputRef.current.focus();\n\n  return &lt;input ref={inputRef} /&gt;;\n}\n\n// Storing mutable value without re-render\nfunction Timer() {\n  const timerRef = useRef(null);\n\n  const start = () => {\n    timerRef.current = setInterval(tick, 1000);\n  };\n  const stop = () => {\n    clearInterval(timerRef.current);\n  };\n}" },
+  { q:"What is context and what are its performance implications?", d:"Hard",
+    a:"Context provides a way to share values across the component tree without explicit prop passing. <strong>Performance trap</strong>: every consumer re-renders when context value changes — even if only a portion of the context changed. Mitigate by: splitting contexts, memoizing values, using state management libraries for frequent updates.",
+    code:"// Split contexts to prevent unnecessary re-renders\nconst ThemeCtx  = createContext(null); // rarely changes\nconst UserCtx   = createContext(null); // rarely changes\nconst CartCtx   = createContext(null); // changes often\n\n// Memoize context value\nfunction CartProvider({ children }) {\n  const [items, setItems] = useState([]);\n  const value = useMemo(\n    () => ({ items, setItems }),\n    [items]\n  );\n  return (\n    &lt;CartCtx.Provider value={value}&gt;\n      {children}\n    &lt;/CartCtx.Provider&gt;\n  );\n}" },
+],
+TypeScript: [
+  { q:"What is TypeScript and why use it over JavaScript?", d:"Easy",
+    a:"TypeScript is a <strong>typed superset of JavaScript</strong> that compiles to plain JS. Benefits: catch type errors at compile-time instead of runtime, better IDE autocompletion, explicit contracts via interfaces/types, safer refactoring. TypeScript doesn't change runtime behavior — it's purely a development tool.",
+    code:"// JavaScript -- bug caught at runtime\nfunction add(a, b) { return a + b; }\nadd('5', 3);  // '53' -- silent bug!\n\n// TypeScript -- bug caught at compile-time\nfunction add(a: number, b: number): number {\n  return a + b;\n}\nadd('5', 3);  // ❌ Error: Argument of type\n              // 'string' is not assignable to 'number'" },
+  { q:"What is the difference between interface and type?", d:"Medium",
+    a:"Both define shapes of objects. <strong>interface</strong>: extendable via extends and declaration merging (multiple declarations auto-merge). <strong>type</strong>: more flexible — supports unions, intersections, mapped types, conditional types. Use interface for public API shapes; type for complex type manipulations and unions.",
+    code:"// Interface -- extendable, mergeable\ninterface User {\n  id: number;\n  name: string;\n}\ninterface User { email: string; } // merges!\n\n// Type -- flexible, no merging\ntype ID = string | number;\ntype Status = 'active' | 'inactive' | 'pending';\ntype ApiResponse<T> = {\n  data: T;\n  status: number;\n  error?: string;\n};\n\n// Intersection\ntype AdminUser = User & { permissions: string[]; };" },
+  { q:"What are generics in TypeScript?", d:"Medium",
+    a:"Generics create <strong>reusable, type-safe components</strong> that work with multiple types. They act as type parameters — you pass the type when calling. Essential for utility functions, data structures, API wrappers, and React components that need to be polymorphic.",
+    code:"// Generic function\nfunction first<T>(arr: T[]): T | undefined {\n  return arr[0];\n}\nfirst([1, 2, 3]);    // returns: number\nfirst(['a', 'b']);   // returns: string\n\n// Generic with constraint\nfunction getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key];\n}\n\n// Generic React component\nfunction List<T extends { id: string }>(\n  { items, renderItem }: {\n    items: T[];\n    renderItem: (item: T) => React.ReactNode;\n  }\n) {\n  return &lt;ul&gt;{items.map(item => renderItem(item))}&lt;/ul&gt;;\n}" },
+  { q:"What are union and intersection types?", d:"Medium",
+    a:"<strong>Union (|)</strong>: a value can be one of several types — use type narrowing to determine which. <strong>Intersection (&)</strong>: a value must satisfy ALL types simultaneously — combines properties. Unions model 'or' relationships; intersections model 'and' / composition.",
+    code:"// Union -- one OR another\ntype ID = string | number;\ntype Status = 'loading' | 'success' | 'error';\n\nfunction format(id: ID): string {\n  if (typeof id === 'string') return id.toUpperCase();\n  return id.toString(); // narrowed to number\n}\n\n// Intersection -- combines types\ntype Timestamped = { createdAt: Date; updatedAt: Date; };\ntype Identifiable = { id: string; };\ntype Entity = Timestamped & Identifiable;\n\n// Discriminated union (type-safe switch)\ntype Result =\n  | { status: 'ok';    data: User  }\n  | { status: 'error'; message: string };" },
+  { q:"What is 'any' vs 'unknown' in TypeScript?", d:"Medium",
+    a:"<strong>any</strong>: opts out of type checking entirely — assignments to/from any are always allowed. Defeats the purpose of TypeScript. <strong>unknown</strong>: type-safe alternative — you must narrow the type before using it. Prefer unknown for values you don't know the type of (API responses, error objects).",
+    code:"// any: dangerous -- no checks\nlet x: any = 'hello';\nx.foo.bar.baz; // ✅ no error, will crash at runtime\n\n// unknown: safe -- must narrow first\nlet y: unknown = getApiResponse();\ny.foo;                    // ❌ Error: can't access property\n\nif (typeof y === 'string') {\n  y.toUpperCase();        // ✅ narrowed to string\n}\n\n// Error handling pattern\ntry {\n  doSomething();\n} catch (err: unknown) {\n  if (err instanceof Error) {\n    console.error(err.message); // safe\n  }\n}" },
+  { q:"What are TypeScript utility types?", d:"Medium",
+    a:"TypeScript ships built-in generic types that transform existing types. <strong>Partial</strong> makes all properties optional. <strong>Required</strong> makes all required. <strong>Pick</strong> selects properties. <strong>Omit</strong> excludes properties. <strong>Readonly</strong> prevents mutation. <strong>Record</strong> creates key-value maps. Essential for reducing boilerplate.",
+    code:"interface User {\n  id: number; name: string; email: string; role: string;\n}\n\n// Partial: all optional (good for patch/update)\ntype UpdateUser = Partial<User>;\n\n// Pick: select subset\ntype UserPreview = Pick<User, 'id' | 'name'>;\n\n// Omit: exclude properties\ntype NewUser = Omit<User, 'id'>;\n\n// Record: typed dictionary\ntype RoleMap = Record<string, User[]>;\n\n// ReturnType: extract function return type\ntype R = ReturnType<typeof fetchUser>;\n\n// Required: all props required (removes optional)\ntype StrictUser = Required<User>;" },
+  { q:"What is type narrowing?", d:"Medium",
+    a:"Type narrowing refines a broader type to a more specific one inside a conditional block. TypeScript tracks control flow — after an if/switch/guard, it knows the precise type. Key narrowing techniques: typeof, instanceof, in operator, equality checks, and <strong>type predicates</strong>.",
+    code:"function processInput(value: string | number | boolean) {\n  if (typeof value === 'string') {\n    return value.toUpperCase();  // string\n  }\n  if (typeof value === 'number') {\n    return value.toFixed(2);     // number\n  }\n  return value;                  // boolean\n}\n\n// Type predicate\nfunction isUser(obj: unknown): obj is User {\n  return typeof obj === 'object'\n    && obj !== null\n    && 'id' in obj\n    && 'name' in obj;\n}\n\n// instanceof narrowing\nif (err instanceof NetworkError) {\n  // err is NetworkError here\n}" },
+  { q:"What are decorators in TypeScript?", d:"Hard",
+    a:"Decorators are a <strong>meta-programming</strong> syntax to annotate and modify classes, methods, properties, and parameters. Currently a Stage 3 proposal; TypeScript supports them experimentally. Widely used in Angular and NestJS for dependency injection, routing, and validation.",
+    code:"// Class decorator\nfunction sealed(constructor: Function) {\n  Object.seal(constructor);\n  Object.seal(constructor.prototype);\n}\n\n// Method decorator\nfunction log(_target: any, key: string, descriptor: PropertyDescriptor) {\n  const original = descriptor.value;\n  descriptor.value = function(...args: unknown[]) {\n    console.log(`Calling ${key} with`, args);\n    return original.apply(this, args);\n  };\n  return descriptor;\n}\n\n@sealed\nclass UserService {\n  @log\n  getUser(id: number) {\n    return fetch(`/api/users/${id}`);\n  }\n}" },
+  { q:"What is the difference between never, void, and undefined?", d:"Hard",
+    a:"<strong>void</strong>: function returns nothing (implicitly returns undefined). <strong>undefined</strong>: explicit undefined value. <strong>never</strong>: function never returns — it either throws or runs forever. TypeScript uses never for exhaustiveness checks — if you handle all union cases, the else branch is never.",
+    code:"// void: no meaningful return\nfunction log(msg: string): void {\n  console.log(msg);\n  // returns undefined implicitly\n}\n\n// never: truly never returns\nfunction fail(msg: string): never {\n  throw new Error(msg);\n}\n\nfunction infinite(): never {\n  while (true) {}\n}\n\n// Exhaustiveness check with never\ntype Shape = 'circle' | 'square' | 'triangle';\nfunction area(s: Shape): number {\n  switch (s) {\n    case 'circle':   return Math.PI;\n    case 'square':   return 1;\n    case 'triangle': return 0.5;\n    default: const _: never = s; // error if case missed\n  }\n}" },
+  { q:"What are conditional types and mapped types?", d:"Hard",
+    a:"<strong>Conditional types</strong> act like ternaries at the type level: T extends U ? X : Y. <strong>Mapped types</strong> create new types by iterating over keys. Together they power TypeScript's built-in utilities (Partial, Required, Readonly). The infer keyword extracts types from within conditionals.",
+    code:"// Conditional type\ntype IsString<T> = T extends string ? true : false;\ntype A = IsString<'hi'>;    // true\ntype B = IsString<42>;      // false\n\n// infer: extract inner type\ntype ReturnType<T> = T extends (...args: any) => infer R ? R : never;\ntype Unwrap<T>    = T extends Promise<infer U> ? U : T;\n\n// Mapped type\ntype Readonly<T> = {\n  readonly [K in keyof T]: T[K];\n};\ntype Nullable<T> = {\n  [K in keyof T]: T[K] | null;\n};\n\n// Conditional + mapped\ntype NonNullableProps<T> = {\n  [K in keyof T as T[K] extends null | undefined ? never : K]: T[K];\n};" },
 ],
 };
 
@@ -523,16 +695,57 @@ let activeFilter = 'all';
 let expanded = new Set();
 let viewed = new Set();
 
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  updateThemeButton(next);
+  // Re-render to update colors
+  renderTabs();
+  updateSection();
+}
+
+function updateThemeButton(theme) {
+  const icon  = document.getElementById('theme-icon');
+  const label = document.getElementById('theme-label');
+  if (theme === 'dark') {
+    icon.textContent  = '🌙';
+    label.textContent = 'Dark';
+  } else {
+    icon.textContent  = '☀️';
+    label.textContent = 'Light';
+  }
+}
+
 function tabClass(t) {
-  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react' };
+  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react', TypeScript:'active-ts' };
   return map[t] || '';
+}
+
+function renderStats() {
+  const bar = document.getElementById('stats-bar');
+  if (!bar) return;
+  const total = Object.values(DATA).reduce((acc, arr) => acc + arr.length, 0);
+  bar.innerHTML = TABS.map(t => `
+    <div class="stat">
+      <span class="stat-num" style="color:${getColor(t)}">${DATA[t].length}</span>
+      <span class="stat-lbl">${t}</span>
+    </div>
+  `).join('') + `
+    <div class="stat" style="margin-left:auto;">
+      <span class="stat-num" id="viewed-count" style="color:var(--accent)">0</span>
+      <span class="stat-lbl">Viewed</span>
+    </div>
+  `;
 }
 
 function renderTabs() {
   document.getElementById('tabs').innerHTML = TABS.map(t => {
     const isActive = t === activeTab;
     return `<button class="tab${isActive ? ' '+tabClass(t) : ''}" onclick="setTab('${t}')">
-      <span class="dot" style="background:${COLORS[t]}"></span>
+      <span class="dot" style="background:${getColor(t)}"></span>
       ${t}
       <span class="cnt">${DATA[t].length}</span>
     </button>`;
@@ -557,10 +770,10 @@ function setFilter(f) {
 }
 
 function updateSection() {
-  const dot = document.getElementById('section-dot');
+  const dot   = document.getElementById('section-dot');
   const title = document.getElementById('section-title');
-  if(dot) dot.style.background = COLORS[activeTab];
-  if(title) title.textContent = activeTab;
+  if(dot)   dot.style.background = getColor(activeTab);
+  if(title) title.textContent    = activeTab;
 }
 
 function renderCards() {
@@ -584,12 +797,14 @@ function renderCards() {
   }
   emptyEl.style.display = 'none';
 
+  const tabKey = activeTab.toLowerCase().replace('javascript','js').replace('typescript','ts');
+
   container.innerHTML = items.map((item, i) => {
     const key = `${activeTab}-${i}`;
     const isOpen = expanded.has(key);
     const diffClass = item.d === 'Easy' ? 'diff-easy' : item.d === 'Medium' ? 'diff-med' : 'diff-hard';
-    const openClass = isOpen ? `open-${activeTab.toLowerCase().replace('javascript','js')}` : '';
-    const delay = `animation-delay:${i * 0.04}s`;
+    const openClass = isOpen ? `open-${tabKey}` : '';
+    const delay = `animation-delay:${i * 0.035}s`;
 
     return `<div class="qcard${isOpen ? ' expanded ' + openClass : ''}" style="${delay}" id="card-${key}">
       <div class="qheader" onclick="toggle('${key}')">
@@ -640,7 +855,9 @@ function updateProgress() {
   const total = Object.values(DATA).reduce((acc, arr) => acc + arr.length, 0);
   const pct = Math.round((viewed.size / total) * 100);
   const el = document.getElementById('progress');
-  if(el) el.style.width = pct + '%';
+  const txt = document.getElementById('progress-text');
+  if(el)  el.style.width = pct + '%';
+  if(txt) txt.textContent = `${viewed.size} / ${total} viewed`;
 }
 
 function copyCode(event, key) {
@@ -665,15 +882,19 @@ document.getElementById('search').addEventListener('input', () => {
   renderCards();
 });
 
-// Init
+// Init: restore saved theme preference
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+updateThemeButton(savedTheme);
+
+const total = Object.values(DATA).reduce((acc, arr) => acc + arr.length, 0);
+document.getElementById('progress-text').textContent = `0 / ${total} viewed`;
+
 setFilter('all');
+renderStats();
 renderTabs();
 updateSection();
 renderCards();
-
-// Update section count
-const countEl = document.getElementById('section-count');
-if(countEl) countEl.textContent = `${DATA[activeTab].length} questions`;
 </script>
 </body>
 </html>
