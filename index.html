@@ -11,7 +11,6 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    /* Light mode (default) */
     --bg:         #f5f6fa;
     --bg-card:    #ffffff;
     --bg-hover:   #f0f2f8;
@@ -26,8 +25,8 @@
     --accent-glow:rgba(37,99,235,0.22);
     --html:       #e85d1a;
     --html-dim:   rgba(232,93,26,0.10);
-    --css:        #1e6fd9;
-    --css-dim:    rgba(30,111,217,0.10);
+    --css:        #1e6fd9d9;
+    --css-dim:    rgba(30,221,217,0.10);
     --js:         #c89b10;
     --js-dim:     rgba(200,155,16,0.10);
     --react:      #0794b8;
@@ -111,7 +110,6 @@
 
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-  /* ── Header ── */
   header { padding: 52px 0 44px; }
 
   .header-top {
@@ -149,7 +147,6 @@
 
   .header-desc { color: var(--text-sub); font-size: 15.5px; max-width: 500px; line-height: 1.7; margin-bottom: 32px; }
 
-  /* ── Theme toggle ── */
   .theme-toggle {
     display: flex; align-items: center; gap: 8px;
     padding: 8px 14px;
@@ -162,7 +159,6 @@
   .theme-toggle:hover { border-color: var(--border-md); color: var(--text); }
   .theme-toggle .toggle-icon { font-size: 14px; line-height: 1; }
 
-  /* ── Stats bar ── */
   .stats {
     display: flex; gap: 0; flex-wrap: wrap;
     background: var(--bg-card);
@@ -184,7 +180,6 @@
   .stat-num { font-family: var(--font-head); font-size: 24px; font-weight: 700; line-height: 1; }
   .stat-lbl { font-size: 10.5px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 5px; }
 
-  /* ── Controls ── */
   .controls { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
 
   .search-box { position: relative; }
@@ -203,7 +198,6 @@
   .search-box input::placeholder { color: var(--text-dim); }
   .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
 
-  /* ── Tabs ── */
   .tabs { display: flex; gap: 5px; flex-wrap: wrap; }
 
   .tab {
@@ -225,7 +219,6 @@
   .tab.active-react{ border-color: var(--react);background: var(--react-dim);color: var(--react); }
   .tab.active-ts   { border-color: var(--ts);   background: var(--ts-dim);   color: var(--ts); }
 
-  /* ── Filter pills ── */
   .filters { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
   .filter-lbl { font-size: 11.5px; color: var(--text-dim); font-family: var(--font-mono); }
 
@@ -242,7 +235,6 @@
   .pill.inactive { opacity: 0.3; }
   .pill:hover { opacity: 1 !important; }
 
-  /* ── Question cards ── */
   .cards { display: flex; flex-direction: column; gap: 7px; padding-bottom: 80px; }
 
   .qcard {
@@ -256,7 +248,7 @@
   .qcard:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); transform: translateY(-1px); }
   .qcard.expanded { transform: none; }
   .qcard.open-html  { border-color: rgba(232,93,26,0.35); }
-  .qcard.open-css   { border-color: rgba(30,111,217,0.35); }
+  .qcard.open-css   { border-color: rgba(30,221,217,0.35); }
   .qcard.open-js    { border-color: rgba(200,155,16,0.35); }
   .qcard.open-react { border-color: rgba(7,148,184,0.35); }
   .qcard.open-ts    { border-color: rgba(37,99,235,0.35); }
@@ -301,7 +293,6 @@
   .qcard.expanded .chevron { transform: rotate(180deg); }
   .qheader:hover .chevron { background: var(--bg-hover); color: var(--text-sub); }
 
-  /* ── Answer body ── */
   .qbody {
     display: none;
     padding: 0 18px 18px 60px;
@@ -354,7 +345,6 @@
   .nm { color: #79c0ff; }
   .op { color: #ff7b72; }
 
-  /* ── Empty state ── */
   .empty {
     display: none; text-align: center; padding: 64px 24px;
     color: var(--text-dim);
@@ -362,10 +352,7 @@
   .empty svg { margin-bottom: 16px; opacity: 0.3; }
   .empty p { font-size: 14px; }
 
-  /* ── Progress bar ── */
-  .progress-wrap {
-    margin-bottom: 24px;
-  }
+  .progress-wrap { margin-bottom: 24px; }
   .progress-meta {
     display: flex; justify-content: space-between; align-items: center;
     margin-bottom: 7px;
@@ -380,7 +367,6 @@
     transition: width 0.35s ease;
   }
 
-  /* ── Section label ── */
   .section-label {
     display: flex; align-items: center; justify-content: space-between;
     margin-bottom: 10px;
@@ -393,12 +379,10 @@
   .section-dot { width: 8px; height: 8px; border-radius: 50%; }
   .section-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
 
-  /* ── Scrollbar ── */
   ::-webkit-scrollbar { width: 5px; height: 5px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 3px; }
 
-  /* ── Responsive ── */
   @media (max-width: 600px) {
     .qbody { padding-left: 18px; }
     .stats { gap: 0; }
@@ -408,7 +392,6 @@
     .theme-toggle { align-self: flex-end; }
   }
 
-  /* ── Fade-in animation ── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   .qcard { animation: fadeUp 0.22s ease both; }
 </style>
@@ -428,7 +411,6 @@
         <span id="theme-label">Light</span>
       </button>
     </div>
-
     <div class="stats" id="stats-bar"></div>
   </header>
 
@@ -479,321 +461,82 @@ function getColor(tab) {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? DARK_COLORS[tab] : COLORS[tab];
 }
 
-const DATA = 
-  { q:"What is the Shadow DOM?", d:"Medium",
-    a:"The Shadow DOM is a <strong>scoped, encapsulated DOM subtree</strong> attached to an element — its styles and structure are isolated from the main document. Used internally by browsers for &lt;input&gt;, &lt;video&gt;, &lt;select&gt;. You can create shadow roots manually for Web Components to prevent style leakage.",
-    code:"const host = document.querySelector('#card');\nconst shadow = host.attachShadow({ mode: 'open' });\n\nshadow.innerHTML = `\n  <style>\n    p { color: red; }  /* scoped to shadow only */\n  </style>\n  <p>Shadow content</p>\n`;\n// Styles here won't leak out; outer styles won't leak in" },
-  { q:"What is the difference between localStorage, sessionStorage, and cookies?", d:"Medium",
-    a:"<strong>localStorage</strong>: persists indefinitely, ~5MB, same-origin only, never sent to server. <strong>sessionStorage</strong>: cleared when tab closes, same limits. <strong>Cookies</strong>: sent with every HTTP request, ~4KB, can be scoped by path/domain, can be HTTP-only and Secure. Use cookies for auth tokens, localStorage for UI preferences.",
-    code:"// localStorage -- survives browser restart\nlocalStorage.setItem('theme', 'dark');\nlocalStorage.getItem('theme');  // 'dark'\n\n// sessionStorage -- cleared on tab close\nsessionStorage.setItem('draft', JSON.stringify(form));\n\n// Cookie -- sent to server automatically\ndocument.cookie = 'token=abc; Path=/; Secure; SameSite=Strict';\n// Better: set HttpOnly cookies server-side via Set-Cookie header" },
-  { q:"What is the &lt;picture&gt; element and srcset?", d:"Medium",
-    a:"<strong>srcset</strong> on &lt;img&gt; provides multiple resolution variants — the browser picks the best one for the screen density. <strong>&lt;picture&gt;</strong> adds art direction — different crops at different viewport sizes. Together they eliminate sending oversized images to mobile devices.",
-    code:"&lt;!-- srcset: resolution switching --&gt;\n&lt;img\n  src=\"hero-800.jpg\"\n  srcset=\"hero-400.jpg 400w, hero-800.jpg 800w, hero-1600.jpg 1600w\"\n  sizes=\"(max-width: 600px) 100vw, 50vw\"\n  alt=\"Hero\"\n/&gt;\n\n&lt;!-- picture: art direction --&gt;\n&lt;picture&gt;\n  &lt;source media=\"(max-width: 600px)\" srcset=\"hero-portrait.jpg\" /&gt;\n  &lt;source media=\"(min-width: 601px)\" srcset=\"hero-landscape.jpg\" /&gt;\n  &lt;img src=\"hero-landscape.jpg\" alt=\"Hero\" /&gt;\n&lt;/picture&gt;" },
-  { q:"What are Web Components?", d:"Hard",
-    a:"Web Components are browser-native APIs for creating <strong>reusable, encapsulated custom elements</strong> without a framework. They consist of: <strong>Custom Elements</strong> (define new HTML tags), <strong>Shadow DOM</strong> (scoped styles/DOM), and <strong>HTML Templates</strong> (&lt;template&gt;/&lt;slot&gt;).",
-    code:"class MyCard extends HTMLElement {\n  constructor() {\n    super();\n    const shadow = this.attachShadow({ mode: 'open' });\n    shadow.innerHTML = `\n      <style>.card { padding: 16px; }</style>\n      <div class=\"card\"><slot name=\"title\"></slot><slot></slot></div>\n    `;\n  }\n}\ncustomElements.define('my-card', MyCard);\n// &lt;my-card&gt;&lt;h2 slot=\"title\"&gt;Hello&lt;/h2&gt;&lt;/my-card&gt;" },
-  { q:"What is the difference between GET and POST in HTML forms?", d:"Easy",
-    a:"<strong>GET</strong>: appends form data to the URL as query string — visible, bookmarkable, cacheable, limited length (~2000 chars). Use for search, filtering. <strong>POST</strong>: sends data in the request body — not in URL, supports larger payloads, not cached. Use for creating/updating data. POST is not inherently secure — always use HTTPS for both.",
-    code:"&lt;!-- GET: data in URL -- good for search --&gt;\n&lt;form action=\"/search\" method=\"GET\"&gt;\n  &lt;input name=\"q\" type=\"text\" /&gt;\n  &lt;button type=\"submit\"&gt;Search&lt;/button&gt;\n  &lt;!-- submits to /search?q=value --&gt;\n&lt;/form&gt;\n\n&lt;!-- POST: data in body -- good for mutations --&gt;\n&lt;form action=\"/login\" method=\"POST\"&gt;\n  &lt;input name=\"email\" type=\"email\" /&gt;\n  &lt;input name=\"password\" type=\"password\" /&gt;\n&lt;/form&gt;" },
-  { q:"What is Content Security Policy (CSP)?", d:"Hard",
-    a:"CSP is an HTTP response header that tells browsers <strong>which content sources are trusted</strong> — scripts, styles, images, fonts, etc. It's the primary defense against XSS attacks by preventing inline scripts and limiting external resource origins.",
-    code:"&lt;!-- Meta tag (limited support) --&gt;\n&lt;meta http-equiv=\"Content-Security-Policy\"\n  content=\"default-src 'self'; script-src 'self' cdn.example.com\" /&gt;\n\n// HTTP header (preferred):\nContent-Security-Policy:\n  default-src 'self';\n  script-src 'self' 'nonce-{RANDOM}';\n  style-src 'self' fonts.googleapis.com;\n  img-src 'self' data: https:;\n  report-uri /csp-report;" },
-{
+const DATA = {
 HTML: [
-  { q:"What is the purpose of <!DOCTYPE html>?", d:"Easy",
-    a:"It tells the browser which version of HTML the document uses. Without it, browsers enter <strong>quirks mode</strong> — a legacy rendering mode with inconsistent behavior across browsers. &lt;!DOCTYPE html&gt; triggers standards mode in all modern browsers.",
-    code:"&lt;!-- Always the very first line of your HTML --&gt;\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n  &lt;head&gt;...&lt;/head&gt;\n&lt;/html&gt;" },
-  { q:"What is semantic HTML and why does it matter?", d:"Easy",
-    a:"Semantic HTML uses meaningful tags that describe the <strong>purpose</strong> of content — &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt; — rather than generic &lt;div&gt; and &lt;span&gt;. Benefits: accessibility (screen readers understand structure), SEO (search engines weight semantic content), and maintainability.",
-    code:"&lt;!-- Non-semantic (avoid) --&gt;\n&lt;div class=\"header\"&gt;\n  &lt;div class=\"nav\"&gt;...&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;!-- Semantic (prefer) --&gt;\n&lt;header&gt;\n  &lt;nav&gt;...&lt;/nav&gt;\n&lt;/header&gt;\n&lt;main&gt;\n  &lt;article&gt;...&lt;/article&gt;\n  &lt;aside&gt;...&lt;/aside&gt;\n&lt;/main&gt;" },
-  { q:"What is the difference between &lt;script&gt;, &lt;script async&gt;, and &lt;script defer&gt;?", d:"Medium",
-    a:"<strong>&lt;script&gt;</strong> blocks HTML parsing until the script downloads and executes. <strong>async</strong> downloads in parallel and runs immediately when ready — order not guaranteed. <strong>defer</strong> downloads in parallel but waits until HTML is fully parsed — order is preserved. Use defer for most scripts.",
-    code:"&lt;!-- Blocks rendering -- avoid --&gt;\n&lt;script src=\"app.js\"&gt;&lt;/script&gt;\n\n&lt;!-- Parallel download, runs immediately (unordered) --&gt;\n&lt;script src=\"analytics.js\" async&gt;&lt;/script&gt;\n\n&lt;!-- Parallel download, runs after DOM parsed (ordered) --&gt;\n&lt;script src=\"app.js\" defer&gt;&lt;/script&gt;" },
-  { q:"What is the difference between id and class attributes?", d:"Easy",
-    a:"An <strong>id</strong> must be unique per page — only one element can have a given id. A <strong>class</strong> can be reused on unlimited elements. Use id for unique targets (anchor links, JS hooks) and class for styling reusable groups. In CSS, id (#) has higher specificity than class (.).",
-    code:"&lt;!-- id: unique, higher specificity --&gt;\n&lt;header id=\"main-nav\"&gt;...&lt;/header&gt;\n\n&lt;!-- class: reusable, lower specificity --&gt;\n&lt;div class=\"card featured\"&gt;...&lt;/div&gt;\n&lt;div class=\"card\"&gt;...&lt;/div&gt;" },
-  { q:"What are data-* attributes?", d:"Easy",
-    a:"Custom attributes that store extra data on HTML elements without non-standard attributes. They're accessible in JS via <strong>element.dataset</strong> and can be styled in CSS with attribute selectors. Great for passing config to JS components without separate JS variables.",
-    code:"&lt;button data-user-id=\"42\" data-role=\"admin\" data-confirm=\"true\"&gt;\n  Delete Account\n&lt;/button&gt;\n\n&lt;script&gt;\n  const btn = document.querySelector('button');\n  btn.dataset.userId   // '42'\n  btn.dataset.role     // 'admin'\n  btn.dataset.confirm  // 'true'\n&lt;/script&gt;" },
-  { q:"What is the difference between &lt;strong&gt;, &lt;b&gt;, &lt;em&gt;, and &lt;i&gt;?", d:"Easy",
-    a:"<strong>&lt;strong&gt;</strong> = important content (semantic — screen readers announce it). <strong>&lt;b&gt;</strong> = bold for stylistic reasons only (no semantic meaning). <strong>&lt;em&gt;</strong> = stressed emphasis that changes meaning (semantic). <strong>&lt;i&gt;</strong> = italic without emphasis — for technical terms, foreign words, thoughts.",
-    code:"&lt;p&gt;This is &lt;strong&gt;critically important&lt;/strong&gt;.&lt;/p&gt;\n&lt;p&gt;The word &lt;em&gt;must&lt;/em&gt; be there.&lt;/p&gt;\n&lt;p&gt;Press the &lt;b&gt;Start&lt;/b&gt; button.&lt;/p&gt;\n&lt;p&gt;The genus &lt;i&gt;Homo sapiens&lt;/i&gt;.&lt;/p&gt;" },
-  { q:"What are meta tags and why are they important?", d:"Medium",
-    a:"Meta tags sit inside &lt;head&gt; and provide metadata about the page — invisible to users but critical for browsers, search engines, and social platforms. The <strong>viewport</strong> meta is essential for mobile responsiveness. <strong>og:*</strong> tags control how the page looks when shared on social media.",
-    code:"&lt;head&gt;\n  &lt;meta charset=\"UTF-8\" /&gt;\n  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /&gt;\n  &lt;meta name=\"description\" content=\"Page description for SEO (150-160 chars)\" /&gt;\n  &lt;meta property=\"og:title\" content=\"Page Title\" /&gt;\n  &lt;meta property=\"og:image\" content=\"/preview.png\" /&gt;\n  &lt;title&gt;Page Title&lt;/title&gt;\n&lt;/head&gt;" },
-  { q:"What is the purpose of the alt attribute on images?", d:"Easy",
-    a:"Alt provides a <strong>text alternative</strong> when images fail to load, and is read aloud by screen readers. Empty alt (alt=\"\") tells screen readers the image is purely decorative. A missing alt attribute is an accessibility violation. Descriptive alt text also contributes to image SEO.",
-    code:"&lt;!-- Informative image -- describe it --&gt;\n&lt;img src=\"chart.png\" alt=\"Bar chart showing 40% growth in Q4 2024\" /&gt;\n\n&lt;!-- Decorative image -- empty alt --&gt;\n&lt;img src=\"divider.png\" alt=\"\" /&gt;\n\n&lt;!-- Missing alt -- accessibility violation --&gt;\n&lt;img src=\"photo.jpg\" /&gt; ❌" },
-  { q:"What is the difference between &lt;link&gt; and @import for stylesheets?", d:"Medium",
-    a:"<strong>&lt;link&gt;</strong> is an HTML tag that loads CSS in parallel with page parsing — always preferred. <strong>@import</strong> is a CSS rule that loads stylesheets sequentially and blocks rendering until each imported sheet is downloaded. Link is always faster and should be used for all external stylesheets.",
-    code:"&lt;!-- Preferred: parallel, non-blocking --&gt;\n&lt;link rel=\"stylesheet\" href=\"style.css\" /&gt;\n\n&lt;!-- Avoid: sequential, blocks render --&gt;\n&lt;style&gt;\n  @import url('style.css'); /* slower */\n&lt;/style&gt;" },
-  { q:"What is the difference between block, inline, and inline-block?", d:"Easy",
-    a:"<strong>Block</strong> elements (&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;) start on a new line and stretch full width. <strong>Inline</strong> elements (&lt;span&gt;, &lt;a&gt;) flow within text and only take their content's width. <strong>Inline-block</strong> flows inline but accepts width, height, and vertical padding/margin like a block.",
-    code:"/* Block: full width, new line */\ndiv { display: block; }\n\n/* Inline: content width, no height/top-bottom margin */\nspan { display: inline; }\n\n/* Inline-block: inline flow + block sizing */\n.badge { display: inline-block; width: 24px; height: 24px; }" },
-  { q:"What is the difference between &lt;section&gt; and &lt;article&gt;?", d:"Easy",
-    a:"<strong>&lt;article&gt;</strong> is a self-contained piece of content that makes sense on its own — a blog post, news article, forum post. <strong>&lt;section&gt;</strong> groups related content that's part of a larger whole. An article can contain sections; sections typically belong to a larger page context.",
-    code:"&lt;article&gt;\n  &lt;h2&gt;How to Use CSS Grid&lt;/h2&gt;\n  &lt;section&gt;\n    &lt;h3&gt;Basic Syntax&lt;/h3&gt;\n    &lt;p&gt;...&lt;/p&gt;\n  &lt;/section&gt;\n  &lt;section&gt;\n    &lt;h3&gt;Advanced Layouts&lt;/h3&gt;\n    &lt;p&gt;...&lt;/p&gt;\n  &lt;/section&gt;\n&lt;/article&gt;" },
-  { q:"What is ARIA and when should you use it?", d:"Medium",
-    a:"ARIA (Accessible Rich Internet Applications) adds semantic meaning to HTML for screen readers via roles, states, and properties. Use it only when native HTML semantics are insufficient — prefer native elements first. Key attributes: <strong>role</strong>, <strong>aria-label</strong>, <strong>aria-hidden</strong>, <strong>aria-expanded</strong>, <strong>aria-live</strong>.",
-    code:"&lt;!-- Native button has built-in semantics -- prefer this --&gt;\n&lt;button type=\"button\"&gt;Close&lt;/button&gt;\n\n&lt;!-- When you must use a div for interaction --&gt;\n&lt;div role=\"button\" tabindex=\"0\"\n     aria-label=\"Close modal\"\n     onkeydown=\"handleKey(event)\"&gt;\n  &times;\n&lt;/div&gt;\n\n&lt;!-- Live region for dynamic updates --&gt;\n&lt;div aria-live=\"polite\" aria-atomic=\"true\"&gt;\n  &lt;span id=\"status\"&gt;&lt;/span&gt;\n&lt;/div&gt;" },
-  { q:"What is the difference between &lt;input type='submit'&gt; and &lt;button&gt;?", d:"Easy",
-    a:"<strong>&lt;input type='submit'&gt;</strong> is a void element — it can't contain HTML. <strong>&lt;button&gt;</strong> can contain HTML (icons, spans). &lt;button&gt; without a type attribute inside a form defaults to type='submit'. Always set the type explicitly to avoid accidental form submissions.",
-    code:"&lt;!-- Limited -- text only --&gt;\n&lt;input type=\"submit\" value=\"Submit\" /&gt;\n\n&lt;!-- Flexible -- can contain HTML --&gt;\n&lt;button type=\"submit\"&gt;\n  &lt;svg&gt;...&lt;/svg&gt; Submit\n&lt;/button&gt;\n\n&lt;!-- Explicit type prevents accidental form submit --&gt;\n&lt;button type=\"button\" onclick=\"openModal()\"&gt;\n  Open\n&lt;/button&gt;" },
-  { q:"What is lazy loading and how do you implement it?", d:"Medium",
-    a:"Lazy loading defers loading of non-critical resources (images, iframes) until they're needed — typically when entering the viewport. The native <strong>loading=\"lazy\"</strong> attribute on &lt;img&gt; and &lt;iframe&gt; is supported by all modern browsers. Use the Intersection Observer API for custom lazy-loading behavior.",
-    code:"&lt;!-- Native lazy loading --&gt;\n&lt;img\n  src=\"photo.jpg\"\n  loading=\"lazy\"\n  alt=\"Description\"\n  width=\"800\" height=\"600\"\n/&gt;\n\n&lt;!-- Always include width/height to prevent layout shift --&gt;\n&lt;iframe\n  src=\"https://example.com\"\n  loading=\"lazy\"\n  width=\"600\" height=\"400\"\n&gt;&lt;/iframe&gt;" },
-]
-  { q:"What is the clamp() function?", d:"Medium",
-    a:"<strong>clamp(min, preferred, max)</strong> returns the preferred value clamped between min and max. Perfect for fluid typography and spacing that scales with the viewport without media queries.",
-    code:"/* Fluid font: scales between 16px and 32px */\nh1 { font-size: clamp(1rem, 2.5vw + 1rem, 2rem); }\n\n/* Fluid spacing */\n.section { padding: clamp(24px, 5vw, 80px); }\n\n/* Fluid container */\n.wrap { width: clamp(320px, 90%, 1200px); margin: 0 auto; }" },
-  { q:"What are CSS logical properties?", d:"Medium",
-    a:"Logical properties use <strong>block/inline directions</strong> instead of physical directions (top/right/bottom/left) — making layouts work correctly for both LTR and RTL writing modes automatically.",
-    code:"/* Physical (breaks RTL) */\n.card { margin-left: 16px; padding-top: 24px; }\n\n/* Logical (works in any writing mode) */\n.card {\n  margin-inline-start: 16px; /* left in LTR, right in RTL */\n  padding-block-start: 24px;\n  margin-block: 16px;   /* top + bottom */\n  margin-inline: 24px;  /* left + right */\n}" },
-  { q:"What is :is() and :where()?", d:"Medium",
-    a:"<strong>:is()</strong> matches any element in its selector list, adopting the <strong>highest specificity</strong> of its arguments. <strong>:where()</strong> is identical but has <strong>zero specificity</strong> — great for base styles that should be easily overridden.",
-    code:"/* Without :is() -- repetitive */\nh1 a, h2 a, h3 a { color: inherit; }\n\n/* :is() -- concise, specificity = highest arg */\n:is(h1, h2, h3) a { color: inherit; }\n\n/* :where() -- zero specificity, easily overridden */\n:where(h1, h2, h3) { margin-bottom: 0.5em; }\n.intro h2 { margin-bottom: 1.5em; } /* overrides easily */" },
-  { q:"What is the aspect-ratio property?", d:"Easy",
-    a:"<strong>aspect-ratio</strong> maintains a width-to-height ratio as an element resizes. Replaces the old 'padding-top hack' for responsive iframes and videos. Combine with object-fit for responsive media.",
-    code:"/* Responsive 16:9 video */\n.video { aspect-ratio: 16 / 9; width: 100%; }\n\n/* Square avatar */\n.avatar { aspect-ratio: 1; width: 64px; border-radius: 50%; }\n\n/* Image fills box */\n.thumbnail {\n  aspect-ratio: 4 / 3;\n  object-fit: cover;\n  width: 100%;\n}" },
-  { q:"What are CSS container queries?", d:"Hard",
-    a:"Container queries apply styles based on a <strong>parent container's size</strong> — not the viewport. This enables truly component-based responsive design. Declare containment with container-type, then query with @container.",
-    code:".card-wrapper {\n  container-type: inline-size;\n  container-name: card;\n}\n\n@container card (min-width: 400px) {\n  .card { display: flex; gap: 16px; }\n  .card__image { width: 160px; flex-shrink: 0; }\n}\n/* Same component adapts to sidebar vs main content */" },
-  { q:"What is CSS scroll-snap?", d:"Medium",
-    a:"<strong>scroll-snap</strong> creates controlled snapping behavior during scroll — for carousels, full-page sections, and image galleries without JavaScript. Set scroll-snap-type on the container and scroll-snap-align on children.",
-    code:".carousel {\n  display: flex;\n  overflow-x: auto;\n  scroll-snap-type: x mandatory;\n  scroll-behavior: smooth;\n}\n.slide {\n  flex-shrink: 0;\n  width: 100%;\n  scroll-snap-align: start;\n}\n\n/* Full-page sections */\n.page { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }\n.section { height: 100vh; scroll-snap-align: start; }" },
-,
+  {q:"What is the purpose of <!DOCTYPE html>?", d:"Easy", a:"It tells the browser which version of HTML the document uses. Without it, browsers enter <strong>quirks mode</strong> — a legacy rendering mode with inconsistent behavior across browsers.", code:"&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n  &lt;head&gt;...&lt;/head&gt;\n&lt;/html&gt;"},
+  {q:"What is semantic HTML and why does it matter?", d:"Easy", a:"Semantic HTML uses meaningful tags that describe the <strong>purpose</strong> of content — &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt; — rather than generic &lt;div&gt;. Benefits: accessibility, SEO, and maintainability.", code:"&lt;header&gt;\n  &lt;nav&gt;...&lt;/nav&gt;\n&lt;/header&gt;\n&lt;main&gt;\n  &lt;article&gt;...&lt;/article&gt;\n&lt;/main&gt;"},
+  {q:"What is the difference between &lt;script&gt;, &lt;script async&gt;, and &lt;script defer&gt;?", d:"Medium", a:"<strong>&lt;script&gt;</strong> blocks HTML parsing. <strong>async</strong> downloads in parallel, runs immediately. <strong>defer</strong> downloads in parallel but waits until HTML is parsed. Use defer for most scripts.", code:"&lt;script src=\"app.js\" defer&gt;&lt;/script&gt;"},
+  {q:"What is the difference between id and class attributes?", d:"Easy", a:"An <strong>id</strong> must be unique per page. A <strong>class</strong> can be reused. Use id for unique targets, class for styling groups.", code:"&lt;header id=\"main-nav\"&gt;...&lt;/header&gt;\n&lt;div class=\"card featured\"&gt;...&lt;/div&gt;"},
+  {q:"What are data-* attributes?", d:"Easy", a:"Custom attributes that store extra data on HTML elements. Accessible in JS via <strong>element.dataset</strong>.", code:"&lt;button data-user-id=\"42\"&gt;\n  Delete\n&lt;/button&gt;\n\nbtn.dataset.userId // '42'"},
+  {q:"What is the purpose of the alt attribute on images?", d:"Easy", a:"Alt provides a <strong>text alternative</strong> when images fail to load, and is read by screen readers. Missing alt is an accessibility violation.", code:"&lt;img src=\"chart.png\" alt=\"Bar chart showing 40% growth\" /&gt;"},
+  {q:"What is the difference between &lt;section&gt; and &lt;article&gt;?", d:"Easy", a:"<strong>&lt;article&gt;</strong> is self-contained content that makes sense alone. <strong>&lt;section&gt;</strong> groups related content.", code:"&lt;article&gt;\n  &lt;section&gt;...&lt;/section&gt;\n&lt;/article&gt;"},
+  {q:"What is ARIA and when should you use it?", d:"Medium", a:"ARIA adds semantic meaning for screen readers. Use only when native HTML semantics are insufficient.", code:"&lt;div role=\"button\" tabindex=\"0\"&gt;\n  Close\n&lt;/div&gt;"},
+  {q:"What is the difference between &lt;input type='submit'&gt; and &lt;button&gt;?", d:"Easy", a:"&lt;input type='submit'&gt; is void element — can't contain HTML. &lt;button&gt; can contain HTML (icons, spans).", code:"&lt;button type=\"submit\"&gt;\n  &lt;svg&gt;...&lt;/svg&gt; Submit\n&lt;/button&gt;"},
+  {q:"What is lazy loading and how do you implement it?", d:"Medium", a:"Lazy loading defers loading until resources enter the viewport. Use <strong>loading=\"lazy\"</strong> on img and iframe.", code:"&lt;img src=\"photo.jpg\" loading=\"lazy\" alt=\"...\" /&gt;"},
+  {q:"What is the Shadow DOM?", d:"Medium", a:"Shadow DOM is a <strong>scoped, encapsulated DOM subtree</strong> — its styles and structure are isolated from the main document.", code:"const shadow = host.attachShadow({mode:'open'});\nshadow.innerHTML = '...';"},
+  {q:"What is the difference between localStorage, sessionStorage, and cookies?", d:"Medium", a:"<strong>localStorage</strong>: persists indefinitely, ~5MB. <strong>sessionStorage</strong>: cleared on tab close. <strong>Cookies</strong>: sent with every request, ~4KB.", code:"localStorage.setItem('theme','dark');\nsessionStorage.setItem('draft', data);"},
+  {q:"What is the &lt;picture&gt; element and srcset?", d:"Medium", a:"srcset provides resolution variants. &lt;picture&gt; adds art direction — different images at different viewport sizes.", code:"&lt;img srcset=\"img-400.jpg 400w, img-800.jpg 800w\" /&gt;"},
+  {q:"What are Web Components?", d:"Hard", a:"Browser-native APIs for creating <strong>reusable, encapsulated custom elements</strong>: Custom Elements, Shadow DOM, HTML Templates.", code:"class MyCard extends HTMLElement {}\ncustomElements.define('my-card', MyCard);"},
+],
 CSS: [
-  { q:"What is the CSS Box Model?", d:"Easy",
-    a:"Every element is a rectangular box with four layers: <strong>content</strong>, <strong>padding</strong> (inner space), <strong>border</strong>, and <strong>margin</strong> (outer space). By default (content-box), width/height applies to content only. Use <strong>box-sizing: border-box</strong> globally to include padding and border in the declared size — this is always recommended.",
-    code:"/* Always add this global reset */\n*, *::before, *::after {\n  box-sizing: border-box;\n}\n\n.box {\n  width: 200px;    /* includes padding + border */\n  padding: 20px;\n  border: 2px solid #ccc;\n  margin: 16px;    /* outside, not included in width */\n}" },
-  { q:"What is CSS specificity and how are conflicts resolved?", d:"Medium",
-    a:"Specificity is calculated as <strong>(inline, id, class/attr, element)</strong> — each column wins over lower columns regardless of count. Inline styles (style=\"\") always win. !important overrides everything (use sparingly). When specificity ties, the <strong>last rule in source order</strong> wins.",
-    code:"/* (0,0,1,0) — class */\n.button { color: blue; }\n\n/* (0,1,0,0) — id — wins over class */\n#submit { color: red; }\n\n/* (0,0,2,1) — two classes + element */\ndiv.card.featured { color: green; }\n\n/* Overrides everything — avoid */\n.btn { color: orange !important; }" },
-  { q:"What is Flexbox and when do you use it?", d:"Medium",
-    a:"Flexbox is a <strong>one-dimensional</strong> layout system — it distributes space along a single row or column. Perfect for: navigation bars, centering elements vertically, equal-height cards, distributing space between items. Set display: flex on the parent; all direct children become flex items.",
-    code:".nav {\n  display: flex;\n  align-items: center;           /* cross-axis: vertical */\n  justify-content: space-between; /* main-axis: horizontal */\n  gap: 16px;\n}\n\n/* Center anything perfectly */\n.center {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}" },
-  { q:"What is CSS Grid and how does it differ from Flexbox?", d:"Medium",
-    a:"Grid is <strong>two-dimensional</strong> — it controls rows AND columns simultaneously. Flexbox is one-dimensional. Use Grid for page-level layouts and complex 2D arrangements. Use Flexbox for component alignment and single-axis distribution. They complement each other — use both.",
-    code:".layout {\n  display: grid;\n  grid-template-columns: 240px 1fr;     /* sidebar + main */\n  grid-template-rows: 64px 1fr 48px;   /* header, content, footer */\n  gap: 16px;\n  min-height: 100vh;\n}\n\n/* Responsive columns */\n.cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n  gap: 16px;\n}" },
-  { q:"What is the difference between CSS position values?", d:"Medium",
-    a:"<strong>static</strong>: default, normal flow. <strong>relative</strong>: offset from normal position, still occupies space, creates positioning context. <strong>absolute</strong>: removed from flow, positioned relative to nearest positioned ancestor. <strong>fixed</strong>: relative to viewport, stays on scroll. <strong>sticky</strong>: relative until threshold, then fixed.",
-    code:".sticky-header {\n  position: sticky;\n  top: 0;         /* sticks at 0px from top */\n  z-index: 100;\n}\n\n.tooltip {\n  position: absolute; /* relative to nearest positioned parent */\n  top: calc(100% + 8px);\n  left: 50%;\n  transform: translateX(-50%);\n}" },
-  { q:"What is the difference between em, rem, px, vh, and vw?", d:"Easy",
-    a:"<strong>px</strong>: absolute, fixed size. <strong>em</strong>: relative to parent's font-size — compounds in nested elements. <strong>rem</strong>: relative to root &lt;html&gt; font-size — predictable, doesn't compound. <strong>vh/vw</strong>: percentage of viewport height/width. Best practice: rem for fonts, px for borders/shadows, % or fr for layouts.",
-    code:":root { font-size: 16px; }\n\n.text {\n  font-size: 1rem;    /* 16px — predictable */\n  padding: 0.75em;    /* relative to THIS element's font-size */\n  border: 1px solid;  /* px for fine details */\n}\n\n.hero {\n  height: 100vh;      /* full viewport height */\n  width: min(90vw, 1200px);\n}" },
-  { q:"What are CSS custom properties (variables)?", d:"Easy",
-    a:"CSS variables are declared with <strong>--</strong> prefix and accessed via <strong>var()</strong>. Unlike preprocessor variables (Sass/Less), they: cascade and inherit like any CSS property, can be updated at runtime with JavaScript, can be scoped to any element, and respond to media queries.",
-    code:":root {\n  --color-primary: #6c63ff;\n  --spacing-md: 1rem;\n  --radius: 8px;\n}\n\n/* Scoped override */\n[data-theme='dark'] {\n  --color-primary: #a89cff;\n}\n\n.button {\n  background: var(--color-primary);\n  padding: var(--spacing-md);\n  border-radius: var(--radius);\n}\n\n/* Update via JS */\ndocument.documentElement.style\n  .setProperty('--color-primary', '#ff6b35');" },
-  { q:"What is z-index and what creates a stacking context?", d:"Hard",
-    a:"z-index controls layer order — higher values render in front. It only works on <strong>positioned</strong> elements (not static). A new stacking context is created by: position + z-index != auto, opacity < 1, transform, filter, will-change, isolation: isolate. Elements inside a context are sorted only within it — a z-index:9999 child can't escape a z-index:1 parent.",
-    code:"/* Creates a stacking context */\n.modal-container {\n  position: fixed;\n  z-index: 1000;\n  /* All children z-index relative to this */\n}\n\n/* Explicit stacking context */\n.component {\n  isolation: isolate; /* clean stacking context */\n}" },
-  { q:"What is the difference between display:none and visibility:hidden?", d:"Easy",
-    a:"<strong>display: none</strong> removes the element from document flow — takes up zero space, inaccessible to screen readers. <strong>visibility: hidden</strong> hides the element but it still occupies its layout space. <strong>opacity: 0</strong> is invisible but still interactive and occupies space. Use opacity for animations.",
-    code:"/* Completely removed from layout */\n.hidden { display: none; }\n\n/* Invisible but occupies space */\n.ghost { visibility: hidden; }\n\n/* Invisible, interactive, animatable */\n.fade { opacity: 0; transition: opacity 0.3s; }\n.fade:hover { opacity: 1; }" },
-  { q:"What is a pseudo-class vs a pseudo-element?", d:"Medium",
-    a:"<strong>Pseudo-classes</strong> (:hover, :focus, :nth-child, :checked) target elements in a specific state. <strong>Pseudo-elements</strong> (::before, ::after, ::first-line) style a specific part of an element's content. The double-colon (::) for pseudo-elements is the modern convention but single-colon still works for legacy support.",
-    code:"/* Pseudo-class — element in a state */\n.btn:hover { background: #5a52e0; }\n.input:focus { outline: 2px solid blue; }\nli:nth-child(odd) { background: #f9f9f9; }\n\n/* Pseudo-element — virtual sub-element */\n.card::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  border-radius: inherit;\n}\n\np::first-line { font-weight: 500; }" },
-  { q:"What are CSS transitions vs CSS animations?", d:"Medium",
-    a:"<strong>Transitions</strong> animate between two states triggered by a state change (hover, focus, class toggle) — defined by property, duration, timing. <strong>Animations</strong> use @keyframes and run independently, can loop, alternate, and have multiple steps. Transitions are simpler; animations offer full control.",
-    code:"/* Transition: triggered by state change */\n.btn {\n  background: #2563eb;\n  transition: background 0.2s ease, transform 0.15s;\n}\n.btn:hover {\n  background: #1d4ed8;\n  transform: translateY(-2px);\n}\n\n/* Animation: runs independently */\n@keyframes spin {\n  from { transform: rotate(0deg); }\n  to   { transform: rotate(360deg); }\n}\n.loader {\n  animation: spin 1s linear infinite;\n}" },
-  { q:"How does CSS @media query work?", d:"Easy",
-    a:"Media queries apply CSS rules conditionally based on viewport size, device type, or user preferences. The <strong>mobile-first</strong> approach uses min-width breakpoints — base styles target mobile, larger screens progressively add complexity. <strong>prefers-color-scheme</strong> and <strong>prefers-reduced-motion</strong> target user system settings.",
-    code:"/* Mobile first */\n.grid {\n  display: block;        /* mobile: stacked */\n}\n@media (min-width: 640px) {\n  .grid { display: grid; grid-template-columns: 1fr 1fr; }\n}\n@media (min-width: 1024px) {\n  .grid { grid-template-columns: repeat(3, 1fr); }\n}\n\n/* System preference */\n@media (prefers-color-scheme: dark) {\n  :root { --bg: #0c0e13; }\n}\n@media (prefers-reduced-motion: reduce) {\n  * { animation-duration: 0.01ms !important; }\n}" },
-  { q:"What is the CSS cascade and how does it work?", d:"Medium",
-    a:"The cascade determines which CSS rule wins when multiple rules target the same element. Order of precedence: <strong>origin & importance</strong> (user-agent, author, user) > <strong>specificity</strong> > <strong>order of appearance</strong>. Understanding this hierarchy is key to writing predictable, maintainable CSS.",
-    code:"/* 1. Browser default styles (lowest priority) */\na { color: blue; text-decoration: underline; }\n\n/* 2. Author stylesheet */\n.link { color: #2563eb; }\n\n/* 3. Higher specificity wins over lower */\nnav .link { color: white; }  /* wins over .link */\n\n/* 4. Same specificity: last one wins */\n.btn { color: red; }\n.btn { color: blue; }  /* this wins */" },
-  { q:"What is the contain property and when is it useful?", d:"Hard",
-    a:"The <strong>contain</strong> property tells the browser a subtree is independent from the rest of the page — enabling rendering optimizations. <strong>layout</strong>: nothing inside affects outside layout. <strong>paint</strong>: contents don't paint outside the box. <strong>strict</strong>: both layout and paint. Useful for complex component lists where one card changing shouldn't relayout the whole page.",
-    code:"/* Contain layout and paint for performance */\n.card-list-item {\n  contain: layout paint;\n  /* Browser can skip relayout of siblings\n     when this item changes */\n}\n\n/* content-visibility for off-screen optimization */\n.off-screen-section {\n  content-visibility: auto;\n  contain-intrinsic-size: 0 500px;\n}" },
-]
-  { q:"What is the difference between shallow and deep copy?", d:"Medium",
-    a:"A <strong>shallow copy</strong> duplicates top-level properties — nested objects share references. A <strong>deep copy</strong> recursively duplicates everything — fully independent. Use <strong>structuredClone()</strong> for deep copies (modern, handles most types).",
-    code:"const original = { a: 1, nested: { b: 2 } };\n\n// Shallow -- nested is shared\nconst shallow = { ...original };\nshallow.nested.b = 99;\nconsole.log(original.nested.b); // 99 -- mutated!\n\n// Deep -- fully independent\nconst deep = structuredClone(original);\ndeep.nested.b = 99;\nconsole.log(original.nested.b); // 2 -- safe!" },
-  { q:"What is optional chaining (?.) and nullish coalescing (??)?", d:"Easy",
-    a:"<strong>?.</strong> safely accesses nested properties — returns undefined instead of throwing if any link is null/undefined. <strong>??</strong> returns the right-hand side only if left is null/undefined (unlike || which also triggers on 0, '', false).",
-    code:"// Optional chaining\nconst city = user?.address?.city;  // undefined, not error\nconst item = arr?.[0]?.name;\nobj?.method?.();\n\n// Nullish coalescing\nconst name = user.name ?? 'Anonymous';\n\n// || vs ?? difference\n0 || 'default'   // 'default' (0 is falsy)\n0 ?? 'default'   // 0 (not null/undefined)\n\n// Combined\nconst zip = user?.address?.zip ?? 'N/A';" },
-  { q:"What are WeakMap and WeakSet?", d:"Hard",
-    a:"<strong>WeakMap/WeakSet</strong> hold <strong>weak references</strong> — they don't prevent garbage collection of their keys. If a key object has no other references, it can be collected automatically. Not iterable, no size property. Perfect for associating private data with DOM nodes without memory leaks.",
-    code:"const cache = new WeakMap();\n\nfunction process(element) {\n  if (cache.has(element)) return cache.get(element);\n  const result = expensiveCompute(element);\n  cache.set(element, result);\n  return result;\n  // When element is removed from DOM and dereferenced,\n  // cache entry is garbage collected automatically!\n}\n\nconst visited = new WeakSet();\nfunction visit(node) {\n  if (visited.has(node)) return;\n  visited.add(node);\n}" },
-  { q:"What is the JavaScript Proxy object?", d:"Hard",
-    a:"<strong>Proxy</strong> wraps an object and intercepts fundamental operations — get, set, delete, function calls. Used for: validation, logging, reactive data (Vue 3), virtual objects. The <strong>Reflect</strong> API performs the default operation inside a trap.",
-    code:"const handler = {\n  get(target, key) {\n    console.log(`Getting: ${String(key)}`);\n    return Reflect.get(target, key);\n  },\n  set(target, key, value) {\n    if (typeof value !== 'number') throw new TypeError('Numbers only!');\n    return Reflect.set(target, key, value);\n  }\n};\n\nconst nums = new Proxy({}, handler);\nnums.a = 42;    // ✅\nnums.b = 'hi';  // ❌ TypeError" },
-  { q:"What are ES Modules (import/export)?", d:"Easy",
-    a:"ES Modules are the official JS module system. <strong>Named exports</strong> allow multiple exports per file; <strong>default export</strong> is the main export. Modules are statically analyzed (enabling tree-shaking), loaded asynchronously, strict mode by default, and cached (evaluated once).",
-    code:"// math.js\nexport const PI = 3.14;\nexport function add(a, b) { return a + b; }\nexport default class Calculator { /* ... */ }\n\n// app.js\nimport Calculator, { PI, add } from './math.js';\nimport * as Math from './math.js'; // namespace\n\n// Dynamic import (lazy)\nconst { default: Heavy } = await import('./heavy.js');" },
-  { q:"What is Symbol in JavaScript?", d:"Hard",
-    a:"<strong>Symbol</strong> creates unique, immutable primitives — guaranteed never to conflict with other keys even with the same description. Used for: unique object keys (hidden from JSON/for-in), custom iteration (Symbol.iterator), and hooking into JS internals.",
-    code:"const id  = Symbol('id');\nconst id2 = Symbol('id');\nid === id2; // false -- always unique\n\nconst user = { name: 'Alice', [id]: 42 };\nuser[id]; // 42 -- hidden from JSON.stringify\n\n// Custom iterator\nconst range = {\n  from: 1, to: 5,\n  [Symbol.iterator]() {\n    let n = this.from;\n    return { next: () => n <= this.to ? { value: n++, done: false } : { done: true } };\n  }\n};\nfor (const n of range) console.log(n); // 1,2,3,4,5" },
-,
+  {q:"What is the CSS Box Model?", d:"Easy", a:"Every element is a rectangular box: <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, <strong>margin</strong>. Use <strong>box-sizing: border-box</strong> globally.", code:"*, *::before, *::after {\n  box-sizing: border-box;\n}"},
+  {q:"What is CSS specificity and how are conflicts resolved?", d:"Medium", a:"Specificity is calculated as <strong>(inline, id, class, element)</strong>. Higher wins. !important overrides everything.", code:"#submit { color: red; } /* wins */\n.btn { color: blue; }"},
+  {q:"What is Flexbox and when do you use it?", d:"Medium", a:"Flexbox is a <strong>one-dimensional</strong> layout system. Perfect for navigation bars, centering, equal-height cards.", code:".center {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}"},
+  {q:"What is CSS Grid and how does it differ from Flexbox?", d:"Medium", a:"Grid is <strong>two-dimensional</strong> — controls rows AND columns. Flexbox is one-dimensional. Use Grid for page layouts.", code:".layout {\n  display: grid;\n  grid-template-columns: 240px 1fr;\n}"},
+  {q:"What is the difference between CSS position values?", d:"Medium", a:"<strong>static</strong>: default. <strong>relative</strong>: offset from normal position. <strong>absolute</strong>: removed from flow. <strong>fixed</strong>: relative to viewport. <strong>sticky</strong>: relative until threshold.", code:".sticky { position: sticky; top: 0; }"},
+  {q:"What is the difference between em, rem, px, vh, and vw?", d:"Easy", a:"<strong>px</strong>: fixed. <strong>em</strong>: relative to parent. <strong>rem</strong>: relative to root. <strong>vh/vw</strong>: viewport percentage.", code:":root { font-size: 16px; }\n.text { font-size: 1rem; }"},
+  {q:"What are CSS custom properties (variables)?", d:"Easy", a:"Declared with <strong>--</strong>, accessed via <strong>var()</strong>. Can be updated at runtime with JS.", code:":root {\n  --color-primary: #2563eb;\n}\n.btn { background: var(--color-primary); }"},
+  {q:"What is z-index and what creates a stacking context?", d:"Hard", a:"z-index controls layer order. Stacking context created by: position + z-index, opacity < 1, transform.", code:".modal { position: fixed; z-index: 1000; }"},
+  {q:"What is the difference between display:none and visibility:hidden?", d:"Easy", a:"<strong>display: none</strong> removes from layout. <strong>visibility: hidden</strong> hides but occupies space. <strong>opacity: 0</strong> is invisible but interactive.", code:".hidden { display: none; }\n.ghost { visibility: hidden; }"},
+  {q:"What is a pseudo-class vs a pseudo-element?", d:"Medium", a:"<strong>Pseudo-classes</strong> (:hover, :focus) target elements in a state. <strong>Pseudo-elements</strong> (::before, ::after) style parts of content.", code:".btn:hover { background: blue; }\n.card::before { content: ''; }"},
+  {q:"What are CSS transitions vs CSS animations?", d:"Medium", a:"<strong>Transitions</strong> animate between two states. <strong>Animations</strong> use @keyframes and run independently.", code:".btn { transition: all 0.2s; }\n@keyframes spin { to { transform: rotate(360deg); } }"},
+  {q:"How does CSS @media query work?", d:"Easy", a:"Media queries apply CSS conditionally based on viewport size or user preferences.", code:"@media (min-width: 640px) {\n  .grid { display: grid; }\n}"},
+  {q:"What is the cascade and how does it work?", d:"Medium", a:"The cascade determines which rule wins: origin > specificity > order of appearance.", code:"/* Later rule wins if same specificity */\n.btn { color: blue; }\n.btn { color: red; }"},
+  {q:"What is the contain property?", d:"Hard", a:"Tells the browser a subtree is independent, enabling rendering optimizations.", code:".card { contain: layout paint; }"},
+],
 JavaScript: [
-  { q:"What is the difference between var, let, and const?", d:"Easy",
-    a:"<strong>var</strong>: function-scoped, hoisted with undefined, can be re-declared — avoid in modern code. <strong>let</strong>: block-scoped, not initialized on hoist (TDZ), reassignable. <strong>const</strong>: block-scoped, must be initialized, cannot be reassigned — but objects/arrays it references are still mutable.",
-    code:"var x = 1;    // function scope, re-declarable, hoisted\nlet y = 2;    // block scope, reassignable\nconst z = 3;  // block scope, not reassignable\n\n// const with objects -- reference is locked, not contents\nconst obj = { a: 1 };\nobj.a = 2;      // ✅ mutation is allowed\nobj = {};       // ❌ TypeError: Assignment to constant" },
-  { q:"What is a closure?", d:"Medium",
-    a:"A closure is created when an inner function <strong>retains access to its outer function's scope</strong> even after the outer function has returned. Closures enable: private state, factory functions, memoization, event handler patterns, and the module pattern.",
-    code:"function makeCounter(start = 0) {\n  let count = start;   // enclosed variable\n  return {\n    increment: () => ++count,\n    decrement: () => --count,\n    value:     () => count,\n    reset:     () => { count = start; }\n  };\n}\n\nconst counter = makeCounter(10);\ncounter.increment(); // 11\ncounter.increment(); // 12\ncounter.value();     // 12\n// count is private -- not accessible outside" },
-  { q:"How does the JavaScript event loop work?", d:"Hard",
-    a:"JS is single-threaded. The event loop works in order: 1) run all synchronous code (call stack). 2) drain all <strong>microtasks</strong> (Promise callbacks, queueMicrotask). 3) run one <strong>macrotask</strong> (setTimeout, setInterval, I/O). 4) repeat. This is why Promise callbacks always run before setTimeout, even with 0ms delay.",
-    code:"console.log('1 — sync');\n\nsetTimeout(() => console.log('4 — macrotask'), 0);\n\nPromise.resolve()\n  .then(() => console.log('2 — microtask'))\n  .then(() => console.log('3 — microtask'));\n\nconsole.log('still sync');\n// Output: 1, still sync, 2, 3, 4" },
-  { q:"What is hoisting in JavaScript?", d:"Medium",
-    a:"Hoisting moves <strong>declarations</strong> (not initializations) to the top of their scope during compilation. var is hoisted and initialized as undefined. Function declarations are fully hoisted — callable before definition. let/const are hoisted but not initialized — accessing before declaration throws a <strong>ReferenceError</strong> (Temporal Dead Zone).",
-    code:"console.log(a); // undefined (var hoisted)\nvar a = 5;\n\nconsole.log(b); // ReferenceError: TDZ\nlet b = 5;\n\nfoo();          // ✅ works — fully hoisted\nfunction foo() { return 'hello'; }\n\nbar();          // ❌ TypeError — not yet assigned\nconst bar = () => 'arrow';" },
-  { q:"How do Promises and async/await work?", d:"Medium",
-    a:"A Promise represents a value that may be available now, later, or never — it's <strong>pending</strong>, <strong>fulfilled</strong>, or <strong>rejected</strong>. async/await is syntactic sugar over Promises: async functions always return a Promise, await pauses function execution until the Promise settles. Use try/catch for error handling.",
-    code:"// Promise chain\nfetch('/api/user')\n  .then(res => res.json())\n  .then(user => console.log(user))\n  .catch(err => console.error(err));\n\n// async/await — same thing, more readable\nasync function getUser() {\n  try {\n    const res  = await fetch('/api/user');\n    const user = await res.json();\n    return user;\n  } catch (err) {\n    console.error('Failed:', err);\n  }\n}\n\n// Run multiple in parallel\nconst [user, posts] = await Promise.all([\n  getUser(), getPosts()\n]);" },
-  { q:"What is 'this' in JavaScript?", d:"Hard",
-    a:"<strong>this</strong> is determined by <em>how</em> a function is called, not where it's defined. In a method: this = the object. Standalone call: undefined (strict) or globalThis. Arrow functions don't have own this — they inherit from lexical scope. call/apply/bind explicitly set this.",
-    code:"const person = {\n  name: 'Alice',\n  greet() { return `Hi, ${this.name}`; },\n  arrowGreet: () => `Hi, ${this.name}`, // undefined!\n};\n\nperson.greet();      // 'Hi, Alice'\nperson.arrowGreet(); // 'Hi, undefined'\n\nconst fn = person.greet;\nfn();                // 'Hi, undefined' (lost context)\nfn.call(person);     // 'Hi, Alice'\n\nconst bound = person.greet.bind(person);\nbound();             // 'Hi, Alice' (permanently bound)" },
-  { q:"What is event delegation?", d:"Medium",
-    a:"Instead of attaching listeners to each child, attach <strong>one listener to a common parent</strong>. Events bubble up from the target — the parent handler uses event.target to identify the source. More performant for long lists, works for dynamically added elements, reduces memory usage.",
-    code:"// ❌ Inefficient -- listener on each item\ndocument.querySelectorAll('li').forEach(li =>\n  li.addEventListener('click', handler)\n);\n\n// ✅ Event delegation -- one listener\ndocument.querySelector('#list')\n  .addEventListener('click', (e) => {\n    const item = e.target.closest('li');\n    if (!item) return;\n    console.log('clicked:', item.dataset.id);\n  });" },
-  { q:"What is the difference between call, apply, and bind?", d:"Medium",
-    a:"All three explicitly set <strong>this</strong>. <strong>call</strong>: invokes immediately, args listed separately. <strong>apply</strong>: invokes immediately, args as array. <strong>bind</strong>: returns a new function with this permanently bound — doesn't invoke immediately. Bind is used for callbacks, partial application, and React event handlers.",
-    code:"function greet(greeting, punct) {\n  return `${greeting}, ${this.name}${punct}`;\n}\nconst user = { name: 'Alice' };\n\ngreet.call(user, 'Hello', '!');   // 'Hello, Alice!'\ngreet.apply(user, ['Hi', '?']);   // 'Hi, Alice?'\n\nconst sayHi = greet.bind(user, 'Hey');\nsayHi('.');                       // 'Hey, Alice.'" },
-  { q:"What is debouncing vs throttling?", d:"Medium",
-    a:"<strong>Debouncing</strong> delays execution until after a pause — the timer resets on every call. Use for: search input, window resize, save-as-you-type. <strong>Throttling</strong> limits execution to at most once per interval. Use for: scroll events, mouse moves, API rate limiting.",
-    code:"// Debounce -- waits 300ms after LAST call\nconst debounce = (fn, ms) => {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), ms);\n  };\n};\n\n// Throttle -- runs at most once per 300ms\nconst throttle = (fn, ms) => {\n  let last = 0;\n  return (...args) => {\n    if (Date.now() - last >= ms) {\n      last = Date.now();\n      fn(...args);\n    }\n  };\n};\n\nwindow.addEventListener('resize', debounce(onResize, 300));\nwindow.addEventListener('scroll', throttle(onScroll, 100));" },
-  { q:"What is prototypal inheritance?", d:"Hard",
-    a:"Every JS object has an internal <strong>[[Prototype]]</strong> link to another object. Property lookups walk up the chain until found or null is reached. The class syntax is <strong>syntactic sugar</strong> over prototypal inheritance — no class-based OOP under the hood.",
-    code:"// Prototypal\nconst animal = {\n  speak() { return `${this.name} makes a sound`; }\n};\nconst dog = Object.create(animal);\ndog.name = 'Rex';\ndog.bark = () => 'woof!';\n\ndog.speak(); // 'Rex makes a sound' (from prototype)\ndog.bark();  // 'woof!' (own property)\n\n// Class syntax (same thing underneath)\nclass Dog extends Animal {\n  bark() { return 'woof!'; }\n}" },
-  { q:"What are generators and iterators?", d:"Hard",
-    a:"An <strong>iterator</strong> is an object with a next() method that returns { value, done }. A <strong>generator</strong> is a function using function* that pauses with yield, resuming on next(). Generators enable lazy sequences, infinite streams, custom iteration, and are the foundation of async generators.",
-    code:"function* range(start, end, step = 1) {\n  for (let i = start; i < end; i += step) {\n    yield i;\n  }\n}\n\nfor (const n of range(0, 10, 2)) {\n  console.log(n); // 0, 2, 4, 6, 8\n}\n\n// Infinite sequence\nfunction* fibonacci() {\n  let [a, b] = [0, 1];\n  while (true) {\n    yield a;\n    [a, b] = [b, a + b];\n  }\n}\n\nconst fib = fibonacci();\nfib.next().value; // 0\nfib.next().value; // 1\nfib.next().value; // 1" },
-  { q:"What is destructuring in JavaScript?", d:"Easy",
-    a:"Destructuring extracts values from arrays or objects into variables in a concise syntax. Supports <strong>default values</strong>, <strong>renaming</strong>, <strong>rest patterns</strong>, and <strong>nested destructuring</strong>. Heavily used in function parameters, React props, and module imports.",
-    code:"// Object destructuring\nconst { name, age, role = 'user' } = user;\nconst { address: { city } } = user; // nested\nconst { id: userId } = user;         // rename\n\n// Array destructuring\nconst [first, second, ...rest] = [1, 2, 3, 4];\nconst [,, third] = arr; // skip elements\n\n// Function parameters\nfunction greet({ name, greeting = 'Hello' }) {\n  return `${greeting}, ${name}!`;\n}\n\n// Swap variables\n[a, b] = [b, a];" },
-  { q:"What is the difference between == and === in JavaScript?", d:"Easy",
-    a:"<strong>===</strong> (strict equality) compares value AND type — no conversions. <strong>==</strong> (loose equality) performs <strong>type coercion</strong> before comparing, leading to surprising results. Always use === in production code. The only common valid use of == is null checks: value == null catches both null and undefined.",
-    code:"// Loose equality surprises\n0 == false      // true (coercion)\n'' == false     // true\nnull == undefined // true\n'1' == 1        // true\n\n// Strict equality\n0 === false     // false\n'' === false    // false\nnull === undefined // false\n\n// The one valid use of ==\nif (value == null) {\n  // catches both null and undefined\n}" },
-  { q:"What are the array methods map, filter, and reduce?", d:"Easy",
-    a:"<strong>map</strong>: transforms each element, returns new array of same length. <strong>filter</strong>: keeps elements matching predicate, returns new array. <strong>reduce</strong>: accumulates elements into a single value (sum, object, nested structure). All three are pure — they don't mutate the original array.",
-    code:"const nums = [1, 2, 3, 4, 5];\n\n// map: transform each item\nconst doubled = nums.map(n => n * 2);\n// [2, 4, 6, 8, 10]\n\n// filter: keep matching items\nconst evens = nums.filter(n => n % 2 === 0);\n// [2, 4]\n\n// reduce: accumulate\nconst sum = nums.reduce((acc, n) => acc + n, 0);\n// 15\n\n// Chained\nconst result = nums\n  .filter(n => n > 2)\n  .map(n => n * n)\n  .reduce((acc, n) => acc + n, 0);\n// 9 + 16 + 25 = 50" },
-]
-  { q:"What is useLayoutEffect vs useEffect?", d:"Hard",
-    a:"<strong>useLayoutEffect</strong> fires synchronously after DOM mutations but <strong>before the browser paints</strong>. <strong>useEffect</strong> fires asynchronously after paint. Use useLayoutEffect for DOM measurements that must not cause visual flicker. Prefer useEffect for most side effects.",
-    code:"// useEffect: after paint -- may flicker\nuseEffect(() => { setWidth(ref.current.offsetWidth); }, []);\n\n// useLayoutEffect: before paint -- no flicker\nuseLayoutEffect(() => {\n  const width = ref.current.offsetWidth;\n  setWidth(width); // batched into same paint\n}, []);\n\n// Tooltip positioning -- classic useLayoutEffect use case\nuseLayoutEffect(() => {\n  const rect = triggerRef.current.getBoundingClientRect();\n  setPos({ top: rect.bottom, left: rect.left });\n}, []);" },
-  { q:"What is React.StrictMode?", d:"Medium",
-    a:"<strong>StrictMode</strong> is a development-only tool that surfaces potential problems. In React 18+, it <strong>double-invokes</strong> renders and effects to surface impure functions and non-idempotent side effects. Wrap your app or any subtree in it — no production impact.",
-    code:"root.render(\n  &lt;React.StrictMode&gt;\n    &lt;App /&gt;\n  &lt;/React.StrictMode&gt;\n);\n\n// StrictMode catches:\n// 1. Impure renders (renders twice in dev)\n// 2. Missing useEffect cleanup (mounts twice in dev)\n// 3. Deprecated lifecycle methods\n// 4. Unexpected side effects\n// If your app breaks with StrictMode, you have a real bug!" },
-  { q:"What is automatic batching in React 18?", d:"Hard",
-    a:"<strong>Batching</strong> groups multiple state updates into a single re-render. Before React 18, batching only worked inside React event handlers. React 18 batches updates <strong>everywhere</strong> (setTimeout, Promises, native events). Use flushSync to opt out.",
-    code:"// React 17: two renders inside setTimeout\nsetTimeout(() => {\n  setCount(c => c + 1); // render\n  setFlag(f => !f);     // render\n}, 1000);\n\n// React 18: one render (automatic batching)\nsetTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);  // batched!\n}, 1000);\n\n// Opt out when needed\nimport { flushSync } from 'react-dom';\nflushSync(() => setCount(c => c + 1)); // immediate render" },
-  { q:"What are React Server Components?", d:"Hard",
-    a:"<strong>React Server Components</strong> render on the server only — their code never ships to the browser. They enable: direct DB/file access, zero-bundle third-party imports, improved initial load. Client Components use 'use client'. Server Components can't use state, effects, or browser APIs.",
-    code:"// ServerComponent.tsx (server by default in Next.js)\nexport default async function UserList() {\n  const users = await db.query('SELECT * FROM users');\n  return &lt;ul&gt;{users.map(u => &lt;li key={u.id}&gt;{u.name}&lt;/li&gt;)}&lt;/ul&gt;;\n  // Code never ships to browser!\n}\n\n// ClientComponent.tsx\n'use client';\nexport default function Counter() {\n  const [count, setCount] = useState(0);\n  return &lt;button onClick={() => setCount(c => c+1)}&gt;{count}&lt;/button&gt;;\n}" },
-  { q:"What is useTransition in React 18?", d:"Hard",
-    a:"<strong>useTransition</strong> marks state updates as non-urgent — React can interrupt them for urgent updates. Returns [isPending, startTransition]. Perfect for search, tab switching, or any slow render — keeps the UI responsive without debouncing.",
-    code:"const [query, setQuery]     = useState('');\nconst [results, setResults] = useState([]);\nconst [isPending, startTransition] = useTransition();\n\nfunction handleSearch(e) {\n  setQuery(e.target.value);           // urgent: immediate\n  startTransition(() => {             // non-urgent: interruptible\n    setResults(filterBigList(e.target.value));\n  });\n}\n\nreturn (\n  &lt;&gt;\n    &lt;input value={query} onChange={handleSearch} /&gt;\n    {isPending ? &lt;Spinner /&gt; : &lt;List data={results} /&gt;}\n  &lt;/&gt;\n);" },
-  { q:"What is JSX and what does it compile to?", d:"Easy",
-    a:"<strong>JSX</strong> is syntactic sugar that compiles to <strong>React.createElement</strong> calls. Understanding the compilation explains: why you return one root element, why you use className, and how components are just function calls. React 17+ has a new JSX transform that doesn't require importing React.",
-    code:"// JSX (what you write)\nfunction Card({ title, children }) {\n  return (\n    &lt;div className=\"card\"&gt;\n      &lt;h2&gt;{title}&lt;/h2&gt;\n      {children}\n    &lt;/div&gt;\n  );\n}\n\n// Compiled output\nfunction Card({ title, children }) {\n  return React.createElement('div', { className: 'card' },\n    React.createElement('h2', null, title),\n    children\n  );\n}" },
-,
+  {q:"What is the difference between var, let, and const?", d:"Easy", a:"<strong>var</strong>: function-scoped, hoisted. <strong>let</strong>: block-scoped, reassignable. <strong>const</strong>: block-scoped, not reassignable.", code:"var x = 1;\nlet y = 2;\nconst z = 3;"},
+  {q:"What is a closure?", d:"Medium", a:"A closure is created when an inner function <strong>retains access to its outer scope</strong> even after the outer function returns.", code:"function makeCounter() {\n  let count = 0;\n  return () => ++count;\n}"},
+  {q:"How does the JavaScript event loop work?", d:"Hard", a:"JS runs sync code, then drains <strong>microtasks</strong> (Promises), then one <strong>macrotask</strong> (setTimeout), then repeats.", code:"console.log('1');\nsetTimeout(() => log('3'), 0);\nPromise.resolve().then(() => log('2'));\n// Output: 1, 2, 3"},
+  {q:"What is hoisting in JavaScript?", d:"Medium", a:"Hoisting moves <strong>declarations</strong> to top of scope. var is initialized as undefined. let/const are hoisted but not initialized (TDZ).", code:"console.log(a); // undefined\nvar a = 5;"},
+  {q:"How do Promises and async/await work?", d:"Medium", a:"A Promise is <strong>pending</strong>, <strong>fulfilled</strong>, or <strong>rejected</strong>. async/await is syntactic sugar over Promises.", code:"async function getUser() {\n  const res = await fetch('/api/user');\n  return res.json();\n}"},
+  {q:"What is 'this' in JavaScript?", d:"Hard", a:"<strong>this</strong> is determined by how a function is called. Arrow functions inherit this from lexical scope.", code:"const obj = {\n  greet() { return this.name; }\n};"},
+  {q:"What is event delegation?", d:"Medium", a:"Attach <strong>one listener to a parent</strong> instead of many to children. Events bubble up from target.", code:"document.querySelector('#list')\n  .addEventListener('click', e => {\n    if (e.target.matches('li')) handle(e);\n  });"},
+  {q:"What is the difference between call, apply, and bind?", d:"Medium", a:"All three set <strong>this</strong>. <strong>call</strong> invokes immediately. <strong>apply</strong> takes args as array. <strong>bind</strong> returns new function.", code:"fn.call(obj, arg1, arg2);\nfn.apply(obj, [arg1, arg2]);\nconst bound = fn.bind(obj);"},
+  {q:"What is debouncing vs throttling?", d:"Medium", a:"<strong>Debouncing</strong> delays until after pause. <strong>Throttling</strong> limits to once per interval.", code:"const debounce = (fn, ms) => {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), ms);\n  };\n};"},
+  {q:"What is prototypal inheritance?", d:"Hard", a:"Every object has a <strong>[[Prototype]]</strong> link. class syntax is syntactic sugar over prototypal inheritance.", code:"const dog = Object.create(animal);\ndog.speak(); // inherited"},
+  {q:"What are generators and iterators?", d:"Hard", a:"An <strong>iterator</strong> has next() returning {value, done}. A <strong>generator</strong> uses function* and yield.", code:"function* range(start, end) {\n  for (let i = start; i < end; i++) yield i;\n}"},
+  {q:"What is destructuring in JavaScript?", d:"Easy", a:"Extracts values from arrays or objects into variables concisely.", code:"const {name, age} = user;\nconst [first, ...rest] = arr;"},
+  {q:"What is the difference between == and ===?", d:"Easy", a:"<strong>===</strong> compares value AND type. <strong>==</strong> does type coercion first. Always use ===.", code:"0 == false   // true\n0 === false  // false"},
+  {q:"What are map, filter, and reduce?", d:"Easy", a:"<strong>map</strong>: transform each item. <strong>filter</strong>: keep matching items. <strong>reduce</strong>: accumulate into single value.", code:"const doubled = nums.map(n => n * 2);\nconst evens = nums.filter(n => n % 2 === 0);\nconst sum = nums.reduce((a, b) => a + b, 0);"},
+],
 React: [
-  { q:"What is the Virtual DOM and how does React use it?", d:"Medium",
-    a:"The Virtual DOM is an in-memory JavaScript representation of the real DOM tree. When state changes, React creates a <strong>new virtual tree</strong>, diffs it against the previous one (reconciliation), and applies only the minimal real DOM changes needed. This batching and diffing avoids expensive full DOM re-renders.",
-    code:"// React handles this automatically.\n// You write declarative UI:\nfunction Counter({ count }) {\n  return &lt;h1&gt;Count: {count}&lt;/h1&gt;;\n}\n// React diffs virtual trees and updates only\n// the text node inside &lt;h1&gt; if count changes." },
-  { q:"What are React Hooks and why were they introduced?", d:"Easy",
-    a:"Hooks (React 16.8) let <strong>functional components</strong> use state, lifecycle methods, context, and refs — without class components. They make logic <strong>reusable</strong> via custom hooks, eliminate the complexity of this bindings, HOC/render prop nesting, and lifecycle method duplication.",
-    code:"function UserProfile({ userId }) {\n  const [user, setUser]     = useState(null);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    fetchUser(userId).then(u => {\n      setUser(u);\n      setLoading(false);\n    });\n  }, [userId]);\n\n  if (loading) return &lt;Spinner /&gt;;\n  return &lt;div&gt;{user.name}&lt;/div&gt;;\n}" },
-  { q:"What is the difference between useState and useReducer?", d:"Medium",
-    a:"<strong>useState</strong> is ideal for simple, independent state values. <strong>useReducer</strong> is better when: next state depends on previous, multiple values change together, update logic is complex, or you need to test the logic in isolation (pure reducer functions).",
-    code:"// useState -- simple\nconst [count, setCount] = useState(0);\n\n// useReducer -- complex state\nconst [state, dispatch] = useReducer((state, action) => {\n  switch (action.type) {\n    case 'INCREMENT': return { ...state, count: state.count + 1 };\n    case 'RESET':     return { count: 0, error: null };\n    case 'ERROR':     return { ...state, error: action.payload };\n    default: throw new Error('Unknown action');\n  }\n}, { count: 0, error: null });\n\ndispatch({ type: 'INCREMENT' });" },
-  { q:"How does the useEffect dependency array work?", d:"Medium",
-    a:"useEffect's dependency array controls <strong>when</strong> the effect re-runs. <strong>[]</strong>: run once on mount. <strong>[a, b]</strong>: re-run when a or b changes (shallow comparison). <strong>omitted</strong>: run after every render. Always return a cleanup function to cancel timers, subscriptions, or in-flight requests.",
-    code:"// Once on mount, cleanup on unmount\nuseEffect(() => {\n  const sub = websocket.subscribe(onMessage);\n  return () => sub.unsubscribe();\n}, []);\n\n// Re-run when userId changes\nuseEffect(() => {\n  const controller = new AbortController();\n  fetch(`/api/user/${userId}`, { signal: controller.signal })\n    .then(r => r.json())\n    .then(setUser);\n  return () => controller.abort(); // cancel on cleanup\n}, [userId]);" },
-  { q:"What is the difference between useMemo and useCallback?", d:"Hard",
-    a:"<strong>useMemo</strong> memoizes the <em>result</em> of a computation — returns cached value until deps change. <strong>useCallback</strong> memoizes a <em>function reference</em> — prevents creating a new function on every render. Both exist to preserve referential equality so child components wrapped in React.memo don't re-render unnecessarily.",
-    code:"// useMemo -- expensive calculation\nconst sortedList = useMemo(\n  () => [...items].sort((a, b) => a.score - b.score),\n  [items]  // only recalculates when items changes\n);\n\n// useCallback -- stable function reference\nconst handleDelete = useCallback(\n  (id) => dispatch({ type: 'DELETE', id }),\n  [dispatch]  // same fn reference unless dispatch changes\n);\n\n// Pair with React.memo on child\nconst Row = React.memo(({ onDelete }) => {\n  /* only re-renders if onDelete reference changes */\n});" },
-  { q:"What is prop drilling and how do you solve it?", d:"Medium",
-    a:"Prop drilling is threading props through multiple layers of components just to reach a distant child. Solutions: <strong>Context API</strong> for global data (theme, auth, locale), <strong>Zustand/Redux</strong> for complex app state, <strong>Component composition</strong> (passing children/JSX as props to skip intermediate layers).",
-    code:"// Context API solution\nconst AuthCtx = createContext(null);\n\nfunction App() {\n  const auth = useAuth();\n  return (\n    &lt;AuthCtx.Provider value={auth}&gt;\n      &lt;Router /&gt;\n    &lt;/AuthCtx.Provider&gt;\n  );\n}\n\n// Any descendant can access it\nfunction UserMenu() {\n  const { user, logout } = useContext(AuthCtx);\n  return &lt;button onClick={logout}&gt;{user.name}&lt;/button&gt;;\n}" },
-  { q:"What is the key prop and why is it critical?", d:"Medium",
-    a:"Keys help React identify which items in a list were added, removed, or reordered during reconciliation. Without stable keys, React reuses DOM nodes incorrectly — causing <strong>state bugs</strong> (inputs keeping wrong values, animations glitching). Never use array index as key when lists can be sorted or filtered.",
-    code:"// ❌ Index as key -- causes bugs on reorder/delete\n{items.map((item, i) => &lt;Row key={i} {...item} /&gt;)}\n\n// ✅ Stable unique ID from data\n{items.map(item => &lt;Row key={item.id} {...item} /&gt;)}\n\n// ✅ Also good: stable string key\n{tabs.map(tab => &lt;Tab key={tab.slug} {...tab} /&gt;)}" },
-  { q:"What is React.memo and when should you use it?", d:"Hard",
-    a:"React.memo is a HOC that wraps a component and <strong>skips re-rendering</strong> if props haven't changed (shallow equality check). Use it for pure components that receive the same props often but render expensively. Don't overuse — the comparison itself has cost, and most components are fast enough without it.",
-    code:"// Basic usage\nconst Avatar = React.memo(function Avatar({ src, name }) {\n  return &lt;img src={src} alt={name} /&gt;;\n});\n\n// Custom comparison (return true to SKIP re-render)\nconst Row = React.memo(\n  function Row({ user }) { return &lt;tr&gt;{user.name}&lt;/tr&gt;; },\n  (prev, next) => prev.user.id === next.user.id\n);" },
-  { q:"What are controlled vs uncontrolled form components?", d:"Medium",
-    a:"<strong>Controlled</strong>: React state is the single source of truth — input value is bound to state, onChange updates state. Enables real-time validation and conditional logic. <strong>Uncontrolled</strong>: DOM manages state, accessed via ref. Simpler for basic forms. File inputs must be uncontrolled.",
-    code:"// Controlled -- React owns the state\nconst [email, setEmail] = useState('');\n&lt;input\n  value={email}\n  onChange={e => setEmail(e.target.value)}\n/&gt;\n\n// Uncontrolled -- DOM owns the state\nconst inputRef = useRef(null);\nconst handleSubmit = () => {\n  console.log(inputRef.current.value);\n};\n&lt;input ref={inputRef} defaultValue=\"initial\" /&gt;" },
-  { q:"What is code splitting and React.lazy?", d:"Medium",
-    a:"Code splitting breaks the JS bundle into smaller chunks loaded on demand — reducing initial bundle size and improving load time. <strong>React.lazy</strong> wraps a dynamic import and makes it work with <strong>Suspense</strong>. The component's code only downloads when first rendered.",
-    code:"import { lazy, Suspense } from 'react';\n\n// Only downloaded when rendered\nconst Dashboard = lazy(() => import('./Dashboard'));\nconst Settings  = lazy(() => import('./Settings'));\n\nfunction App() {\n  return (\n    &lt;Suspense fallback={&lt;PageSpinner /&gt;}&gt;\n      {page === 'dashboard' && &lt;Dashboard /&gt;}\n      {page === 'settings'  && &lt;Settings  /&gt;}\n    &lt;/Suspense&gt;\n  );\n}" },
-  { q:"What is the React reconciliation algorithm?", d:"Hard",
-    a:"React's diffing algorithm computes minimal DOM updates in <strong>O(n)</strong> time (vs naive O(n³)). Rules: elements of different types produce entirely new trees. Same-type elements update only changed attributes. Lists use <strong>keys</strong> to match old/new items and avoid unnecessary unmounts/remounts.",
-    code:"// React reconciles these efficiently:\n// Before:\n&lt;ul&gt;\n  &lt;li key=\"a\"&gt;A&lt;/li&gt;\n  &lt;li key=\"b\"&gt;B&lt;/li&gt;\n&lt;/ul&gt;\n\n// After (item added at top):\n&lt;ul&gt;\n  &lt;li key=\"c\"&gt;C&lt;/li&gt;  {/* new -- mounted */}\n  &lt;li key=\"a\"&gt;A&lt;/li&gt;  {/* moved -- not remounted */}\n  &lt;li key=\"b\"&gt;B&lt;/li&gt;  {/* moved -- not remounted */}\n&lt;/ul&gt;" },
-  { q:"What are React Portals?", d:"Hard",
-    a:"Portals render a component's output into a <strong>different DOM node</strong> than its parent — while keeping it in the React component tree (events still bubble through React tree). Essential for modals, tooltips, and dropdowns that need to escape overflow:hidden or z-index constraints.",
-    code:"import { createPortal } from 'react-dom';\n\nfunction Modal({ isOpen, children }) {\n  if (!isOpen) return null;\n  return createPortal(\n    &lt;div className=\"modal-overlay\"&gt;\n      &lt;div className=\"modal-box\"&gt;\n        {children}\n      &lt;/div&gt;\n    &lt;/div&gt;,\n    document.getElementById('modal-root')\n  );\n}\n// Events bubble to App in React tree\n// even though DOM renders in #modal-root" },
-  { q:"What is useRef and when would you use it?", d:"Medium",
-    a:"<strong>useRef</strong> returns a mutable object with a .current property that persists across renders without triggering re-renders. Two main use cases: <strong>DOM references</strong> (focus, scroll, measurements) and <strong>mutable values</strong> that shouldn't trigger renders (previous value, timer IDs, abort controllers).",
-    code:"function Form() {\n  const inputRef = useRef(null);\n\n  // DOM access\n  const focusInput = () => inputRef.current.focus();\n\n  return &lt;input ref={inputRef} /&gt;;\n}\n\n// Storing mutable value without re-render\nfunction Timer() {\n  const timerRef = useRef(null);\n\n  const start = () => {\n    timerRef.current = setInterval(tick, 1000);\n  };\n  const stop = () => {\n    clearInterval(timerRef.current);\n  };\n}" },
-  { q:"What is context and what are its performance implications?", d:"Hard",
-    a:"Context provides a way to share values across the component tree without explicit prop passing. <strong>Performance trap</strong>: every consumer re-renders when context value changes — even if only a portion of the context changed. Mitigate by: splitting contexts, memoizing values, using state management libraries for frequent updates.",
-    code:"// Split contexts to prevent unnecessary re-renders\nconst ThemeCtx  = createContext(null); // rarely changes\nconst UserCtx   = createContext(null); // rarely changes\nconst CartCtx   = createContext(null); // changes often\n\n// Memoize context value\nfunction CartProvider({ children }) {\n  const [items, setItems] = useState([]);\n  const value = useMemo(\n    () => ({ items, setItems }),\n    [items]\n  );\n  return (\n    &lt;CartCtx.Provider value={value}&gt;\n      {children}\n    &lt;/CartCtx.Provider&gt;\n  );\n}" },
-]
-  { q:"What is a type assertion in TypeScript?", d:"Medium",
-    a:"Type assertions tell the compiler to treat a value as a specific type — 'trust me, I know better'. Use <strong>as Type</strong> syntax. Use sparingly — assertions bypass type safety. Prefer type guards and proper typing instead.",
-    code:"// as assertion\nconst el = document.getElementById('app') as HTMLDivElement;\nel.style.backgroundColor = 'red';\n\n// Non-null assertion (!)\nconst el2 = document.getElementById('app')!;\nel2.style.color = 'blue'; // assumes not null\n\n// Without assertion\nconst el3 = document.getElementById('app');\n// el3.style... ❌ might be null" },
-  { q:"What are enums in TypeScript?", d:"Medium",
-    a:"Enums define sets of named constants. <strong>Numeric enums</strong> auto-increment. <strong>String enums</strong> have explicit values. <strong>Const enums</strong> are inlined at compile time. Prefer union types for most cases — simpler and tree-shakeable.",
-    code:"// Numeric\nenum Direction { Up, Down, Left, Right } // 0,1,2,3\n\n// String (more debuggable)\nenum Status { Active = 'ACTIVE', Inactive = 'INACTIVE' }\n\n// Const (no runtime overhead)\nconst enum Size { Small = 1, Medium = 2, Large = 3 }\n\n// Prefer union type\ntype Dir = 'up' | 'down' | 'left' | 'right';" },
-  { q:"What are template literal types?", d:"Hard",
-    a:"Template literal types construct string union types using template syntax — enabling type-safe string manipulation. Combined with mapped types, they power sophisticated utilities like extracting route params or event names.",
-    code:"type Color = 'red' | 'blue';\ntype Shade = 'light' | 'dark';\ntype Variant = `${Shade}-${Color}`;\n// 'light-red' | 'light-blue' | 'dark-red' | 'dark-blue'\n\ntype EventName = 'click' | 'focus' | 'blur';\ntype Handler = `on${Capitalize<EventName>}`;\n// 'onClick' | 'onFocus' | 'onBlur'" },
-  { q:"What is the satisfies operator?", d:"Hard",
-    a:"<strong>satisfies</strong> (TS 4.9) validates that a value matches a type without widening the inferred type. Unlike a type annotation (which widens), satisfies lets you keep the precise inferred type while still checking constraints.",
-    code:"type Palette = Record<'red'|'blue', string | number[]>;\n\n// annotation: loses specific type\nconst p1: Palette = { red: [255,0,0], blue: '#00f' };\np1.red; // string | number[] -- too wide\n\n// satisfies: validates AND preserves\nconst p2 = { red: [255,0,0], blue: '#00f' } satisfies Palette;\np2.red;  // number[] -- preserved!\np2.blue; // string -- preserved!" },
-  { q:"What are discriminated unions?", d:"Medium",
-    a:"A discriminated union has a <strong>common literal property</strong> (the discriminant) that TypeScript uses in switch/if to narrow the type — enabling exhaustive type checking with zero runtime overhead.",
-    code:"type State =\n  | { status: 'loading' }\n  | { status: 'success'; data: User[] }\n  | { status: 'error';   message: string };\n\nfunction render(state: State) {\n  switch (state.status) {\n    case 'loading':  return &lt;Spinner /&gt;;\n    case 'success':  return &lt;List data={state.data} /&gt;;\n    case 'error':    return &lt;Error msg={state.message} /&gt;;\n    default:\n      const _: never = state; // exhaustiveness check\n  }\n}" },
-  { q:"What are declaration files (.d.ts)?", d:"Hard",
-    a:"Declaration files contain only <strong>type information</strong> — no runtime code. They describe the shape of JS modules to TypeScript. <strong>@types/*</strong> npm packages provide declarations for popular JS libraries.",
-    code:"// myLib.d.ts\ndeclare module 'my-lib' {\n  export interface Config { apiKey: string; timeout?: number; }\n  export function init(config: Config): void;\n  export default class Client {\n    constructor(config: Config);\n    get(path: string): Promise<unknown>;\n  }\n}\n\n// Module augmentation\ndeclare module 'express' {\n  interface Request { user?: { id: string; role: string }; }\n}" },
-  { q:"What are function overloads?", d:"Hard",
-    a:"Function overloads declare multiple signatures for different input/output combinations — TypeScript picks the correct one based on the call. The implementation signature handles all cases but isn't externally callable.",
-    code:"function process(x: string): string;\nfunction process(x: number): number;\nfunction process(x: string[]): string[];\n\n// Implementation\nfunction process(x: string | number | string[]) {\n  if (typeof x === 'string') return x.toUpperCase();\n  if (typeof x === 'number') return x * 2;\n  return x.map(s => s.toUpperCase());\n}\n\nprocess('hi');      // string\nprocess(42);        // number\nprocess(true);      // ❌ no matching overload" },
-  { q:"What is the readonly modifier?", d:"Easy",
-    a:"<strong>readonly</strong> prevents property reassignment after initialization — compile-time only check. Works on object properties and array types. Combine with Object.freeze() for runtime immutability.",
-    code:"interface Config {\n  readonly apiUrl: string;\n  name: string;\n}\nconst config: Config = { apiUrl: '/api', name: 'app' };\nconfig.apiUrl = '/other'; // ❌ readonly\nconfig.name = 'other';   // ✅\n\nconst nums: readonly number[] = [1,2,3];\nnums.push(4); // ❌\n\ntype ImmutableUser = Readonly<User>;" },
-  { q:"What are index signatures?", d:"Medium",
-    a:"Index signatures describe types for objects with <strong>dynamic property names</strong> — you know the value type but not the keys. The key type must be string, number, or symbol. Use <strong>Record</strong> as a cleaner alternative.",
-    code:"// Index signature\ninterface StringDict { [key: string]: string; }\n\n// Record utility (cleaner)\ntype CountMap = Record<string, number>;\nconst counts: CountMap = {};\ncounts['apple']  = 5;\ncounts['banana'] = 3;\n\n// Generic API routes\ntype Routes = Record<string, { method: 'GET'|'POST'; auth: boolean }>;\nconst routes: Routes = {\n  '/users': { method: 'GET', auth: false },\n  '/admin': { method: 'POST', auth: true },\n};" },
-  { q:"What is module augmentation?", d:"Hard",
-    a:"Module augmentation lets you <strong>add new declarations to an existing module</strong> — extending Express types, adding global properties, or enhancing third-party libraries without modifying source files.",
-    code:"// Extend Express Request\nimport 'express';\ndeclare module 'express-serve-static-core' {\n  interface Request {\n    user?: { id: string; role: 'admin' | 'user' };\n  }\n}\n// Now: req.user?.id works in all route handlers\n\n// Augment global scope\ndeclare global {\n  interface String { toTitleCase(): string; }\n}\nString.prototype.toTitleCase = function() {\n  return this.replace(/\\b\\w/g, c => c.toUpperCase());\n};" },
-,
+  {q:"What is the Virtual DOM?", d:"Medium", a:"Virtual DOM is an in-memory JS representation. React diffs it against previous and applies minimal DOM changes.", code:"// React handles this automatically"},
+  {q:"What are React Hooks?", d:"Easy", a:"Hooks let <strong>functional components</strong> use state, lifecycle, context — without classes.", code:"const [count, setCount] = useState(0);\nuseEffect(() => { ... }, []);"},
+  {q:"What is the difference between useState and useReducer?", d:"Medium", a:"<strong>useState</strong> for simple values. <strong>useReducer</strong> for complex state where next depends on previous.", code:"const [state, dispatch] = useReducer(reducer, initial);"},
+  {q:"How does useEffect dependency array work?", d:"Medium", a:"<strong>[]</strong>: runs once on mount. <strong>[a, b]</strong>: re-runs when deps change. Omitted: runs every render. Always return cleanup.", code:"useEffect(() => {\n  subscribe();\n  return () => unsubscribe();\n}, [id]);"},
+  {q:"What is the difference between useMemo and useCallback?", d:"Hard", a:"<strong>useMemo</strong> memoizes a result. <strong>useCallback</strong> memoizes a function reference.", code:"const memoized = useMemo(() => compute(a), [a]);\nconst cb = useCallback(() => fn(), [deps]);"},
+  {q:"What is prop drilling and how do you solve it?", d:"Medium", a:"Prop drilling is threading props through layers. Solve with <strong>Context API</strong> or state management.", code:"const AuthCtx = createContext(null);\nconst {user} = useContext(AuthCtx);"},
+  {q:"What is the key prop and why is it critical?", d:"Medium", a:"Keys help React match items during reconciliation. Never use index as key for reorderable lists.", code:"{items.map(item => <Row key={item.id} />)}"},
+  {q:"What is React.memo?", d:"Hard", a:"React.memo skips re-render if props haven't changed. Use for pure components with expensive renders.", code:"const Avatar = React.memo(function Avatar({src}) { ... });"},
+  {q:"What are controlled vs uncontrolled components?", d:"Medium", a:"<strong>Controlled</strong>: React state is source of truth. <strong>Uncontrolled</strong>: DOM manages state via ref.", code:"// Controlled\n<input value={email} onChange={e => setEmail(e.target.value)} />\n\n// Uncontrolled\n<input ref={inputRef} defaultValue=\"initial\" />"},
+  {q:"What is code splitting and React.lazy?", d:"Medium", a:"Code splitting breaks bundle into chunks. <strong>React.lazy</strong> wraps dynamic import, works with <strong>Suspense</strong>.", code:"const Dashboard = lazy(() => import('./Dashboard'));\n\n<Suspense fallback={<Spinner />}>\n  <Dashboard />\n</Suspense>"},
+  {q:"What is the reconciliation algorithm?", d:"Hard", a:"React diffs trees in O(n). Different types = new tree. Same type = update attributes. Keys match list items.", code:"// React uses keys to match items"},
+  {q:"What are React Portals?", d:"Hard", a:"Portals render to a <strong>different DOM node</strong> while staying in React tree. Essential for modals.", code:"return createPortal(\n  <Modal />,\n  document.getElementById('modal-root')\n);"},
+  {q:"What is useRef?", d:"Medium", a:"useRef returns a mutable .current that persists without re-renders. Used for DOM refs and mutable values.", code:"const inputRef = useRef(null);\ninputRef.current.focus();"},
+  {q:"What is context and its performance implications?", d:"Hard", a:"Context shares values tree-wide. Every consumer re-renders when context value changes. Split for performance.", code:"const ThemeCtx = createContext(null);"},
+],
 TypeScript: [
-  { q:"What is TypeScript and why use it over JavaScript?", d:"Easy",
-    a:"TypeScript is a <strong>typed superset of JavaScript</strong> that compiles to plain JS. Benefits: catch type errors at compile-time instead of runtime, better IDE autocompletion, explicit contracts via interfaces/types, safer refactoring. TypeScript doesn't change runtime behavior — it's purely a development tool.",
-    code:"// JavaScript -- bug caught at runtime\nfunction add(a, b) { return a + b; }\nadd('5', 3);  // '53' -- silent bug!\n\n// TypeScript -- bug caught at compile-time\nfunction add(a: number, b: number): number {\n  return a + b;\n}\nadd('5', 3);  // ❌ Error: Argument of type\n              // 'string' is not assignable to 'number'" },
-  { q:"What is the difference between interface and type?", d:"Medium",
-    a:"Both define shapes of objects. <strong>interface</strong>: extendable via extends and declaration merging (multiple declarations auto-merge). <strong>type</strong>: more flexible — supports unions, intersections, mapped types, conditional types. Use interface for public API shapes; type for complex type manipulations and unions.",
-    code:"// Interface -- extendable, mergeable\ninterface User {\n  id: number;\n  name: string;\n}\ninterface User { email: string; } // merges!\n\n// Type -- flexible, no merging\ntype ID = string | number;\ntype Status = 'active' | 'inactive' | 'pending';\ntype ApiResponse<T> = {\n  data: T;\n  status: number;\n  error?: string;\n};\n\n// Intersection\ntype AdminUser = User & { permissions: string[]; };" },
-  { q:"What are generics in TypeScript?", d:"Medium",
-    a:"Generics create <strong>reusable, type-safe components</strong> that work with multiple types. They act as type parameters — you pass the type when calling. Essential for utility functions, data structures, API wrappers, and React components that need to be polymorphic.",
-    code:"// Generic function\nfunction first<T>(arr: T[]): T | undefined {\n  return arr[0];\n}\nfirst([1, 2, 3]);    // returns: number\nfirst(['a', 'b']);   // returns: string\n\n// Generic with constraint\nfunction getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key];\n}\n\n// Generic React component\nfunction List<T extends { id: string }>(\n  { items, renderItem }: {\n    items: T[];\n    renderItem: (item: T) => React.ReactNode;\n  }\n) {\n  return &lt;ul&gt;{items.map(item => renderItem(item))}&lt;/ul&gt;;\n}" },
-  { q:"What are union and intersection types?", d:"Medium",
-    a:"<strong>Union (|)</strong>: a value can be one of several types — use type narrowing to determine which. <strong>Intersection (&)</strong>: a value must satisfy ALL types simultaneously — combines properties. Unions model 'or' relationships; intersections model 'and' / composition.",
-    code:"// Union -- one OR another\ntype ID = string | number;\ntype Status = 'loading' | 'success' | 'error';\n\nfunction format(id: ID): string {\n  if (typeof id === 'string') return id.toUpperCase();\n  return id.toString(); // narrowed to number\n}\n\n// Intersection -- combines types\ntype Timestamped = { createdAt: Date; updatedAt: Date; };\ntype Identifiable = { id: string; };\ntype Entity = Timestamped & Identifiable;\n\n// Discriminated union (type-safe switch)\ntype Result =\n  | { status: 'ok';    data: User  }\n  | { status: 'error'; message: string };" },
-  { q:"What is 'any' vs 'unknown' in TypeScript?", d:"Medium",
-    a:"<strong>any</strong>: opts out of type checking entirely — assignments to/from any are always allowed. Defeats the purpose of TypeScript. <strong>unknown</strong>: type-safe alternative — you must narrow the type before using it. Prefer unknown for values you don't know the type of (API responses, error objects).",
-    code:"// any: dangerous -- no checks\nlet x: any = 'hello';\nx.foo.bar.baz; // ✅ no error, will crash at runtime\n\n// unknown: safe -- must narrow first\nlet y: unknown = getApiResponse();\ny.foo;                    // ❌ Error: can't access property\n\nif (typeof y === 'string') {\n  y.toUpperCase();        // ✅ narrowed to string\n}\n\n// Error handling pattern\ntry {\n  doSomething();\n} catch (err: unknown) {\n  if (err instanceof Error) {\n    console.error(err.message); // safe\n  }\n}" },
-  { q:"What are TypeScript utility types?", d:"Medium",
-    a:"TypeScript ships built-in generic types that transform existing types. <strong>Partial</strong> makes all properties optional. <strong>Required</strong> makes all required. <strong>Pick</strong> selects properties. <strong>Omit</strong> excludes properties. <strong>Readonly</strong> prevents mutation. <strong>Record</strong> creates key-value maps. Essential for reducing boilerplate.",
-    code:"interface User {\n  id: number; name: string; email: string; role: string;\n}\n\n// Partial: all optional (good for patch/update)\ntype UpdateUser = Partial<User>;\n\n// Pick: select subset\ntype UserPreview = Pick<User, 'id' | 'name'>;\n\n// Omit: exclude properties\ntype NewUser = Omit<User, 'id'>;\n\n// Record: typed dictionary\ntype RoleMap = Record<string, User[]>;\n\n// ReturnType: extract function return type\ntype R = ReturnType<typeof fetchUser>;\n\n// Required: all props required (removes optional)\ntype StrictUser = Required<User>;" },
-  { q:"What is type narrowing?", d:"Medium",
-    a:"Type narrowing refines a broader type to a more specific one inside a conditional block. TypeScript tracks control flow — after an if/switch/guard, it knows the precise type. Key narrowing techniques: typeof, instanceof, in operator, equality checks, and <strong>type predicates</strong>.",
-    code:"function processInput(value: string | number | boolean) {\n  if (typeof value === 'string') {\n    return value.toUpperCase();  // string\n  }\n  if (typeof value === 'number') {\n    return value.toFixed(2);     // number\n  }\n  return value;                  // boolean\n}\n\n// Type predicate\nfunction isUser(obj: unknown): obj is User {\n  return typeof obj === 'object'\n    && obj !== null\n    && 'id' in obj\n    && 'name' in obj;\n}\n\n// instanceof narrowing\nif (err instanceof NetworkError) {\n  // err is NetworkError here\n}" },
-  { q:"What are decorators in TypeScript?", d:"Hard",
-    a:"Decorators are a <strong>meta-programming</strong> syntax to annotate and modify classes, methods, properties, and parameters. Currently a Stage 3 proposal; TypeScript supports them experimentally. Widely used in Angular and NestJS for dependency injection, routing, and validation.",
-    code:"// Class decorator\nfunction sealed(constructor: Function) {\n  Object.seal(constructor);\n  Object.seal(constructor.prototype);\n}\n\n// Method decorator\nfunction log(_target: any, key: string, descriptor: PropertyDescriptor) {\n  const original = descriptor.value;\n  descriptor.value = function(...args: unknown[]) {\n    console.log(`Calling ${key} with`, args);\n    return original.apply(this, args);\n  };\n  return descriptor;\n}\n\n@sealed\nclass UserService {\n  @log\n  getUser(id: number) {\n    return fetch(`/api/users/${id}`);\n  }\n}" },
-  { q:"What is the difference between never, void, and undefined?", d:"Hard",
-    a:"<strong>void</strong>: function returns nothing (implicitly returns undefined). <strong>undefined</strong>: explicit undefined value. <strong>never</strong>: function never returns — it either throws or runs forever. TypeScript uses never for exhaustiveness checks — if you handle all union cases, the else branch is never.",
-    code:"// void: no meaningful return\nfunction log(msg: string): void {\n  console.log(msg);\n  // returns undefined implicitly\n}\n\n// never: truly never returns\nfunction fail(msg: string): never {\n  throw new Error(msg);\n}\n\nfunction infinite(): never {\n  while (true) {}\n}\n\n// Exhaustiveness check with never\ntype Shape = 'circle' | 'square' | 'triangle';\nfunction area(s: Shape): number {\n  switch (s) {\n    case 'circle':   return Math.PI;\n    case 'square':   return 1;\n    case 'triangle': return 0.5;\n    default: const _: never = s; // error if case missed\n  }\n}" },
-  { q:"What are conditional types and mapped types?", d:"Hard",
-    a:"<strong>Conditional types</strong> act like ternaries at the type level: T extends U ? X : Y. <strong>Mapped types</strong> create new types by iterating over keys. Together they power TypeScript's built-in utilities (Partial, Required, Readonly). The infer keyword extracts types from within conditionals.",
-    code:"// Conditional type\ntype IsString<T> = T extends string ? true : false;\ntype A = IsString<'hi'>;    // true\ntype B = IsString<42>;      // false\n\n// infer: extract inner type\ntype ReturnType<T> = T extends (...args: any) => infer R ? R : never;\ntype Unwrap<T>    = T extends Promise<infer U> ? U : T;\n\n// Mapped type\ntype Readonly<T> = {\n  readonly [K in keyof T]: T[K];\n};\ntype Nullable<T> = {\n  [K in keyof T]: T[K] | null;\n};\n\n// Conditional + mapped\ntype NonNullableProps<T> = {\n  [K in keyof T as T[K] extends null | undefined ? never : K]: T[K];\n};" },
+  {q:"What is TypeScript and why use it?", d:"Easy", a:"TypeScript is a <strong>typed superset of JavaScript</strong>. Catches type errors at compile-time, better IDE support.", code:"function add(a: number, b: number): number {\n  return a + b;\n}"},
+  {q:"What is the difference between interface and type?", d:"Medium", a:"<strong>interface</strong>: extendable, declaration merging. <strong>type</strong>: unions, intersections, mapped types.", code:"interface User { id: number; }\ntype ID = string | number;"},
+  {q:"What are generics in TypeScript?", d:"Medium", a:"Generics create <strong>reusable, type-safe components</strong> that work with multiple types.", code:"function first<T>(arr: T[]): T {\n  return arr[0];\n}"},
+  {q:"What are union and intersection types?", d:"Medium", a:"<strong>Union (|)</strong>: one of several types. <strong>Intersection (&)</strong>: satisfies ALL types.", code:"type ID = string | number;\ntype Entity = Timestamped & Identifiable;"},
+  {q:"What is 'any' vs 'unknown'?", d:"Medium", a:"<strong>any</strong>: opts out of type checking. <strong>unknown</strong>: must narrow type before use. Prefer unknown.", code:"let x: unknown = getValue();\nif (typeof x === 'string') {\n  x.toUpperCase(); // narrowed\n}"},
+  {q:"What are TypeScript utility types?", d:"Medium", a:"Built-in types that transform types: <strong>Partial</strong>, <strong>Pick</strong>, <strong>Omit</strong>, <strong>Readonly</strong>, <strong>Record</strong>.", code:"type UpdateUser = Partial<User>;\ntype Preview = Pick<User, 'id' | 'name'>;"},
+  {q:"What is type narrowing?", d:"Medium", a:"Type narrowing refines a broad type to specific inside conditional. Use typeof, instanceof, in, type predicates.", code:"if (typeof x === 'string') {\n  // x is string here\n}"},
+  {q:"What are decorators?", d:"Hard", a:"Meta-programming syntax to annotate classes, methods, properties. Used in Angular, NestJS.", code:"@sealed\nclass Service { ... }"},
+  {q:"What is the difference between never, void, and undefined?", d:"Hard", a:"<strong>void</strong>: returns nothing. <strong>undefined</strong>: explicit value. <strong>never</strong>: never returns (throws or infinite).", code:"function fail(msg: string): never {\n  throw new Error(msg);\n}"},
+  {q:"What are conditional and mapped types?", d:"Hard", a:"<strong>Conditional</strong>: T extends U ? X : Y. <strong>Mapped</strong>: iterate over keys to create new types.", code:"type Readonly<T> = {\n  readonly [K in keyof T]: T[K];\n};"},
 ],
 };
 
@@ -809,19 +552,18 @@ function toggleTheme() {
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
   updateThemeButton(next);
-  // Re-render to update colors
   renderTabs();
   updateSection();
 }
 
 function updateThemeButton(theme) {
-  const icon  = document.getElementById('theme-icon');
+  const icon = document.getElementById('theme-icon');
   const label = document.getElementById('theme-label');
   if (theme === 'dark') {
-    icon.textContent  = '🌙';
+    icon.textContent = '🌙';
     label.textContent = 'Dark';
   } else {
-    icon.textContent  = '☀️';
+    icon.textContent = '☀️';
     label.textContent = 'Light';
   }
 }
@@ -834,7 +576,6 @@ function tabClass(t) {
 function renderStats() {
   const bar = document.getElementById('stats-bar');
   if (!bar) return;
-  const total = Object.values(DATA).reduce((acc, arr) => acc + arr.length, 0);
   bar.innerHTML = TABS.map(t => `
     <div class="stat">
       <span class="stat-num" style="color:${getColor(t)}">${DATA[t].length}</span>
@@ -877,10 +618,10 @@ function setFilter(f) {
 }
 
 function updateSection() {
-  const dot   = document.getElementById('section-dot');
+  const dot = document.getElementById('section-dot');
   const title = document.getElementById('section-title');
-  if(dot)   dot.style.background = getColor(activeTab);
-  if(title) title.textContent    = activeTab;
+  if(dot) dot.style.background = getColor(activeTab);
+  if(title) title.textContent = activeTab;
 }
 
 function renderCards() {
@@ -892,8 +633,8 @@ function renderCards() {
   });
 
   const container = document.getElementById('cards');
-  const emptyEl   = document.getElementById('empty');
-  const countEl   = document.getElementById('section-count');
+  const emptyEl = document.getElementById('empty');
+  const countEl = document.getElementById('section-count');
 
   if(countEl) countEl.textContent = `${items.length} question${items.length !== 1 ? 's' : ''}`;
 
@@ -963,7 +704,7 @@ function updateProgress() {
   const pct = Math.round((viewed.size / total) * 100);
   const el = document.getElementById('progress');
   const txt = document.getElementById('progress-text');
-  if(el)  el.style.width = pct + '%';
+  if(el) el.style.width = pct + '%';
   if(txt) txt.textContent = `${viewed.size} / ${total} viewed`;
 }
 
@@ -971,8 +712,7 @@ function copyCode(event, key) {
   event.stopPropagation();
   const pre = document.getElementById(`code-${key}`);
   if(!pre) return;
-  const text = pre.textContent
-    .replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+  const text = pre.textContent.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
   navigator.clipboard.writeText(text).then(() => {
     const btn = event.currentTarget;
     btn.classList.add('copied');
@@ -989,7 +729,7 @@ document.getElementById('search').addEventListener('input', () => {
   renderCards();
 });
 
-// Init: restore saved theme preference
+// Init
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeButton(savedTheme);
