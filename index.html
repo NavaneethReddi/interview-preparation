@@ -11,76 +11,82 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:         #f5f6fa;
-    --bg-card:    #ffffff;
-    --bg-hover:   #f0f2f8;
-    --bg-code:    #1a1d27;
-    --border:     rgba(0,0,0,0.07);
-    --border-md:  rgba(0,0,0,0.13);
-    --text:       #111318;
-    --text-sub:   #4a5068;
-    --text-dim:   #9097b0;
-    --accent:     #2563eb;
-    --accent-dim: rgba(37,99,235,0.09);
-    --accent-glow:rgba(37,99,235,0.22);
-    --html:       #e85d1a;
-    --html-dim:   rgba(232,93,26,0.10);
-    --css:        #1e6fd9d9;
-    --css-dim:    rgba(30,221,217,0.10);
-    --js:         #c89b10;
-    --js-dim:     rgba(200,155,16,0.10);
-    --react:      #0794b8;
-    --react-dim:  rgba(7,148,184,0.10);
-    --ts:         #2563eb;
-    --ts-dim:     rgba(37,99,235,0.10);
-    --easy:       #16a34a;
-    --easy-dim:   rgba(22,163,74,0.10);
-    --med:        #d97706;
-    --med-dim:    rgba(217,119,6,0.10);
-    --hard:       #dc2626;
-    --hard-dim:   rgba(220,38,38,0.10);
-    --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md:  0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
-    --radius:     14px;
-    --radius-sm:  9px;
-    --font-head:  'Syne', sans-serif;
-    --font-body:  'DM Sans', sans-serif;
-    --font-mono:  'DM Mono', monospace;
-    --grid-color: rgba(0,0,0,0.035);
+    --bg: #f4f5f9;
+    --bg-card: #ffffff;
+    --bg-hover: #eef0f6;
+    --bg-code: #1a1d27;
+    --border: rgba(0,0,0,0.06);
+    --border-md: rgba(0,0,0,0.12);
+    --text: #0f1117;
+    --text-sub: #3d4460;
+    --text-dim: #8891aa;
+    --accent: #2563eb;
+    --accent-dim: rgba(37,99,235,0.08);
+    --accent-glow: rgba(37,99,235,0.2);
+    --html: #e85d1a;
+    --html-dim: rgba(232,93,26,0.08);
+    --css: #1e6fd9;
+    --css-dim: rgba(30,111,217,0.08);
+    --js: #b8890e;
+    --js-dim: rgba(184,137,14,0.08);
+    --react: #0794b8;
+    --react-dim: rgba(7,148,184,0.08);
+    --ts: #2563eb;
+    --ts-dim: rgba(37,99,235,0.08);
+    --perf: #6d28d9;
+    --perf-dim: rgba(109,40,217,0.08);
+    --easy: #16a34a;
+    --easy-dim: rgba(22,163,74,0.08);
+    --med: #d97706;
+    --med-dim: rgba(217,119,6,0.08);
+    --hard: #dc2626;
+    --hard-dim: rgba(220,38,38,0.08);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.03);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+    --radius: 14px;
+    --radius-sm: 10px;
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --grid-color: rgba(0,0,0,0.03);
   }
 
   [data-theme="dark"] {
-    --bg:         #0c0e13;
-    --bg-card:    #13161e;
-    --bg-hover:   #1a1e2a;
-    --bg-code:    #090b10;
-    --border:     rgba(255,255,255,0.07);
-    --border-md:  rgba(255,255,255,0.13);
-    --text:       #edf0f7;
-    --text-sub:   #8891aa;
-    --text-dim:   #4f576e;
-    --accent:     #5b8df5;
-    --accent-dim: rgba(91,141,245,0.12);
-    --accent-glow:rgba(91,141,245,0.28);
-    --html:       #ff7444;
-    --html-dim:   rgba(255,116,68,0.12);
-    --css:        #5b9cf5;
-    --css-dim:    rgba(91,156,245,0.12);
-    --js:         #f7ca48;
-    --js-dim:     rgba(247,202,72,0.12);
-    --react:      #5dd3f3;
-    --react-dim:  rgba(93,211,243,0.12);
-    --ts:         #5b8df5;
-    --ts-dim:     rgba(91,141,245,0.12);
-    --easy:       #4ade80;
-    --easy-dim:   rgba(74,222,128,0.12);
-    --med:        #fb923c;
-    --med-dim:    rgba(251,146,60,0.12);
-    --hard:       #f87171;
-    --hard-dim:   rgba(248,113,113,0.12);
-    --shadow-sm:  0 1px 3px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15);
-    --shadow-md:  0 4px 16px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.20);
-    --grid-color: rgba(255,255,255,0.025);
+    --bg: #0b0d12;
+    --bg-card: #13161e;
+    --bg-hover: #1a1e2a;
+    --bg-code: #090b10;
+    --border: rgba(255,255,255,0.06);
+    --border-md: rgba(255,255,255,0.12);
+    --text: #eaecf4;
+    --text-sub: #8891aa;
+    --text-dim: #4f576e;
+    --accent: #5b8df5;
+    --accent-dim: rgba(91,141,245,0.1);
+    --accent-glow: rgba(91,141,245,0.25);
+    --html: #ff7444;
+    --html-dim: rgba(255,116,68,0.1);
+    --css: #5b9cf5;
+    --css-dim: rgba(91,156,245,0.1);
+    --js: #f7ca48;
+    --js-dim: rgba(247,202,72,0.1);
+    --react: #5dd3f3;
+    --react-dim: rgba(93,211,243,0.1);
+    --ts: #5b8df5;
+    --ts-dim: rgba(91,141,245,0.1);
+    --perf: #a78bfa;
+    --perf-dim: rgba(167,139,250,0.1);
+    --easy: #4ade80;
+    --easy-dim: rgba(74,222,128,0.1);
+    --med: #fb923c;
+    --med-dim: rgba(251,146,60,0.1);
+    --hard: #f87171;
+    --hard-dim: rgba(248,113,113,0.1);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.15);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.4);
+    --grid-color: rgba(255,255,255,0.02);
   }
 
   html { scroll-behavior: smooth; }
@@ -93,7 +99,7 @@
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
-    transition: background 0.25s, color 0.25s;
+    transition: background 0.3s, color 0.3s;
   }
 
   body::before {
@@ -103,14 +109,39 @@
     background-image:
       linear-gradient(var(--grid-color) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-size: 48px 48px;
     pointer-events: none;
     z-index: 0;
   }
 
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-  header { padding: 52px 0 44px; }
+  /* Sticky toolbar */
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    transition: background 0.3s, box-shadow 0.2s;
+  }
+  .sticky-bar.scrolled {
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  [data-theme="light"] .sticky-bar.scrolled { background: rgba(244,245,249,0.85); }
+  [data-theme="dark"] .sticky-bar.scrolled { background: rgba(11,13,18,0.85); }
+  .sticky-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .sticky-inner .tabs { flex: 1; }
+  .sticky-inner .theme-toggle { flex-shrink: 0; }
+
+  /* Header */
+  header { padding: 56px 0 40px; }
 
   .header-top {
     display: flex; align-items: flex-start; justify-content: space-between;
@@ -120,36 +151,36 @@
   .header-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--accent-dim); border: 1px solid var(--accent-glow);
-    border-radius: 20px; padding: 4px 14px;
+    border-radius: 20px; padding: 5px 14px;
     font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
     color: var(--accent); text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .header-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
 
-  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.75); } }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.7); } }
 
   h1 {
     font-family: var(--font-head);
-    font-size: clamp(32px, 5.5vw, 54px);
+    font-size: clamp(30px, 5.5vw, 52px);
     font-weight: 800;
     line-height: 1.1;
-    letter-spacing: -0.025em;
-    margin-bottom: 14px;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
   }
 
   h1 .gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--react) 55%, var(--js) 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--react) 50%, var(--js) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .header-desc { color: var(--text-sub); font-size: 15.5px; max-width: 500px; line-height: 1.7; margin-bottom: 32px; }
+  .header-desc { color: var(--text-sub); font-size: 15px; max-width: 480px; line-height: 1.7; margin-bottom: 28px; }
 
   .theme-toggle {
-    display: flex; align-items: center; gap: 8px;
-    padding: 8px 14px;
+    display: flex; align-items: center; gap: 7px;
+    padding: 7px 14px;
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 20px; cursor: pointer;
     font-family: var(--font-mono); font-size: 11px; color: var(--text-sub);
@@ -157,30 +188,41 @@
     box-shadow: var(--shadow-sm);
   }
   .theme-toggle:hover { border-color: var(--border-md); color: var(--text); }
-  .theme-toggle .toggle-icon { font-size: 14px; line-height: 1; }
+  .theme-toggle .toggle-icon { font-size: 13px; line-height: 1; }
 
-  .stats {
-    display: flex; gap: 0; flex-wrap: wrap;
+  /* Stats */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    margin-bottom: 36px;
-    overflow: hidden;
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
     box-shadow: var(--shadow-sm);
-  }
-  .stat {
-    display: flex; flex-direction: column;
-    padding: 18px 24px; flex: 1; min-width: 80px;
+    transition: all 0.15s;
     position: relative;
+    overflow: hidden;
   }
-  .stat + .stat::before {
-    content: ''; position: absolute; left: 0; top: 20%; bottom: 20%;
-    width: 1px; background: var(--border);
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--stat-color, var(--accent));
+    opacity: 0.7;
   }
-  .stat-num { font-family: var(--font-head); font-size: 24px; font-weight: 700; line-height: 1; }
-  .stat-lbl { font-size: 10.5px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 5px; }
+  .stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+  .stat-num { font-family: var(--font-head); font-size: 22px; font-weight: 700; line-height: 1; }
+  .stat-lbl { font-size: 10px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 5px; }
+  .stat-bar-mini { margin-top: 8px; height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .stat-bar-fill { height: 100%; border-radius: 3px; transition: width 0.4s ease; }
 
-  .controls { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+  /* Controls */
+  .controls { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
 
   .search-box { position: relative; }
   .search-box svg {
@@ -188,7 +230,7 @@
     color: var(--text-dim); pointer-events: none;
   }
   .search-box input {
-    width: 100%; padding: 12px 14px 12px 44px;
+    width: 100%; padding: 11px 14px 11px 42px;
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: var(--radius-sm); color: var(--text);
     font-family: var(--font-body); font-size: 14px;
@@ -197,73 +239,107 @@
   }
   .search-box input::placeholder { color: var(--text-dim); }
   .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+  .search-clear {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px; border-radius: 50%;
+    border: none; background: var(--bg-hover); cursor: pointer;
+    display: none; align-items: center; justify-content: center;
+    color: var(--text-dim); font-size: 13px; line-height: 1;
+    transition: all 0.15s;
+  }
+  .search-clear:hover { background: var(--border-md); color: var(--text-sub); }
+  .search-box.has-value .search-clear { display: flex; }
 
-  .tabs { display: flex; gap: 5px; flex-wrap: wrap; }
+  .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
 
   .tab {
-    display: flex; align-items: center; gap: 7px;
-    padding: 8px 16px;
+    display: flex; align-items: center; gap: 6px;
+    padding: 7px 14px;
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: var(--radius-sm); cursor: pointer;
-    font-family: var(--font-head); font-size: 13px; font-weight: 600;
-    color: var(--text-sub); transition: all 0.16s;
+    font-family: var(--font-head); font-size: 12.5px; font-weight: 600;
+    color: var(--text-sub); transition: all 0.15s;
     user-select: none; box-shadow: var(--shadow-sm);
   }
   .tab:hover { border-color: var(--border-md); color: var(--text); background: var(--bg-hover); }
-  .tab .dot { width: 7px; height: 7px; border-radius: 50%; }
-  .tab .cnt { font-family: var(--font-mono); font-size: 10px; opacity: 0.55; }
+  .tab .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .tab .cnt { font-family: var(--font-mono); font-size: 10px; opacity: 0.5; }
 
   .tab.active-html { border-color: var(--html); background: var(--html-dim); color: var(--html); }
   .tab.active-css  { border-color: var(--css);  background: var(--css-dim);  color: var(--css); }
   .tab.active-js   { border-color: var(--js);   background: var(--js-dim);   color: var(--js); }
   .tab.active-react{ border-color: var(--react);background: var(--react-dim);color: var(--react); }
   .tab.active-ts   { border-color: var(--ts);   background: var(--ts-dim);   color: var(--ts); }
+  .tab.active-perf { border-color: var(--perf); background: var(--perf-dim); color: var(--perf); }
 
-  .filters { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
-  .filter-lbl { font-size: 11.5px; color: var(--text-dim); font-family: var(--font-mono); }
+  .filters { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .filter-lbl { font-size: 11px; color: var(--text-dim); font-family: var(--font-mono); }
 
   .pill {
-    padding: 4px 12px; border-radius: 20px;
+    padding: 4px 11px; border-radius: 20px;
     font-size: 11px; font-weight: 500; font-family: var(--font-mono);
     cursor: pointer; border: 1px solid transparent; transition: all 0.15s;
     user-select: none;
   }
   .pill-all  { background: var(--bg-hover); color: var(--text-sub); border-color: var(--border-md); }
-  .pill-easy { background: var(--easy-dim); color: var(--easy); border-color: rgba(74,222,128,0.25); }
-  .pill-med  { background: var(--med-dim);  color: var(--med);  border-color: rgba(251,146,60,0.25); }
-  .pill-hard { background: var(--hard-dim); color: var(--hard); border-color: rgba(248,113,113,0.25); }
-  .pill.inactive { opacity: 0.3; }
+  .pill-easy { background: var(--easy-dim); color: var(--easy); border-color: rgba(74,222,128,0.2); }
+  .pill-med  { background: var(--med-dim);  color: var(--med);  border-color: rgba(251,146,60,0.2); }
+  .pill-hard { background: var(--hard-dim); color: var(--hard); border-color: rgba(248,113,113,0.2); }
+  .pill.inactive { opacity: 0.28; }
   .pill:hover { opacity: 1 !important; }
 
-  .cards { display: flex; flex-direction: column; gap: 7px; padding-bottom: 80px; }
+  /* Progress */
+  .progress-wrap { margin-bottom: 20px; }
+  .progress-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .progress-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+  .progress-bar { height: 5px; background: var(--border); border-radius: 5px; overflow: hidden; }
+  .progress-fill {
+    height: 100%; border-radius: 5px;
+    background: linear-gradient(90deg, var(--accent), var(--react));
+    transition: width 0.4s ease;
+  }
+
+  /* Section */
+  .section-label {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .section-label-left {
+    display: flex; align-items: center; gap: 9px;
+    font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--text-sub);
+  }
+  .section-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .section-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+
+  /* Cards */
+  .cards { display: flex; flex-direction: column; gap: 6px; padding-bottom: 80px; }
 
   .qcard {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
     box-shadow: var(--shadow-sm);
   }
   .qcard:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); transform: translateY(-1px); }
-  .qcard.expanded { transform: none; }
-  .qcard.open-html  { border-color: rgba(232,93,26,0.35); }
-  .qcard.open-css   { border-color: rgba(30,221,217,0.35); }
-  .qcard.open-js    { border-color: rgba(200,155,16,0.35); }
-  .qcard.open-react { border-color: rgba(7,148,184,0.35); }
-  .qcard.open-ts    { border-color: rgba(37,99,235,0.35); }
-  [data-theme="dark"] .qcard.open-html  { border-color: rgba(255,116,68,0.35); }
-  [data-theme="dark"] .qcard.open-css   { border-color: rgba(91,156,245,0.35); }
-  [data-theme="dark"] .qcard.open-js    { border-color: rgba(247,202,72,0.35); }
-  [data-theme="dark"] .qcard.open-react { border-color: rgba(93,211,243,0.35); }
+  .qcard.expanded { transform: none; box-shadow: var(--shadow-md); }
+
+  .qcard.open-html  { border-left: 3px solid var(--html); }
+  .qcard.open-css   { border-left: 3px solid var(--css); }
+  .qcard.open-js    { border-left: 3px solid var(--js); }
+  .qcard.open-react { border-left: 3px solid var(--react); }
+  .qcard.open-ts    { border-left: 3px solid var(--ts); }
+  .qcard.open-perf  { border-left: 3px solid var(--perf); }
 
   .qheader {
-    display: flex; align-items: center; gap: 14px;
-    padding: 15px 18px; cursor: pointer; user-select: none;
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; cursor: pointer; user-select: none;
   }
 
   .qnum {
-    min-width: 28px; height: 28px; border-radius: 8px;
+    min-width: 30px; height: 30px; border-radius: 8px;
     background: var(--bg-hover); border: 1px solid var(--border);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
@@ -275,36 +351,51 @@
     color: var(--text);
   }
 
-  .qmeta { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+  .qmeta { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 
   .diff {
-    padding: 3px 10px; border-radius: 20px;
+    padding: 3px 9px; border-radius: 20px;
     font-family: var(--font-mono); font-size: 10px; font-weight: 500;
   }
   .diff-easy { background: var(--easy-dim); color: var(--easy); }
   .diff-med  { background: var(--med-dim);  color: var(--med);  }
   .diff-hard { background: var(--hard-dim); color: var(--hard); }
 
+  .bookmark-btn {
+    width: 26px; height: 26px; border-radius: 7px;
+    border: none; background: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-dim); transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .bookmark-btn:hover { background: var(--bg-hover); color: var(--accent); }
+  .bookmark-btn.bookmarked { color: var(--accent); }
+
   .chevron {
     width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
     border-radius: 7px; color: var(--text-dim);
-    transition: transform 0.22s ease, background 0.15s;
+    transition: transform 0.25s ease, background 0.15s;
+    flex-shrink: 0;
   }
   .qcard.expanded .chevron { transform: rotate(180deg); }
   .qheader:hover .chevron { background: var(--bg-hover); color: var(--text-sub); }
 
+  /* Answer */
   .qbody {
-    display: none;
-    padding: 0 18px 18px 60px;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .qcard.expanded .qbody { max-height: 1200px; }
+
+  .qbody-inner {
+    padding: 0 16px 16px 58px;
     border-top: 1px solid var(--border);
   }
-  .qcard.expanded .qbody { display: block; }
 
   .answer-text {
     padding-top: 14px;
     font-size: 14px; color: var(--text-sub); line-height: 1.8;
   }
-
   .answer-text strong { color: var(--text); font-weight: 500; }
 
   .code-block {
@@ -313,7 +404,6 @@
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: var(--radius-sm);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
   }
   .code-header {
     display: flex; align-items: center; justify-content: space-between;
@@ -321,14 +411,14 @@
     border-bottom: 1px solid rgba(255,255,255,0.06);
     background: rgba(255,255,255,0.03);
   }
-  .code-lang { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.07em; text-transform: uppercase; }
+  .code-lang { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.28); letter-spacing: 0.07em; text-transform: uppercase; }
   .copy-btn {
     display: flex; align-items: center; gap: 5px;
-    font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.3);
+    font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.28);
     background: none; border: none; cursor: pointer; padding: 2px 7px;
     border-radius: 4px; transition: all 0.15s;
   }
-  .copy-btn:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65); }
+  .copy-btn:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
   .copy-btn.copied { color: #4ade80; }
 
   pre {
@@ -343,7 +433,6 @@
   .st { color: #a5d6ff; }
   .cm { color: #8b949e; font-style: italic; }
   .nm { color: #79c0ff; }
-  .op { color: #ff7b72; }
 
   .empty {
     display: none; text-align: center; padding: 64px 24px;
@@ -352,48 +441,34 @@
   .empty svg { margin-bottom: 16px; opacity: 0.3; }
   .empty p { font-size: 14px; }
 
-  .progress-wrap { margin-bottom: 24px; }
-  .progress-meta {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 7px;
+  .back-to-top {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--bg-card); border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--text-sub);
+    opacity: 0; transform: translateY(8px);
+    transition: all 0.25s; z-index: 50;
   }
-  .progress-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
-  .progress-bar {
-    height: 4px; background: var(--border); border-radius: 4px; overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%; border-radius: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--react));
-    transition: width 0.35s ease;
-  }
-
-  .section-label {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  .section-label-left {
-    display: flex; align-items: center; gap: 10px;
-    font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
-    color: var(--text-sub);
-  }
-  .section-dot { width: 8px; height: 8px; border-radius: 50%; }
-  .section-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+  .back-to-top.visible { opacity: 1; transform: translateY(0); }
+  .back-to-top:hover { background: var(--bg-hover); color: var(--text); }
 
   ::-webkit-scrollbar { width: 5px; height: 5px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 3px; }
 
   @media (max-width: 600px) {
-    .qbody { padding-left: 18px; }
-    .stats { gap: 0; }
-    .stat { padding: 14px 16px; }
-    h1 { font-size: 30px; }
+    .qbody-inner { padding-left: 16px; }
+    h1 { font-size: 28px; }
     .header-top { flex-direction: column-reverse; }
     .theme-toggle { align-self: flex-end; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .sticky-inner { gap: 8px; }
   }
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-  .qcard { animation: fadeUp 0.22s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .qcard { animation: fadeUp 0.2s ease both; }
 </style>
 </head>
 <body>
@@ -404,28 +479,36 @@
       <div>
         <div class="header-eyebrow"><span></span> Interview Prep Hub</div>
         <h1>Frontend <span class="gradient">Interview</span><br>Questions</h1>
-        <p class="header-desc">Master the most asked questions across HTML, CSS, JavaScript, React, and TypeScript. Curated answers with real code examples.</p>
+        <p class="header-desc">Master the most asked questions across HTML, CSS, JavaScript, React, TypeScript, and Performance. Curated answers with code examples.</p>
       </div>
-      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
-        <span class="toggle-icon" id="theme-icon">☀️</span>
+    </div>
+    <div class="stats-grid" id="stats-grid"></div>
+  </header>
+
+  <div class="sticky-bar" id="sticky-bar">
+    <div class="sticky-inner">
+      <div class="search-box" id="search-wrap">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="search" placeholder="Search questions..." autocomplete="off" />
+        <button class="search-clear" id="search-clear" onclick="clearSearch()">&times;</button>
+      </div>
+      <div class="tabs" id="tabs"></div>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="toggle-icon" id="theme-icon">&#9728;</span>
         <span id="theme-label">Light</span>
       </button>
     </div>
-    <div class="stats" id="stats-bar"></div>
-  </header>
+  </div>
 
   <div class="controls">
-    <div class="search-box">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="search" placeholder="Search questions, answers, or topics..." autocomplete="off" />
-    </div>
-    <div class="tabs" id="tabs"></div>
     <div class="filters">
       <span class="filter-lbl">Difficulty:</span>
       <span class="pill pill-all" id="f-all" onclick="setFilter('all')">All</span>
       <span class="pill pill-easy" id="f-Easy" onclick="setFilter('Easy')">Easy</span>
       <span class="pill pill-med"  id="f-Medium" onclick="setFilter('Medium')">Medium</span>
       <span class="pill pill-hard" id="f-Hard" onclick="setFilter('Hard')">Hard</span>
+      <span style="flex:1"></span>
+      <span class="pill pill-all" id="f-bookmarked" onclick="setFilter('bookmarked')">Bookmarked</span>
     </div>
   </div>
 
@@ -452,10 +535,14 @@
   </div>
 </div>
 
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
 <script>
-const TABS = ['HTML','CSS','JavaScript','React','TypeScript'];
-const COLORS = { HTML:'#e85d1a', CSS:'#1e6fd9', JavaScript:'#c89b10', React:'#0794b8', TypeScript:'#2563eb' };
-const DARK_COLORS = { HTML:'#ff7444', CSS:'#5b9cf5', JavaScript:'#f7ca48', React:'#5dd3f3', TypeScript:'#5b8df5' };
+const TABS = ['HTML','CSS','JavaScript','React','TypeScript','Performance'];
+const COLORS = { HTML:'#e85d1a', CSS:'#1e6fd9', JavaScript:'#b8890e', React:'#0794b8', TypeScript:'#2563eb', Performance:'#6d28d9' };
+const DARK_COLORS = { HTML:'#ff7444', CSS:'#5b9cf5', JavaScript:'#f7ca48', React:'#5dd3f3', TypeScript:'#5b8df5', Performance:'#a78bfa' };
 
 function getColor(tab) {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? DARK_COLORS[tab] : COLORS[tab];
@@ -463,108 +550,144 @@ function getColor(tab) {
 
 const DATA = {
 HTML: [
-  {q:"What is the purpose of <!DOCTYPE html>?", d:"Easy", a:"It tells the browser which version of HTML the document uses. Without it, browsers enter <strong>quirks mode</strong> — a legacy rendering mode with inconsistent behavior across browsers.", code:"&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n  &lt;head&gt;...&lt;/head&gt;\n&lt;/html&gt;"},
-  {q:"What is semantic HTML and why does it matter?", d:"Easy", a:"Semantic HTML uses meaningful tags that describe the <strong>purpose</strong> of content — &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt; — rather than generic &lt;div&gt;. Benefits: accessibility, SEO, and maintainability.", code:"&lt;header&gt;\n  &lt;nav&gt;...&lt;/nav&gt;\n&lt;/header&gt;\n&lt;main&gt;\n  &lt;article&gt;...&lt;/article&gt;\n&lt;/main&gt;"},
-  {q:"What is the difference between &lt;script&gt;, &lt;script async&gt;, and &lt;script defer&gt;?", d:"Medium", a:"<strong>&lt;script&gt;</strong> blocks HTML parsing. <strong>async</strong> downloads in parallel, runs immediately. <strong>defer</strong> downloads in parallel but waits until HTML is parsed. Use defer for most scripts.", code:"&lt;script src=\"app.js\" defer&gt;&lt;/script&gt;"},
-  {q:"What is the difference between id and class attributes?", d:"Easy", a:"An <strong>id</strong> must be unique per page. A <strong>class</strong> can be reused. Use id for unique targets, class for styling groups.", code:"&lt;header id=\"main-nav\"&gt;...&lt;/header&gt;\n&lt;div class=\"card featured\"&gt;...&lt;/div&gt;"},
-  {q:"What are data-* attributes?", d:"Easy", a:"Custom attributes that store extra data on HTML elements. Accessible in JS via <strong>element.dataset</strong>.", code:"&lt;button data-user-id=\"42\"&gt;\n  Delete\n&lt;/button&gt;\n\nbtn.dataset.userId // '42'"},
-  {q:"What is the purpose of the alt attribute on images?", d:"Easy", a:"Alt provides a <strong>text alternative</strong> when images fail to load, and is read by screen readers. Missing alt is an accessibility violation.", code:"&lt;img src=\"chart.png\" alt=\"Bar chart showing 40% growth\" /&gt;"},
-  {q:"What is the difference between &lt;section&gt; and &lt;article&gt;?", d:"Easy", a:"<strong>&lt;article&gt;</strong> is self-contained content that makes sense alone. <strong>&lt;section&gt;</strong> groups related content.", code:"&lt;article&gt;\n  &lt;section&gt;...&lt;/section&gt;\n&lt;/article&gt;"},
-  {q:"What is ARIA and when should you use it?", d:"Medium", a:"ARIA adds semantic meaning for screen readers. Use only when native HTML semantics are insufficient.", code:"&lt;div role=\"button\" tabindex=\"0\"&gt;\n  Close\n&lt;/div&gt;"},
-  {q:"What is the difference between &lt;input type='submit'&gt; and &lt;button&gt;?", d:"Easy", a:"&lt;input type='submit'&gt; is void element — can't contain HTML. &lt;button&gt; can contain HTML (icons, spans).", code:"&lt;button type=\"submit\"&gt;\n  &lt;svg&gt;...&lt;/svg&gt; Submit\n&lt;/button&gt;"},
-  {q:"What is lazy loading and how do you implement it?", d:"Medium", a:"Lazy loading defers loading until resources enter the viewport. Use <strong>loading=\"lazy\"</strong> on img and iframe.", code:"&lt;img src=\"photo.jpg\" loading=\"lazy\" alt=\"...\" /&gt;"},
-  {q:"What is the Shadow DOM?", d:"Medium", a:"Shadow DOM is a <strong>scoped, encapsulated DOM subtree</strong> — its styles and structure are isolated from the main document.", code:"const shadow = host.attachShadow({mode:'open'});\nshadow.innerHTML = '...';"},
-  {q:"What is the difference between localStorage, sessionStorage, and cookies?", d:"Medium", a:"<strong>localStorage</strong>: persists indefinitely, ~5MB. <strong>sessionStorage</strong>: cleared on tab close. <strong>Cookies</strong>: sent with every request, ~4KB.", code:"localStorage.setItem('theme','dark');\nsessionStorage.setItem('draft', data);"},
-  {q:"What is the &lt;picture&gt; element and srcset?", d:"Medium", a:"srcset provides resolution variants. &lt;picture&gt; adds art direction — different images at different viewport sizes.", code:"&lt;img srcset=\"img-400.jpg 400w, img-800.jpg 800w\" /&gt;"},
-  {q:"What are Web Components?", d:"Hard", a:"Browser-native APIs for creating <strong>reusable, encapsulated custom elements</strong>: Custom Elements, Shadow DOM, HTML Templates.", code:"class MyCard extends HTMLElement {}\ncustomElements.define('my-card', MyCard);"},
-  {q:"What is the difference between &lt;div&gt; and &lt;span&gt;?", d:"Easy", a:"<strong>&lt;div&gt;</strong> is a block-level element — starts on a new line, full width. <strong>&lt;span&gt;</strong> is inline — flows within text. Use div for containers/layout, span for inline text styling.", code:"&lt;div class=\"card\"&gt;Block element&lt;/div&gt;\n&lt;p&gt;Text with &lt;span class=\"highlight\"&gt;inline&lt;/span&gt; styling.&lt;/p&gt;"},
-  {q:"What is the &lt;figure&gt; and &lt;figcaption&gt; elements?", d:"Easy", a:"<strong>&lt;figure&gt;</strong> groups self-contained content like images, diagrams, code. <strong>&lt;figcaption&gt;</strong> provides a caption/legend. Both improve accessibility and SEO.", code:"&lt;figure&gt;\n  &lt;img src=\"diagram.png\" alt=\"System architecture\" /&gt;\n  &lt;figcaption&gt;Fig 1: System Architecture&lt;/figcaption&gt;\n&lt;/figure&gt;"},
-  {q:"What is the difference between &lt;head&gt; and &lt;header&gt;?", d:"Easy", a:"<strong>&lt;head&gt;</strong> contains metadata (title, scripts, styles) — not visible. <strong>&lt;header&gt;</strong> is a visible semantic element for introductory content/navigation.", code:"&lt;head&gt;\n  &lt;title&gt;Page Title&lt;/title&gt;\n&lt;/head&gt;\n\n&lt;header&gt;\n  &lt;nav&gt;...&lt;/nav&gt;\n&lt;/header&gt;"},
-  {q:"What are void elements in HTML?", d:"Easy", a:"Void elements have no content and no closing tag: &lt;img&gt;, &lt;br&gt;, &lt;hr&gt;, &lt;input&gt;, &lt;meta&gt;, &lt;link&gt;. They're self-closing by nature.", code:"&lt;img src=\"photo.jpg\" alt=\"Photo\" /&gt;\n&lt;br /&gt;\n&lt;input type=\"text\" /&gt;"},
-  {q:"What is the &lt;template&gt; element?", d:"Medium", a:"&lt;template&gt; holds HTML that's not rendered immediately. Cloned and inserted via JS. Used for dynamic content, Web Components, and avoiding repeated innerHTML.", code:"&lt;template id=\"card-template\"&gt;\n  &lt;div class=\"card\"&gt;\n    &lt;h3&gt;&lt;/h3&gt;\n    &lt;p&gt;&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/template&gt;\n\nconst template = document.getElementById('card-template');\nconst clone = template.content.cloneNode(true);"},
-  {q:"How do you make a form accessible?", d:"Medium", a:"Associate labels with inputs using <strong>&lt;label for=\"id\"&gt;</strong>. Use appropriate input types. Provide error messages linked via aria-describedby. Group related fields with &lt;fieldset&gt; and &lt;legend&gt;.", code:"&lt;label for=\"email\"&gt;Email&lt;/label&gt;\n&lt;input type=\"email\" id=\"email\" required /&gt;\n\n&lt;fieldset&gt;\n  &lt;legend&gt;Shipping Address&lt;/legend&gt;\n  &lt;!-- address fields --&gt;\n&lt;/fieldset&gt;"},
+  {q:"What is the purpose of <!DOCTYPE html>?", d:"Easy", a:"It tells the browser which version of HTML the document uses. Without it, browsers enter <strong>quirks mode</strong> — a legacy rendering mode with inconsistent behavior.", code:"&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n  &lt;head&gt;...&lt;/head&gt;\n&lt;/html&gt;"},
+  {q:"What is semantic HTML and why does it matter?", d:"Easy", a:"Semantic HTML uses meaningful tags — &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt; — rather than generic &lt;div&gt;. Benefits: <strong>accessibility</strong>, <strong>SEO</strong>, and maintainability.", code:"&lt;header&gt;&lt;nav&gt;...&lt;/nav&gt;&lt;/header&gt;\n&lt;main&gt;&lt;article&gt;...&lt;/article&gt;&lt;/main&gt;"},
+  {q:"What is the difference between &lt;script&gt;, &lt;script async&gt;, and &lt;script defer&gt;?", d:"Medium", a:"<strong>&lt;script&gt;</strong> blocks HTML parsing. <strong>async</strong> downloads in parallel, runs immediately (unordered). <strong>defer</strong> downloads in parallel but waits until HTML is parsed (ordered). Use defer for most scripts.", code:"&lt;script src=\"app.js\" defer&gt;&lt;/script&gt;"},
+  {q:"What is the difference between id and class attributes?", d:"Easy", a:"An <strong>id</strong> must be unique per page. A <strong>class</strong> can be reused. In CSS, id (#) has higher specificity than class (.).", code:"&lt;header id=\"main-nav\"&gt;...&lt;/header&gt;\n&lt;div class=\"card featured\"&gt;...&lt;/div&gt;"},
+  {q:"What are data-* attributes?", d:"Easy", a:"Custom attributes that store extra data on HTML elements. Accessible in JS via <strong>element.dataset</strong>. Great for passing config to JS components.", code:"&lt;button data-user-id=\"42\"&gt;Delete&lt;/button&gt;\nbtn.dataset.userId // '42'"},
+  {q:"What is the purpose of the alt attribute on images?", d:"Easy", a:"Alt provides a <strong>text alternative</strong> when images fail to load and is read by screen readers. Missing alt is an accessibility violation.", code:"&lt;img src=\"chart.png\" alt=\"Bar chart showing 40% growth\" /&gt;"},
+  {q:"What is the difference between &lt;section&gt; and &lt;article&gt;?", d:"Easy", a:"<strong>&lt;article&gt;</strong> is self-contained content that makes sense alone (blog post). <strong>&lt;section&gt;</strong> groups related content within a larger context.", code:"&lt;article&gt;\n  &lt;section&gt;...&lt;/section&gt;\n&lt;/article&gt;"},
+  {q:"What is ARIA and when should you use it?", d:"Medium", a:"ARIA adds semantic meaning for screen readers via roles, states, and properties. Use only when <strong>native HTML semantics are insufficient</strong>.", code:"&lt;div role=\"button\" tabindex=\"0\"&gt;Close&lt;/div&gt;"},
+  {q:"What is the difference between &lt;input type='submit'&gt; and &lt;button&gt;?", d:"Easy", a:"&lt;input type='submit'&gt; is a void element — can't contain HTML. &lt;button&gt; can contain icons, spans, and other HTML.", code:"&lt;button type=\"submit\"&gt;&lt;svg/&gt; Submit&lt;/button&gt;"},
+  {q:"What is lazy loading?", d:"Medium", a:"Lazy loading defers loading until resources enter the viewport. Use <strong>loading=\"lazy\"</strong> on &lt;img&gt; and &lt;iframe&gt;.", code:"&lt;img src=\"photo.jpg\" loading=\"lazy\" alt=\"...\" /&gt;"},
+  {q:"What is the Shadow DOM?", d:"Medium", a:"Shadow DOM is a <strong>scoped, encapsulated DOM subtree</strong> — its styles and structure are isolated from the main document. Used by Web Components.", code:"const shadow = host.attachShadow({mode:'open'});\nshadow.innerHTML = '&lt;style&gt;p{color:red}&lt;/style&gt;&lt;p&gt;Hi&lt;/p&gt;';"},
+  {q:"What is the difference between localStorage, sessionStorage, and cookies?", d:"Medium", a:"<strong>localStorage</strong>: persists indefinitely, ~5MB, never sent to server. <strong>sessionStorage</strong>: cleared on tab close. <strong>Cookies</strong>: sent with every HTTP request, ~4KB.", code:"localStorage.setItem('theme','dark');\nsessionStorage.setItem('draft', data);\ndocument.cookie = 'token=abc; Secure';"},
+  {q:"What is the &lt;picture&gt; element and srcset?", d:"Medium", a:"srcset provides resolution variants — browser picks best for screen. &lt;picture&gt; adds <strong>art direction</strong> — different images at different viewport sizes.", code:"&lt;img srcset=\"img-400.jpg 400w, img-800.jpg 800w\"\n     sizes=\"(max-width:600px) 100vw, 50vw\" /&gt;"},
+  {q:"What are Web Components?", d:"Hard", a:"Browser-native APIs for <strong>reusable, encapsulated custom elements</strong>: Custom Elements, Shadow DOM, and HTML Templates. No framework needed.", code:"class MyCard extends HTMLElement {\n  constructor() {\n    super();\n    this.attachShadow({mode:'open'});\n  }\n}\ncustomElements.define('my-card', MyCard);"},
+  {q:"What is the difference between &lt;div&gt; and &lt;span&gt;?", d:"Easy", a:"<strong>&lt;div&gt;</strong> is block-level — starts on new line, full width. <strong>&lt;span&gt;</strong> is inline — flows within text.", code:"&lt;div class=\"card\"&gt;Block&lt;/div&gt;\n&lt;p&gt;Text &lt;span class=\"hl\"&gt;inline&lt;/span&gt;.&lt;/p&gt;"},
+  {q:"What are void elements in HTML?", d:"Easy", a:"Void elements have no content and no closing tag: &lt;img&gt;, &lt;br&gt;, &lt;hr&gt;, &lt;input&gt;, &lt;meta&gt;, &lt;link&gt;.", code:"&lt;img src=\"photo.jpg\" alt=\"Photo\" /&gt;\n&lt;br /&gt;\n&lt;input type=\"text\" /&gt;"},
+  {q:"What is the &lt;template&gt; element?", d:"Medium", a:"&lt;template&gt; holds HTML that's <strong>not rendered immediately</strong>. Cloned and inserted via JS. Used for dynamic content and Web Components.", code:"&lt;template id=\"card-tpl\"&gt;\n  &lt;div class=\"card\"&gt;&lt;h3&gt;&lt;/h3&gt;&lt;/div&gt;\n&lt;/template&gt;\nconst clone = tpl.content.cloneNode(true);"},
+  {q:"How do you make a form accessible?", d:"Medium", a:"Associate labels with &lt;label for=\"id\"&gt;. Use appropriate input types. Provide error messages via aria-describedby. Group with &lt;fieldset&gt;/&lt;legend&gt;.", code:"&lt;label for=\"email\"&gt;Email&lt;/label&gt;\n&lt;input type=\"email\" id=\"email\" required /&gt;"},
+  {q:"What is Content Security Policy (CSP)?", d:"Hard", a:"CSP is an HTTP header that tells browsers <strong>which content sources are trusted</strong>. Primary defense against XSS — prevents inline scripts and limits external origins.", code:"Content-Security-Policy:\n  default-src 'self';\n  script-src 'self' cdn.example.com;\n  style-src 'self' fonts.googleapis.com;"},
+  {q:"What is the difference between GET and POST in forms?", d:"Easy", a:"<strong>GET</strong>: data in URL as query string — visible, cacheable, limited length. <strong>POST</strong>: data in request body — not in URL, supports larger payloads. Use POST for mutations.", code:"&lt;form action=\"/search\" method=\"GET\"&gt;\n  &lt;input name=\"q\" /&gt;\n&lt;/form&gt;\n\n&lt;form action=\"/login\" method=\"POST\"&gt;...&lt;/form&gt;"},
+  {q:"What is the &lt;dialog&gt; element?", d:"Medium", a:"<strong>&lt;dialog&gt;</strong> is a native HTML element for modals. Has .showModal() and .close() methods. Built-in backdrop, focus trapping, and Escape key handling.", code:"&lt;dialog id=\"modal\"&gt;\n  &lt;p&gt;Are you sure?&lt;/p&gt;\n  &lt;button onclick=\"modal.close()\"&gt;Close&lt;/button&gt;\n&lt;/dialog&gt;\n\ndocument.getElementById('modal').showModal();"},
+  {q:"What is the difference between &lt;head&gt; and &lt;header&gt;?", d:"Easy", a:"<strong>&lt;head&gt;</strong> contains metadata (title, scripts, styles) — invisible. <strong>&lt;header&gt;</strong> is a visible semantic element for introductory content and navigation.", code:"&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;\n&lt;header&gt;&lt;nav&gt;...&lt;/nav&gt;&lt;/header&gt;"},
+  {q:"What is the &lt;figure&gt; and &lt;figcaption&gt; elements?", d:"Easy", a:"<strong>&lt;figure&gt;</strong> groups self-contained content (images, diagrams). <strong>&lt;figcaption&gt;</strong> provides a caption. Both improve accessibility and SEO.", code:"&lt;figure&gt;\n  &lt;img src=\"diagram.png\" alt=\"Architecture\" /&gt;\n  &lt;figcaption&gt;Fig 1: Architecture&lt;/figcaption&gt;\n&lt;/figure&gt;"},
+  {q:"What are the different input types in HTML5?", d:"Easy", a:"HTML5 added types: email, url, number, range, date, color, search, tel. They provide built-in validation and mobile keyboard customization.", code:"&lt;input type=\"email\" /&gt;\n&lt;input type=\"number\" min=\"0\" max=\"100\" /&gt;\n&lt;input type=\"date\" /&gt;\n&lt;input type=\"range\" min=\"0\" max=\"10\" /&gt;"},
 ],
 CSS: [
-  {q:"What is the CSS Box Model?", d:"Easy", a:"Every element is a rectangular box: <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, <strong>margin</strong>. Use <strong>box-sizing: border-box</strong> globally.", code:"*, *::before, *::after {\n  box-sizing: border-box;\n}"},
-  {q:"What is CSS specificity and how are conflicts resolved?", d:"Medium", a:"Specificity is calculated as <strong>(inline, id, class, element)</strong>. Higher wins. !important overrides everything.", code:"#submit { color: red; } /* wins */\n.btn { color: blue; }"},
-  {q:"What is Flexbox and when do you use it?", d:"Medium", a:"Flexbox is a <strong>one-dimensional</strong> layout system. Perfect for navigation bars, centering, equal-height cards.", code:".center {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}"},
-  {q:"What is CSS Grid and how does it differ from Flexbox?", d:"Medium", a:"Grid is <strong>two-dimensional</strong> — controls rows AND columns. Flexbox is one-dimensional. Use Grid for page layouts.", code:".layout {\n  display: grid;\n  grid-template-columns: 240px 1fr;\n}"},
-  {q:"What is the difference between CSS position values?", d:"Medium", a:"<strong>static</strong>: default. <strong>relative</strong>: offset from normal position. <strong>absolute</strong>: removed from flow. <strong>fixed</strong>: relative to viewport. <strong>sticky</strong>: relative until threshold.", code:".sticky { position: sticky; top: 0; }"},
-  {q:"What is the difference between em, rem, px, vh, and vw?", d:"Easy", a:"<strong>px</strong>: fixed. <strong>em</strong>: relative to parent. <strong>rem</strong>: relative to root. <strong>vh/vw</strong>: viewport percentage.", code:":root { font-size: 16px; }\n.text { font-size: 1rem; }"},
-  {q:"What are CSS custom properties (variables)?", d:"Easy", a:"Declared with <strong>--</strong>, accessed via <strong>var()</strong>. Can be updated at runtime with JS.", code:":root {\n  --color-primary: #2563eb;\n}\n.btn { background: var(--color-primary); }"},
-  {q:"What is z-index and what creates a stacking context?", d:"Hard", a:"z-index controls layer order. Stacking context created by: position + z-index, opacity < 1, transform.", code:".modal { position: fixed; z-index: 1000; }"},
-  {q:"What is the difference between display:none and visibility:hidden?", d:"Easy", a:"<strong>display: none</strong> removes from layout. <strong>visibility: hidden</strong> hides but occupies space. <strong>opacity: 0</strong> is invisible but interactive.", code:".hidden { display: none; }\n.ghost { visibility: hidden; }"},
-  {q:"What is a pseudo-class vs a pseudo-element?", d:"Medium", a:"<strong>Pseudo-classes</strong> (:hover, :focus) target elements in a state. <strong>Pseudo-elements</strong> (::before, ::after) style parts of content.", code:".btn:hover { background: blue; }\n.card::before { content: ''; }"},
-  {q:"What are CSS transitions vs CSS animations?", d:"Medium", a:"<strong>Transitions</strong> animate between two states. <strong>Animations</strong> use @keyframes and run independently.", code:".btn { transition: all 0.2s; }\n@keyframes spin { to { transform: rotate(360deg); } }"},
-  {q:"How does CSS @media query work?", d:"Easy", a:"Media queries apply CSS conditionally based on viewport size or user preferences.", code:"@media (min-width: 640px) {\n  .grid { display: grid; }\n}"},
-  {q:"What is the cascade and how does it work?", d:"Medium", a:"The cascade determines which rule wins: origin > specificity > order of appearance.", code:"/* Later rule wins if same specificity */\n.btn { color: blue; }\n.btn { color: red; }"},
-  {q:"What is the contain property?", d:"Hard", a:"Tells the browser a subtree is independent, enabling rendering optimizations.", code:".card { contain: layout paint; }"},
-  {q:"What is the difference between margin: auto and justify-content: center?", d:"Easy", a:"<strong>margin: auto</strong> centers a block element horizontally within its parent. <strong>justify-content: center</strong> centers flex items along the main axis. Flexbox is more flexible for multiple items.", code:".box {\n  width: 200px;\n  margin: 0 auto; /* horizontal center */\n}\n\n.container {\n  display: flex;\n  justify-content: center; /* centers items */\n}"},
-  {q:"What are CSS functions?", d:"Easy", a:"CSS functions perform calculations. <strong>calc()</strong> for math, <strong>min()/max()</strong> for bounds, <strong>clamp()</strong> for ranges. Very useful for responsive sizing.", code:".box {\n  width: calc(100% - 32px);\n  font-size: clamp(14px, 2vw, 18px);\n  padding: min(5vw, 40px);\n}"},
-  {q:"What is CSS isolation property?", d:"Medium", a:"<strong>isolation: isolate</strong> creates a new stacking context. Prevents z-index from leaking into parent. Useful for components and modals.", code:".component {\n  isolation: isolate;\n  /* z-index stays scoped here */\n}\n\n.modal {\n  position: fixed;\n  z-index: 100;\n  isolation: isolate;\n}"},
-   {q:"What are logical properties in CSS?", d:"Hard", a:"Logical properties adapt to writing mode and direction. <strong>margin-inline</strong> vs margin-left/right. <strong>padding-block</strong> vs padding-top/bottom. Better for internationalization.", code:".box {\n  margin-inline: auto;  /* horizontal in LTR, vertical in vertical mode */\n  padding-block: 16px;    /* top/bottom in horizontal */\n  border-inline-start: 1px solid;\n}"},
-  {q:"What is the difference between width: 100% and width: auto?", d:"Easy", a:"<strong>width: 100%</strong> forces element to fill parent. <strong>width: auto</strong> lets browser calculate — default width based on display type, box-sizing, and margins.", code:"/* 100% ignores margins — can overflow */\n.box { width: 100%; margin: 0 20px; }\n\n/* auto accounts for margins */\n.box { width: auto; margin: 0 20px; }"},
+  {q:"What is the CSS Box Model?", d:"Easy", a:"Every element is a rectangular box: <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, <strong>margin</strong>. Use <strong>box-sizing: border-box</strong> globally to include padding and border in width.", code:"*, *::before, *::after {\n  box-sizing: border-box;\n}"},
+  {q:"What is CSS specificity?", d:"Medium", a:"Specificity is calculated as <strong>(inline, id, class, element)</strong>. Each column wins over lower columns regardless of count. !important overrides everything.", code:"#id { color: red; }      /* (0,1,0,0) wins */\n.class { color: blue; }  /* (0,0,1,0) */"},
+  {q:"What is Flexbox and when do you use it?", d:"Medium", a:"Flexbox is a <strong>one-dimensional</strong> layout system. Perfect for navigation bars, centering elements vertically, and distributing space.", code:".center {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}"},
+  {q:"What is CSS Grid and how does it differ from Flexbox?", d:"Medium", a:"Grid is <strong>two-dimensional</strong> — controls rows AND columns simultaneously. Use Grid for page layouts, Flexbox for component alignment.", code:".layout {\n  display: grid;\n  grid-template-columns: 240px 1fr;\n  gap: 16px;\n}"},
+  {q:"What is the difference between CSS position values?", d:"Medium", a:"<strong>static</strong>: default. <strong>relative</strong>: offset from normal position. <strong>absolute</strong>: positioned relative to nearest positioned ancestor. <strong>fixed</strong>: relative to viewport. <strong>sticky</strong>: relative until threshold, then fixed.", code:".sticky { position: sticky; top: 0; z-index: 10; }"},
+  {q:"What is the difference between em, rem, px, vh, and vw?", d:"Easy", a:"<strong>px</strong>: fixed. <strong>em</strong>: relative to parent font-size (compounds). <strong>rem</strong>: relative to root font-size (predictable). <strong>vh/vw</strong>: viewport percentage.", code:":root { font-size: 16px; }\n.text { font-size: 1rem; }  /* 16px */"},
+  {q:"What are CSS custom properties?", d:"Easy", a:"Declared with <strong>--</strong>, accessed via <strong>var()</strong>. Can be updated at runtime with JS. Cascade and inherit like any CSS property.", code:":root { --primary: #2563eb; }\n.btn { background: var(--primary); }"},
+  {q:"What is z-index and stacking context?", d:"Hard", a:"z-index controls layer order — only works on positioned elements. A <strong>stacking context</strong> is created by: position + z-index, opacity < 1, transform, filter. Children can't escape parent context.", code:".modal { position: fixed; z-index: 1000; }\n.component { isolation: isolate; }"},
+  {q:"What is the difference between display:none and visibility:hidden?", d:"Easy", a:"<strong>display: none</strong> removes from layout. <strong>visibility: hidden</strong> hides but occupies space. <strong>opacity: 0</strong> is invisible but interactive and animatable.", code:".hidden { display: none; }\n.ghost { visibility: hidden; }\n.fade { opacity: 0; }"},
+  {q:"What is a pseudo-class vs a pseudo-element?", d:"Medium", a:"<strong>Pseudo-classes</strong> (:hover, :focus, :nth-child) target elements in a specific state. <strong>Pseudo-elements</strong> (::before, ::after) style a specific part of content.", code:".btn:hover { background: blue; }\n.card::before { content: ''; }"},
+  {q:"What are CSS transitions vs CSS animations?", d:"Medium", a:"<strong>Transitions</strong> animate between two states triggered by a change. <strong>Animations</strong> use @keyframes, run independently, can loop and have multiple steps.", code:".btn { transition: all 0.2s ease; }\n@keyframes spin {\n  to { transform: rotate(360deg); }\n}"},
+  {q:"How does CSS @media query work?", d:"Easy", a:"Media queries apply CSS conditionally based on viewport size, device type, or user preferences. Use <strong>mobile-first</strong> with min-width breakpoints.", code:"@media (min-width: 640px) {\n  .grid { display: grid; }\n}\n@media (prefers-color-scheme: dark) { }"},
+  {q:"What is the cascade?", d:"Medium", a:"The cascade determines which rule wins: <strong>origin & importance</strong> > <strong>specificity</strong> > <strong>order of appearance</strong>. Same specificity — last rule wins.", code:".btn { color: blue; }\n.btn { color: red; }  /* wins */"},
+  {q:"What are CSS functions?", d:"Easy", a:"CSS functions perform calculations. <strong>calc()</strong> for math, <strong>min()/max()</strong> for bounds, <strong>clamp()</strong> for ranges. Essential for responsive sizing.", code:".box {\n  width: calc(100% - 32px);\n  font-size: clamp(14px, 2vw, 18px);\n}"},
+  {q:"What is the CSS isolation property?", d:"Medium", a:"<strong>isolation: isolate</strong> creates a new stacking context without needing position or z-index. Prevents z-index from leaking into parent.", code:".component { isolation: isolate; }"},
+  {q:"What are logical properties in CSS?", d:"Hard", a:"Logical properties adapt to writing mode and direction. <strong>margin-inline</strong> vs margin-left/right. <strong>padding-block</strong> vs padding-top/bottom. Better for internationalization.", code:".box {\n  margin-inline: auto;\n  padding-block: 16px;\n  border-inline-start: 1px solid;\n}"},
+  {q:"What is the difference between width: 100% and width: auto?", d:"Easy", a:"<strong>width: 100%</strong> forces element to fill parent (can overflow with margins). <strong>width: auto</strong> lets browser account for margins — default behavior.", code:".full { width: 100%; margin: 0 20px; } /* overflow */\n.auto { width: auto; margin: 0 20px; }  /* fine */"},
+  {q:"What is the contain property?", d:"Hard", a:"Tells the browser a subtree is independent, enabling <strong>rendering optimizations</strong>. <strong>contain: layout paint</strong> prevents the element from affecting outside layout.", code:".card { contain: layout paint; }"},
+  {q:"What is the difference between nth-child and nth-of-type?", d:"Medium", a:"<strong>nth-child(n)</strong> counts all sibling children regardless of type. <strong>nth-of-type(n)</strong> counts only siblings of the same element type.", code:"li:nth-child(2)      /* 2nd child of any type */\nli:nth-of-type(odd)  /* odd li elements only */"},
+  {q:"What is the CSS gap property?", d:"Easy", a:"<strong>gap</strong> sets spacing between flex/grid items. Works in both Flexbox and Grid. Shorthand: row-gap and column-gap. Cleaner than margins.", code:".grid {\n  display: grid;\n  gap: 16px;  /* row and column */\n}\n.flex { display: flex; gap: 8px; }"},
+  {q:"What is aspect-ratio in CSS?", d:"Easy", a:"<strong>aspect-ratio</strong> sets the width-to-height ratio of an element. Great for responsive videos, images, and preventing layout shift.", code:".video {\n  aspect-ratio: 16 / 9;\n  width: 100%;\n}"},
+  {q:"What is the difference between absolute and relative units?", d:"Easy", a:"<strong>Absolute</strong>: px, pt — fixed size. <strong>Relative</strong>: em, rem, %, vw, vh — scale based on parent, root, or viewport. Prefer rem for fonts and % for layouts.", code:":root { font-size: 16px; }\nh1 { font-size: 2rem; }  /* 32px */"},
+  {q:"What is the CSS :has() selector?", d:"Medium", a:"<strong>:has()</strong> is a parent selector — selects an element based on its children. Called the 'parent selector'. Enables patterns impossible before without JS.", code:".card:has(img) { padding: 0; }\n.form:has(:invalid) { border-color: red; }\n/* Select .card only if it contains an img */"},
+  {q:"What is the difference between overflow: hidden and overflow: clip?", d:"Medium", a:"<strong>overflow: hidden</strong> clips content and creates a scroll container (affects layout). <strong>overflow: clip</strong> clips content without creating a scroll container — lighter weight, no scrolling possible.", code:".clip-box { overflow: clip; }\n.hidden-box { overflow: hidden; }"},
 ],
 JavaScript: [
-  {q:"What is the difference between var, let, and const?", d:"Easy", a:"<strong>var</strong>: function-scoped, hoisted. <strong>let</strong>: block-scoped, reassignable. <strong>const</strong>: block-scoped, not reassignable.", code:"var x = 1;\nlet y = 2;\nconst z = 3;"},
-  {q:"What is a closure?", d:"Medium", a:"A closure is created when an inner function <strong>retains access to its outer scope</strong> even after the outer function returns.", code:"function makeCounter() {\n  let count = 0;\n  return () => ++count;\n}"},
-  {q:"How does the JavaScript event loop work?", d:"Hard", a:"JS runs sync code, then drains <strong>microtasks</strong> (Promises), then one <strong>macrotask</strong> (setTimeout), then repeats.", code:"console.log('1');\nsetTimeout(() => log('3'), 0);\nPromise.resolve().then(() => log('2'));\n// Output: 1, 2, 3"},
-  {q:"What is hoisting in JavaScript?", d:"Medium", a:"Hoisting moves <strong>declarations</strong> to top of scope. var is initialized as undefined. let/const are hoisted but not initialized (TDZ).", code:"console.log(a); // undefined\nvar a = 5;"},
-  {q:"How do Promises and async/await work?", d:"Medium", a:"A Promise is <strong>pending</strong>, <strong>fulfilled</strong>, or <strong>rejected</strong>. async/await is syntactic sugar over Promises.", code:"async function getUser() {\n  const res = await fetch('/api/user');\n  return res.json();\n}"},
-  {q:"What is 'this' in JavaScript?", d:"Hard", a:"<strong>this</strong> is determined by how a function is called. Arrow functions inherit this from lexical scope.", code:"const obj = {\n  greet() { return this.name; }\n};"},
-  {q:"What is event delegation?", d:"Medium", a:"Attach <strong>one listener to a parent</strong> instead of many to children. Events bubble up from target.", code:"document.querySelector('#list')\n  .addEventListener('click', e => {\n    if (e.target.matches('li')) handle(e);\n  });"},
-  {q:"What is the difference between call, apply, and bind?", d:"Medium", a:"All three set <strong>this</strong>. <strong>call</strong> invokes immediately. <strong>apply</strong> takes args as array. <strong>bind</strong> returns new function.", code:"fn.call(obj, arg1, arg2);\nfn.apply(obj, [arg1, arg2]);\nconst bound = fn.bind(obj);"},
-  {q:"What is debouncing vs throttling?", d:"Medium", a:"<strong>Debouncing</strong> delays until after pause. <strong>Throttling</strong> limits to once per interval.", code:"const debounce = (fn, ms) => {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), ms);\n  };\n};"},
-  {q:"What is prototypal inheritance?", d:"Hard", a:"Every object has a <strong>[[Prototype]]</strong> link. class syntax is syntactic sugar over prototypal inheritance.", code:"const dog = Object.create(animal);\ndog.speak(); // inherited"},
-  {q:"What are generators and iterators?", d:"Hard", a:"An <strong>iterator</strong> has next() returning {value, done}. A <strong>generator</strong> uses function* and yield.", code:"function* range(start, end) {\n  for (let i = start; i < end; i++) yield i;\n}"},
-  {q:"What is destructuring in JavaScript?", d:"Easy", a:"Extracts values from arrays or objects into variables concisely.", code:"const {name, age} = user;\nconst [first, ...rest] = arr;"},
-  {q:"What is the difference between == and ===?", d:"Easy", a:"<strong>===</strong> compares value AND type. <strong>==</strong> does type coercion first. Always use ===.", code:"0 == false   // true\n0 === false  // false"},
-  {q:"What are map, filter, and reduce?", d:"Easy", a:"<strong>map</strong>: transform each item. <strong>filter</strong>: keep matching items. <strong>reduce</strong>: accumulate into single value.", code:"const doubled = nums.map(n => n * 2);\nconst evens = nums.filter(n => n % 2 === 0);\nconst sum = nums.reduce((a, b) => a + b, 0);"},
-  {q:"What is the spread operator and rest parameters?", d:"Easy", a:"<strong>Spread (...)</strong> expands iterables into elements. <strong>Rest (...)</strong> collects multiple elements into an array. Same syntax, different uses.", code:"// Spread\nconst arr = [...arr1, ...arr2];\nconst obj = {...obj1, ...obj2};\n\n// Rest parameters\nfunction sum(...nums) {\n  return nums.reduce((a, b) => a + b, 0);\n}"},
-  {q:"What is the difference between shallow and deep copy?", d:"Medium", a:"<strong>Shallow copy</strong> copies only top-level properties. Nested objects share references. <strong>Deep copy</strong> clones all nested structures. Use structuredClone() for deep copying.", code:"// Shallow\nconst shallow = {...obj};\nconst shallow2 = Object.assign({}, obj);\n\n// Deep\nconst deep = structuredClone(obj);\nconst deep2 = JSON.parse(JSON.stringify(obj));"},
-  {q:"What is the difference between null and undefined?", d:"Easy", a:"<strong>undefined</strong>: variable declared but not assigned, missing property, missing argument. <strong>null</strong>: intentional absence of value, must be assigned.", code:"let a;           // undefined\nlet b = null;     // explicit null\nconst obj = {};\nobj.x;            // undefined"},
-  {q:"What are symbols in JavaScript?", d:"Hard", a:"Symbols are unique, immutable identifiers. Used as object property keys to avoid collisions. Created with Symbol(). Well-known symbols control internal JS behavior.", code:"const id = Symbol('id');\nconst obj = {\n  [id]: 123,\n  name: 'John'\n};\nObject.keys(obj);     // ['name'] — symbols not enumerated\nObject.getOwnPropertySymbols(obj); // [Symbol(id)]"},
-  {q:"What is the difference between for...in and for...of?", d:"Easy", a:"<strong>for...in</strong> iterates over enumerable property keys (including inherited). <strong>for...of</strong> iterates over values of iterable objects (arrays, strings, Maps).", code:"const arr = ['a', 'b', 'c'];\n\nfor (const key in arr) console.log(key);   // 0, 1, 2\nfor (const val of arr) console.log(val);  // 'a', 'b', 'c'"},
-  {q:"What is memoization?", d:"Medium", a:"Memoization caches function results based on inputs. If same inputs again, returns cached result. Trade-off: memory for speed. Used heavily in recursion and React.", code:"function memoize(fn) {\n  const cache = new Map();\n  return (...args) => {\n    const key = JSON.stringify(args);\n    if (cache.has(key)) return cache.get(key);\n    const result = fn(...args);\n    cache.set(key, result);\n    return result;\n  };\n}"},
+  {q:"What is the difference between var, let, and const?", d:"Easy", a:"<strong>var</strong>: function-scoped, hoisted with undefined. <strong>let</strong>: block-scoped, reassignable. <strong>const</strong>: block-scoped, not reassignable (but objects are mutable).", code:"var x = 1;   // avoid\nlet y = 2;   // reassignable\nconst z = 3; // prefer by default"},
+  {q:"What is a closure?", d:"Medium", a:"A closure is created when an inner function <strong>retains access to its outer scope</strong> even after the outer function returns. Enables private state, factory functions, and memoization.", code:"function makeCounter() {\n  let count = 0;\n  return { inc: () => ++count, val: () => count };\n}"},
+  {q:"How does the JavaScript event loop work?", d:"Hard", a:"JS is single-threaded. Order: 1) run sync code 2) drain <strong>microtasks</strong> (Promises) 3) run one <strong>macrotask</strong> (setTimeout) 4) repeat. Promises always run before setTimeout.", code:"console.log('1');\nsetTimeout(() => log('3'), 0);\nPromise.resolve().then(() => log('2'));\n// Output: 1, 2, 3"},
+  {q:"What is hoisting in JavaScript?", d:"Medium", a:"Hoisting moves <strong>declarations</strong> to top of scope. var is initialized as undefined. let/const are hoisted but not initialized — accessing before declaration throws <strong>ReferenceError</strong> (TDZ).", code:"console.log(a); // undefined\nvar a = 5;\nconsole.log(b); // ReferenceError\nlet b = 5;"},
+  {q:"How do Promises and async/await work?", d:"Medium", a:"A Promise is <strong>pending</strong>, <strong>fulfilled</strong>, or <strong>rejected</strong>. async/await is syntactic sugar — async functions return Promises, await pauses until settled. Use try/catch for errors.", code:"async function getUser() {\n  try {\n    const res = await fetch('/api/user');\n    return await res.json();\n  } catch (e) { console.error(e); }\n}"},
+  {q:"What is 'this' in JavaScript?", d:"Hard", a:"<strong>this</strong> is determined by <em>how</em> a function is called, not where defined. Arrow functions inherit this from lexical scope. call/apply/bind explicitly set this.", code:"const obj = { name: 'Alice', greet() { return this.name; } };\nobj.greet(); // 'Alice'\nconst fn = obj.greet;\nfn(); // undefined (lost context)"},
+  {q:"What is event delegation?", d:"Medium", a:"Attach <strong>one listener to a parent</strong> instead of many to children. Events bubble up. More performant for long lists, works for dynamically added elements.", code:"list.addEventListener('click', e => {\n  const item = e.target.closest('li');\n  if (item) handleClick(item);\n});"},
+  {q:"What is the difference between call, apply, and bind?", d:"Medium", a:"All three set <strong>this</strong>. <strong>call</strong>: invokes immediately, args listed. <strong>apply</strong>: invokes immediately, args as array. <strong>bind</strong>: returns new function with this permanently bound.", code:"fn.call(obj, arg1, arg2);\nfn.apply(obj, [arg1, arg2]);\nconst bound = fn.bind(obj);"},
+  {q:"What is debouncing vs throttling?", d:"Medium", a:"<strong>Debouncing</strong> delays execution until after a pause — timer resets on every call. <strong>Throttling</strong> limits to once per interval. Debounce for search, throttle for scroll.", code:"const debounce = (fn, ms) => {\n  let t;\n  return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };\n};"},
+  {q:"What is prototypal inheritance?", d:"Hard", a:"Every object has a <strong>[[Prototype]]</strong> link. Property lookups walk the chain until found or null. class syntax is <strong>syntactic sugar</strong> over this mechanism.", code:"const animal = { speak() { return this.name; } };\nconst dog = Object.create(animal);\ndog.name = 'Rex'; dog.speak(); // 'Rex'"},
+  {q:"What are generators and iterators?", d:"Hard", a:"An <strong>iterator</strong> has next() returning {value, done}. A <strong>generator</strong> (function*) pauses with yield and resumes. Enables lazy sequences and async generators.", code:"function* range(a, b) {\n  for (let i = a; i < b; i++) yield i;\n}\nfor (const n of range(0, 5)) console.log(n);"},
+  {q:"What is destructuring?", d:"Easy", a:"Extracts values from arrays or objects into variables concisely. Supports defaults, renaming, rest, and nested patterns.", code:"const {name, age = 0} = user;\nconst [first, ...rest] = arr;\nconst {a: x} = obj; // rename"},
+  {q:"What is the difference between == and ===?", d:"Easy", a:"<strong>===</strong> compares value AND type — no coercion. <strong>==</strong> performs type coercion first, leading to surprises. Always use ===. Only valid use of ==: value == null catches null and undefined.", code:"0 == false    // true\n0 === false   // false\nnull == undefined  // true"},
+  {q:"What are map, filter, and reduce?", d:"Easy", a:"<strong>map</strong>: transform each item. <strong>filter</strong>: keep matching items. <strong>reduce</strong>: accumulate into single value. All are pure — don't mutate original.", code:"nums.map(n => n * 2);\nnums.filter(n => n % 2 === 0);\nnums.reduce((sum, n) => sum + n, 0);"},
+  {q:"What is the spread operator and rest parameters?", d:"Easy", a:"<strong>Spread (...)</strong> expands iterables into elements. <strong>Rest (...)</strong> collects multiple elements into an array. Same syntax, different context.", code:"const arr = [...a, ...b];\nconst obj = {...o1, ...o2};\nfunction sum(...nums) { return nums.reduce((a,b) => a+b, 0); }"},
+  {q:"What is the difference between shallow and deep copy?", d:"Medium", a:"<strong>Shallow copy</strong> copies only top-level — nested objects share references. <strong>Deep copy</strong> clones everything. Use <strong>structuredClone()</strong> for deep copying.", code:"const shallow = {...obj};\nconst deep = structuredClone(obj);"},
+  {q:"What is the difference between null and undefined?", d:"Easy", a:"<strong>undefined</strong>: variable declared but not assigned, missing property. <strong>null</strong>: intentional absence of value — must be assigned explicitly.", code:"let a;            // undefined\nlet b = null;      // explicit\nobj.missing;       // undefined"},
+  {q:"What are Symbols in JavaScript?", d:"Hard", a:"Symbols are unique, immutable identifiers. Used as object property keys to avoid collisions. Well-known symbols control internal JS behavior (Symbol.iterator, Symbol.toPrimitive).", code:"const id = Symbol('id');\nconst obj = { [id]: 123, name: 'John' };\nObject.keys(obj); // ['name'] — symbols hidden"},
+  {q:"What is the difference between for...in and for...of?", d:"Easy", a:"<strong>for...in</strong> iterates enumerable property <strong>keys</strong> (including inherited). <strong>for...of</strong> iterates <strong>values</strong> of iterables (arrays, strings, Maps).", code:"for (const key in arr) console.log(key);  // 0, 1, 2\nfor (const val of arr) console.log(val);  // 'a', 'b', 'c'"},
+  {q:"What is memoization?", d:"Medium", a:"Memoization caches function results based on inputs. Same inputs = cached result. Trade-off: memory for speed. Used heavily in recursion and React (useMemo).", code:"function memoize(fn) {\n  const cache = new Map();\n  return (...args) => {\n    const key = JSON.stringify(args);\n    if (cache.has(key)) return cache.get(key);\n    const result = fn(...args);\n    cache.set(key, result);\n    return result;\n  };\n}"},
+  {q:"What are WeakMap and WeakSet?", d:"Hard", a:"<strong>WeakMap/WeakSet</strong> hold weak references to objects — entries are garbage collected when the key object has no other references. Can't be iterated. Used for metadata, caches, private data.", code:"const meta = new WeakMap();\nmeta.set(domNode, { clicks: 0 });\n// When domNode is removed from DOM,\n// entry is garbage collected automatically"},
+  {q:"What is the difference between Array.prototype.at() and bracket notation?", d:"Easy", a:"<strong>.at()</strong> supports negative indices for easy access from end. arr.at(-1) gets last element. Bracket notation doesn't support negative indices (arr[-1] is undefined).", code:"const arr = [1, 2, 3];\narr.at(-1);     // 3 (last)\narr.at(-2);     // 2\narr[arr.length-1]; // 3 (old way)"},
+  {q:"What are Proxy and Reflect in JavaScript?", d:"Hard", a:"<strong>Proxy</strong> wraps an object to intercept and customize operations (get, set, delete). <strong>Reflect</strong> provides default implementations for those operations. Used for validation, logging, and reactive systems.", code:"const handler = {\n  set(obj, prop, value) {\n    if (prop === 'age' && value < 0) throw new Error('Invalid');\n    obj[prop] = value;\n    return true;\n  }\n};\nconst person = new Proxy({}, handler);"},
+  {q:"What is the difference between Object.freeze and Object.seal?", d:"Medium", a:"<strong>Object.freeze</strong>: can't add, remove, or change properties. <strong>Object.seal</strong>: can't add or remove, but existing properties can be modified. Neither is deep by default.", code:"const frozen = Object.freeze({ a: 1 });\nfrozen.a = 2; // silently fails\n\nconst sealed = Object.seal({ a: 1 });\nsealed.a = 2; // works\nsealed.b = 3; // fails"},
 ],
 React: [
-  {q:"What is the Virtual DOM?", d:"Medium", a:"Virtual DOM is an in-memory JS representation. React diffs it against previous and applies minimal DOM changes.", code:"// React handles this automatically"},
-  {q:"What are React Hooks?", d:"Easy", a:"Hooks let <strong>functional components</strong> use state, lifecycle, context — without classes.", code:"const [count, setCount] = useState(0);\nuseEffect(() => { ... }, []);"},
-  {q:"What is the difference between useState and useReducer?", d:"Medium", a:"<strong>useState</strong> for simple values. <strong>useReducer</strong> for complex state where next depends on previous.", code:"const [state, dispatch] = useReducer(reducer, initial);"},
-  {q:"How does useEffect dependency array work?", d:"Medium", a:"<strong>[]</strong>: runs once on mount. <strong>[a, b]</strong>: re-runs when deps change. Omitted: runs every render. Always return cleanup.", code:"useEffect(() => {\n  subscribe();\n  return () => unsubscribe();\n}, [id]);"},
-  {q:"What is the difference between useMemo and useCallback?", d:"Hard", a:"<strong>useMemo</strong> memoizes a result. <strong>useCallback</strong> memoizes a function reference.", code:"const memoized = useMemo(() => compute(a), [a]);\nconst cb = useCallback(() => fn(), [deps]);"},
-  {q:"What is prop drilling and how do you solve it?", d:"Medium", a:"Prop drilling is threading props through layers. Solve with <strong>Context API</strong> or state management.", code:"const AuthCtx = createContext(null);\nconst {user} = useContext(AuthCtx);"},
-  {q:"What is the key prop and why is it critical?", d:"Medium", a:"Keys help React match items during reconciliation. Never use index as key for reorderable lists.", code:"{items.map(item => <Row key={item.id} />)}"},
-  {q:"What is React.memo?", d:"Hard", a:"React.memo skips re-render if props haven't changed. Use for pure components with expensive renders.", code:"const Avatar = React.memo(function Avatar({src}) { ... });"},
-  {q:"What are controlled vs uncontrolled components?", d:"Medium", a:"<strong>Controlled</strong>: React state is source of truth. <strong>Uncontrolled</strong>: DOM manages state via ref.", code:"// Controlled\n<input value={email} onChange={e => setEmail(e.target.value)} />\n\n// Uncontrolled\n<input ref={inputRef} defaultValue=\"initial\" />"},
-  {q:"What is code splitting and React.lazy?", d:"Medium", a:"Code splitting breaks bundle into chunks. <strong>React.lazy</strong> wraps dynamic import, works with <strong>Suspense</strong>.", code:"const Dashboard = lazy(() => import('./Dashboard'));\n\n<Suspense fallback={<Spinner />}>\n  <Dashboard />\n</Suspense>"},
-  {q:"What is the reconciliation algorithm?", d:"Hard", a:"React diffs trees in O(n). Different types = new tree. Same type = update attributes. Keys match list items.", code:"// React uses keys to match items"},
-  {q:"What are React Portals?", d:"Hard", a:"Portals render to a <strong>different DOM node</strong> while staying in React tree. Essential for modals.", code:"return createPortal(\n  <Modal />,\n  document.getElementById('modal-root')\n);"},
-  {q:"What is useRef?", d:"Medium", a:"useRef returns a mutable .current that persists without re-renders. Used for DOM refs and mutable values.", code:"const inputRef = useRef(null);\ninputRef.current.focus();"},
-  {q:"What is context and its performance implications?", d:"Hard", a:"Context shares values tree-wide. Every consumer re-renders when context value changes. Split for performance.", code:"const ThemeCtx = createContext(null);"},
-  {q:"What is the difference between useEffect and useLayoutEffect?", d:"Hard", a:"<strong>useEffect</strong> runs after paint, async. <strong>useLayoutEffect</strong> runs synchronously before paint. Use useLayoutEffect for DOM measurements that must block paint.", code:"// useEffect - most common\nuseEffect(() => {\n  fetchData();\n}, []);\n\n// useLayoutEffect - DOM measurements\nuseLayoutEffect(() => {\n  const height = ref.current.offsetHeight;\n  // runs before user sees anything\n}, []);"},
-  {q:"What are custom hooks?", d:"Easy", a:"Custom hooks extract reusable logic into a function starting with 'use'. Can call other hooks. Share logic, not state.", code:"function useWindowSize() {\n  const [size, setSize] = useState({width: 0, height: 0});\n  useEffect(() => {\n    const handleResize = () => setSize({\n      width: window.innerWidth,\n      height: window.innerHeight\n    });\n    handleResize();\n    window.addEventListener('resize', handleResize);\n    return () => window.removeEventListener('resize', handleResize);\n  }, []);\n  return size;\n}"},
-  {q:"What is the difference between createElement and JSX?", d:"Medium", a:"JSX is syntactic sugar for React.createElement(). Babel transpiles JSX to createElement calls.createElement(type, props, ...children).", code:"// JSX\n<button className=\"btn\" onClick={handleClick}>Click me</button>\n\n// Transpiled to:\nReact.createElement('button', {className: 'btn', onClick: handleClick}, 'Click me')"},
-  {q:"What is the children prop?", d:"Easy", a:"<strong>children</strong> is a special prop containing nested elements. Used for composition patterns like layouts, wrappers, and compound components.", code:"function Card({ children }) {\n  return <div className=\"card\">{children}</div>;\n}\n\n<Card>\n  <h2>Title</h2>\n  <p>Content</p>\n</Card>"},
-  {q:"What is strict mode in React?", d:"Medium", a:"<strong>StrictMode</strong> highlights potential problems in development. Double-invokes effects, checks for unsafe lifecycles. Has no production overhead.", code:"import { StrictMode } from 'react';\n\n<StrictMode>\n  <App />\n</StrictMode>"},
+  {q:"What is the Virtual DOM?", d:"Medium", a:"Virtual DOM is an in-memory JS representation of the real DOM. React diffs it against previous and applies only <strong>minimal DOM changes</strong> needed.", code:"// React handles this automatically"},
+  {q:"What are React Hooks?", d:"Easy", a:"Hooks let <strong>functional components</strong> use state, lifecycle, context — without classes. Introduced in React 16.8.", code:"const [count, setCount] = useState(0);\nuseEffect(() => { ... }, []);"},
+  {q:"What is the difference between useState and useReducer?", d:"Medium", a:"<strong>useState</strong> for simple values. <strong>useReducer</strong> for complex state where next depends on previous, or multiple values change together.", code:"const [state, dispatch] = useReducer(reducer, initial);"},
+  {q:"How does useEffect dependency array work?", d:"Medium", a:"<strong>[]</strong>: runs once on mount. <strong>[a, b]</strong>: re-runs when deps change (shallow). Omitted: every render. Always return cleanup function.", code:"useEffect(() => {\n  const sub = subscribe();\n  return () => sub.unsubscribe();\n}, [id]);"},
+  {q:"What is the difference between useMemo and useCallback?", d:"Hard", a:"<strong>useMemo</strong> memoizes a computed <strong>result</strong>. <strong>useCallback</strong> memoizes a <strong>function reference</strong>. Both preserve referential equality for React.memo children.", code:"const val = useMemo(() => compute(a), [a]);\nconst fn = useCallback(() => doSomething(id), [id]);"},
+  {q:"What is prop drilling and how do you solve it?", d:"Medium", a:"Prop drilling is threading props through many layers. Solve with <strong>Context API</strong> for global data, or state management libraries (Zustand, Redux).", code:"const AuthCtx = createContext(null);\nconst {user} = useContext(AuthCtx);"},
+  {q:"What is the key prop and why is it critical?", d:"Medium", a:"Keys help React match list items during reconciliation. <strong>Never use index as key</strong> for reorderable lists — causes state bugs and performance issues.", code:"{items.map(item => <Row key={item.id} />)}"},
+  {q:"What is React.memo?", d:"Hard", a:"React.memo skips re-render if props haven't changed (shallow compare). Use for pure components with expensive renders. Don't overuse — comparison itself has cost.", code:"const Avatar = React.memo(({src, name}) => <img src={src} alt={name} />);"},
+  {q:"What are controlled vs uncontrolled components?", d:"Medium", a:"<strong>Controlled</strong>: React state is source of truth. <strong>Uncontrolled</strong>: DOM manages state, accessed via ref. File inputs must be uncontrolled.", code:"<input value={email} onChange={e => setEmail(e.target.value)} />\n<input ref={inputRef} defaultValue=\"initial\" />"},
+  {q:"What is code splitting and React.lazy?", d:"Medium", a:"Code splitting breaks the bundle into smaller chunks loaded on demand. <strong>React.lazy</strong> wraps dynamic imports. Works with <strong>Suspense</strong> for loading states.", code:"const Dashboard = lazy(() => import('./Dashboard'));\n<Suspense fallback={<Spinner />}><Dashboard /></Suspense>"},
+  {q:"What is the reconciliation algorithm?", d:"Hard", a:"React diffs trees in O(n): different types = new tree. Same type = update changed attributes. <strong>Keys</strong> match old/new list items to avoid unnecessary unmounts.", code:"// Keys tell React which items moved vs changed"},
+  {q:"What are React Portals?", d:"Hard", a:"Portals render to a <strong>different DOM node</strong> while staying in React tree. Events still bubble through React tree. Essential for modals and tooltips.", code:"createPortal(<Modal />, document.getElementById('modal-root'))"},
+  {q:"What is useRef?", d:"Medium", a:"useRef returns a mutable <strong>.current</strong> that persists across renders without triggering re-renders. Used for DOM refs, timers, and previous values.", code:"const inputRef = useRef(null);\ninputRef.current.focus();"},
+  {q:"What is context and its performance implications?", d:"Hard", a:"Context shares values tree-wide without prop drilling. <strong>Trap</strong>: every consumer re-renders when value changes. Split contexts and memoize values for performance.", code:"const ThemeCtx = createContext(null);\nconst value = useMemo(() => ({theme, setTheme}), [theme]);"},
+  {q:"What is the difference between useEffect and useLayoutEffect?", d:"Hard", a:"<strong>useEffect</strong> runs after paint (async). <strong>useLayoutEffect</strong> runs synchronously before paint. Use useLayoutEffect for DOM measurements that must block visual paint.", code:"useLayoutEffect(() => {\n  const h = ref.current.offsetHeight;\n  // runs before user sees anything\n}, []);"},
+  {q:"What are custom hooks?", d:"Easy", a:"Custom hooks extract reusable logic into a function starting with 'use'. Can call other hooks. Share <strong>logic, not state</strong>.", code:"function useWindowSize() {\n  const [size, setSize] = useState({w:0, h:0});\n  useEffect(() => {\n    const onResize = () => setSize({w:innerWidth, h:innerHeight});\n    onResize();\n    addEventListener('resize', onResize);\n    return () => removeEventListener('resize', onResize);\n  }, []);\n  return size;\n}"},
+  {q:"What is the difference between createElement and JSX?", d:"Medium", a:"JSX is syntactic sugar for <strong>React.createElement(type, props, ...children)</strong>. Babel transpiles JSX to createElement calls at build time.", code:"// JSX\n<button className=\"btn\">Click</button>\n// Becomes:\nReact.createElement('button', {className:'btn'}, 'Click')"},
+  {q:"What is the children prop?", d:"Easy", a:"<strong>children</strong> is a special prop containing nested elements. Used for composition — layouts, wrappers, and compound components.", code:"function Card({ children }) {\n  return <div className=\"card\">{children}</div>;\n}"},
+  {q:"What is strict mode?", d:"Medium", a:"<strong>StrictMode</strong> highlights potential problems in development by double-invoking effects. No production overhead. Catches unsafe lifecycles and side effects.", code:"<StrictMode><App /></StrictMode>"},
+  {q:"What is the difference between useEffect cleanup and componentWillUnmount?", d:"Medium", a:"useEffect's cleanup function runs <strong>before the next effect and on unmount</strong>. Unlike componentWillUnmount, it can run multiple times. Essential for subscriptions and timers.", code:"useEffect(() => {\n  const id = setInterval(tick, 1000);\n  return () => clearInterval(id); // cleanup\n}, []);"},
+  {q:"What are error boundaries?", d:"Medium", a:"Error boundaries catch rendering errors in child components. Implemented as <strong>class components</strong> with componentDidCatch. Prevents entire app crash from a single component error.", code:"class ErrorBoundary extends React.Component {\n  state = { hasError: false };\n  static getDerivedStateFromError() { return { hasError: true }; }\n  componentDidCatch(err, info) { logError(err); }\n  render() {\n    return this.state.hasError ? <Fallback /> : this.props.children;\n  }\n}"},
+  {q:"What is the useId hook?", d:"Easy", a:"<strong>useId</strong> generates unique, stable IDs for accessibility attributes. Same ID on server and client — prevents hydration mismatches.", code:"function Form() {\n  const id = useId();\n  return <><label htmlFor={id}>Name</label><input id={id} /></>;\n}"},
+  {q:"What is the useTransition hook?", d:"Hard", a:"<strong>useTransition</strong> marks state updates as non-urgent, keeping the UI responsive during expensive renders. Returns [isPending, startTransition].", code:"const [isPending, startTransition] = useTransition();\nfunction handleChange(val) {\n  startTransition(() => {\n    setFilteredList(expensiveFilter(val));\n  });\n}"},
+  {q:"What is server components in React?", d:"Hard", a:"Server Components render on the server only — no JS sent to client. They can access databases directly. Reduce bundle size. Cannot use useState or useEffect.", code:"// server-component.jsx (runs on server only)\nasync function UserProfile({ id }) {\n  const user = await db.user.findUnique({ where: { id } });\n  return <div>{user.name}</div>;\n}"},
 ],
 TypeScript: [
-  {q:"What is TypeScript and why use it?", d:"Easy", a:"TypeScript is a <strong>typed superset of JavaScript</strong>. Catches type errors at compile-time, better IDE support.", code:"function add(a: number, b: number): number {\n  return a + b;\n}"},
-  {q:"What is the difference between interface and type?", d:"Medium", a:"<strong>interface</strong>: extendable, declaration merging. <strong>type</strong>: unions, intersections, mapped types.", code:"interface User { id: number; }\ntype ID = string | number;"},
-  {q:"What are generics in TypeScript?", d:"Medium", a:"Generics create <strong>reusable, type-safe components</strong> that work with multiple types.", code:"function first<T>(arr: T[]): T {\n  return arr[0];\n}"},
-  {q:"What are union and intersection types?", d:"Medium", a:"<strong>Union (|)</strong>: one of several types. <strong>Intersection (&)</strong>: satisfies ALL types.", code:"type ID = string | number;\ntype Entity = Timestamped & Identifiable;"},
-  {q:"What is 'any' vs 'unknown'?", d:"Medium", a:"<strong>any</strong>: opts out of type checking. <strong>unknown</strong>: must narrow type before use. Prefer unknown.", code:"let x: unknown = getValue();\nif (typeof x === 'string') {\n  x.toUpperCase(); // narrowed\n}"},
-  {q:"What are TypeScript utility types?", d:"Medium", a:"Built-in types that transform types: <strong>Partial</strong>, <strong>Pick</strong>, <strong>Omit</strong>, <strong>Readonly</strong>, <strong>Record</strong>.", code:"type UpdateUser = Partial<User>;\ntype Preview = Pick<User, 'id' | 'name'>;"},
-  {q:"What is type narrowing?", d:"Medium", a:"Type narrowing refines a broad type to specific inside conditional. Use typeof, instanceof, in, type predicates.", code:"if (typeof x === 'string') {\n  // x is string here\n}"},
-  {q:"What are decorators?", d:"Hard", a:"Meta-programming syntax to annotate classes, methods, properties. Used in Angular, NestJS.", code:"@sealed\nclass Service { ... }"},
-  {q:"What is the difference between never, void, and undefined?", d:"Hard", a:"<strong>void</strong>: returns nothing. <strong>undefined</strong>: explicit value. <strong>never</strong>: never returns (throws or infinite).", code:"function fail(msg: string): never {\n  throw new Error(msg);\n}"},
-  {q:"What are conditional and mapped types?", d:"Hard", a:"<strong>Conditional</strong>: T extends U ? X : Y. <strong>Mapped</strong>: iterate over keys to create new types.", code:"type Readonly<T> = {\n  readonly [K in keyof T]: T[K];\n};"},
-  {q:"What is the 'as' keyword in TypeScript?", d:"Easy", a:"<strong>as</strong> performs type assertions — tells TypeScript the type. Use sparingly; prefer type narrowing. Double assertion 'as unknown as T' bypasses direct assertion.", code:"const el = document.getElementById('input') as HTMLInputElement;\nel.value; // TypeScript knows it's an input\n\n// Double assertion (avoid if possible)\nconst x = data as unknown as MyType;"},
-  {q:"What are literal types in TypeScript?", d:"Medium", a:"Literal types specify exact values: string literals, number literals, boolean literals. Combined with unions for precise typing.", code:"type Direction = 'up' | 'down' | 'left' | 'right';\ntype Roll = 1 | 2 | 3 | 4 | 5 | 6;\n\nfunction move(dir: Direction) {\n  // dir can only be one of four strings\n}"},
-  {q:"What is the satisfies operator?", d:"Medium", a:"<strong>satisfies</strong> validates an expression matches a type while preserving its specific type for inference. Unlike 'as', it doesn't widen the type.", code:"const config = {\n  host: 'localhost',\n  port: 3000\n} satisfies Record<string, string | number>;\n\nconfig.host.toUpperCase(); // OK - TypeScript knows it's string\nconfig.port.toFixed();      // OK - TypeScript knows it's number"},
-  {q:"What is 'infer' in TypeScript?", d:"Hard", a:"<strong>infer</strong> extracts types from within conditional types. Used in utility types like ReturnType, Parameters. Can only be used in extends clauses.", code:"type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;\n\ntype R = ReturnType<() => string>; // string\n\ntype ElementOf<T> = T extends (infer E)[] ? E : never;\ntype E = ElementOf<string[]>; // string"},
-  {q:"What are index access types?", d:"Medium", a:"Access property types using <strong>T['property']</strong> or <strong>T[keyof T]</strong>. Useful for extracting types from existing types.", code:"interface User {\n  id: number;\n  name: string;\n  email: string;\n}\n\ntype UserId = User['id'];           // number\ntype UserValues = User[keyof User];  // number | string"},
-  {q:"What is the difference between a type and a value?", d:"Easy", a:"Types exist at compile-time only and are erased. Values exist at runtime. <strong>typeof</strong> returns JS type at runtime; <strong>ReturnType<T></strong> works at type level.", code:"// Type (erased at runtime)\ntype Name = string;\n\n// Value (exists at runtime)\nconst name = 'Alice';\n\n// typeof at runtime\ntypeof name; // 'string' (JS value)\n\n// typeof at type level\ntype NameType = typeof name; // string (TS type)"},
+  {q:"What is TypeScript and why use it?", d:"Easy", a:"TypeScript is a <strong>typed superset of JavaScript</strong> that compiles to plain JS. Catches type errors at compile-time, better IDE support, safer refactoring.", code:"function add(a: number, b: number): number {\n  return a + b;\n}"},
+  {q:"What is the difference between interface and type?", d:"Medium", a:"<strong>interface</strong>: extendable via extends, supports declaration merging. <strong>type</strong>: more flexible — supports unions, intersections, mapped types, conditional types.", code:"interface User { id: number; }\ntype ID = string | number;"},
+  {q:"What are generics?", d:"Medium", a:"Generics create <strong>reusable, type-safe components</strong> that work with multiple types. Act as type parameters — you pass the type when using.", code:"function first<T>(arr: T[]): T | undefined {\n  return arr[0];\n}"},
+  {q:"What are union and intersection types?", d:"Medium", a:"<strong>Union (|)</strong>: value can be one of several types. <strong>Intersection (&)</strong>: value must satisfy ALL types simultaneously.", code:"type ID = string | number;\ntype Admin = User & { permissions: string[] };"},
+  {q:"What is any vs unknown?", d:"Medium", a:"<strong>any</strong>: opts out of type checking — dangerous. <strong>unknown</strong>: must narrow type before using — type-safe alternative. Always prefer unknown over any.", code:"let x: unknown = getValue();\nif (typeof x === 'string') {\n  x.toUpperCase(); // safe\n}"},
+  {q:"What are TypeScript utility types?", d:"Medium", a:"Built-in types that transform existing types: <strong>Partial</strong>, <strong>Required</strong>, <strong>Pick</strong>, <strong>Omit</strong>, <strong>Readonly</strong>, <strong>Record</strong>, <strong>ReturnType</strong>.", code:"type Update = Partial<User>;\ntype Preview = Pick<User, 'id' | 'name'>;\ntype Dict = Record<string, User>;"},
+  {q:"What is type narrowing?", d:"Medium", a:"Type narrowing refines a broad type to a specific one inside conditionals. Use typeof, instanceof, in operator, and type predicates.", code:"if (typeof x === 'string') {\n  // x is string here\n}"},
+  {q:"What is the difference between never, void, and undefined?", d:"Hard", a:"<strong>void</strong>: function returns nothing. <strong>undefined</strong>: explicit undefined value. <strong>never</strong>: function never returns (throws or infinite loop).", code:"function fail(msg: string): never {\n  throw new Error(msg);\n}"},
+  {q:"What are conditional and mapped types?", d:"Hard", a:"<strong>Conditional</strong>: T extends U ? X : Y — type-level ternary. <strong>Mapped</strong>: iterate over keys to create new types. Together they power built-in utility types.", code:"type Readonly<T> = { readonly [K in keyof T]: T[K]; };\ntype IsString<T> = T extends string ? true : false;"},
+  {q:"What is the as keyword?", d:"Easy", a:"<strong>as</strong> performs type assertions — tells TypeScript the type. Use sparingly; prefer type narrowing. Double assertion (as unknown as T) bypasses safety.", code:"const el = document.getElementById('x') as HTMLInputElement;\nel.value;"},
+  {q:"What are literal types?", d:"Medium", a:"Literal types specify exact values. Combined with unions for precise typing of known values.", code:"type Direction = 'up' | 'down' | 'left' | 'right';\ntype Bool = true | false;"},
+  {q:"What is the satisfies operator?", d:"Medium", a:"<strong>satisfies</strong> validates an expression matches a type while preserving the specific type for inference. Unlike 'as', it doesn't widen.", code:"const cfg = { host: 'localhost', port: 3000 }\n  satisfies Record<string, string | number>;\ncfg.host.toUpperCase(); // OK"},
+  {q:"What is infer in TypeScript?", d:"Hard", a:"<strong>infer</strong> extracts types from within conditional types. Used in utility types like ReturnType and Parameters. Can only appear in extends clauses.", code:"type ReturnOf<T> = T extends (...args: any[]) => infer R ? R : never;"},
+  {q:"What are index access types?", d:"Medium", a:"Access property types using <strong>T['property']</strong> or <strong>T[keyof T]</strong>. Extracts types from existing interfaces.", code:"type UserId = User['id'];        // number\ntype Values = User[keyof User];    // number | string"},
+  {q:"What is the difference between a type and a value?", d:"Easy", a:"Types exist at compile-time only and are erased. Values exist at runtime. typeof works on both levels — returns JS type at runtime, TS type at type level.", code:"const name = 'Alice'; // value\ntype Name = typeof name; // string type"},
+  {q:"What is keyof in TypeScript?", d:"Easy", a:"<strong>keyof</strong> creates a union of an object type's property names. Used for type-safe property access and mapped types.", code:"type UserKeys = keyof User; // 'id' | 'name' | 'email'\nfunction get<K extends keyof User>(key: K): User[K] { ... }"},
+  {q:"What are enum types and should you use them?", d:"Medium", a:"Enums create named constant groups. <strong>String enums</strong> are recommended. Numeric enums have auto-increment and reverse mapping. Many prefer union literals for simpler output.", code:"enum Direction { Up='UP', Down='DOWN' }\n// Alternative: type Direction = 'UP' | 'DOWN'"},
+  {q:"What is the difference between type and value space?", d:"Hard", a:"TypeScript has <strong>type space</strong> (erased at runtime) and <strong>value space</strong> (exists at runtime). Same name can exist in both — context determines which is used.", code:"const Foo = { bar: 1 }; // value space\ntype Foo = typeof Foo;    // type space\n// Foo means different things in different positions"},
+],
+Performance: [
+  {q:"What is critical rendering path?", d:"Hard", a:"The sequence of steps the browser takes to render a page: <strong>DOM -> CSSOM -> Render Tree -> Layout -> Paint -> Composite</strong>. Optimizing this path reduces Time to First Paint.", code:"// Minimize CRP:\n// 1. Inline critical CSS\n// 2. Defer non-critical JS\n// 3. Use preload for key resources\n<link rel=\"preload\" href=\"app.js\" as=\"script\" />"},
+  {q:"What is the difference between layout, paint, and composite?", d:"Hard", a:"<strong>Layout</strong>: calculate geometry (position, size). <strong>Paint</strong>: fill pixels (colors, images, text). <strong>Composite</strong>: combine layers on GPU. Only composite is cheap — avoid layout and paint triggers.", code:"// Triggers layout (expensive)\nel.style.width = '200px';\n\n// Triggers only composite (cheap)\nel.style.transform = 'translateX(100px)';\nel.style.opacity = '0.5';"},
+  {q:"What is tree shaking?", d:"Medium", a:"Tree shaking removes <strong>unused code</strong> from bundles at build time. Requires ES modules (import/export). Bundlers like Webpack and Rollup perform it automatically.", code:"// Only import what you need\nimport { debounce } from 'lodash-es';\n// NOT: import _ from 'lodash';"},
+  {q:"What is code splitting?", d:"Medium", a:"Code splitting breaks the JS bundle into smaller chunks loaded on demand. Reduces initial bundle size. Use dynamic import() and route-based splitting.", code:"const Dashboard = lazy(() => import('./Dashboard'));\n// Or: import('./chart').then(mod => mod.render());"},
+  {q:"What is lazy loading vs eager loading?", d:"Easy", a:"<strong>Eager loading</strong> loads everything upfront (faster navigation, slower initial load). <strong>Lazy loading</strong> loads on demand (faster initial, delayed navigation). Use lazy for below-fold content.", code:"&lt;img src=\"hero.jpg\" /&gt;           <!-- eager -->\n&lt;img src=\"below.jpg\" loading=\"lazy\" /&gt; <!-- lazy -->"},
+  {q:"What is the difference between throttling and debouncing in performance?", d:"Medium", a:"<strong>Throttle</strong>: at most once per interval — guarantees regular execution. <strong>Debounce</strong>: waits for pause — groups rapid calls into one. Throttle for scroll/resize, debounce for search input.", code:"// Throttle scroll handler\nwindow.addEventListener('scroll', throttle(update, 16));\n// Debounce search\ninput.addEventListener('input', debounce(search, 300));"},
+  {q:"What are Core Web Vitals?", d:"Medium", a:"Three metrics: <strong>LCP</strong> (Largest Contentful Paint — loading), <strong>INP</strong> (Interaction to Next Paint — interactivity), <strong>CLS</strong> (Cumulative Layout Shift — visual stability). Target: LCP < 2.5s, INP < 200ms, CLS < 0.1.", code:"// Measure in JS\nnew PerformanceObserver((list) => {\n  for (const entry of list.getEntries()) {\n    console.log(entry.name, entry.startTime);\n  }\n}).observe({type: 'largest-contentful-paint'});"},
+  {q:"What is bundle size and how do you reduce it?", d:"Easy", a:"Bundle size is the total JS downloaded. Reduce by: tree shaking, code splitting, using lighter libraries, compressing (gzip/brotli), and analyzing with webpack-bundle-analyzer.", code:"// Check sizes\nimport { debounce } from 'lodash-es'; // ~4KB\n// vs\nimport _ from 'lodash';              // ~70KB"},
+  {q:"What is memoization and how does it improve performance?", d:"Medium", a:"Memoization caches results based on inputs. Same inputs = cached result without recomputation. In React: useMemo, React.memo. Trade memory for speed.", code:"const sorted = useMemo(\n  () => items.sort((a, b) => b.score - a.score),\n  [items]\n);"},
+  {q:"What is hydration in SSR?", d:"Hard", a:"<strong>Hydration</strong> attaches event listeners to server-rendered HTML without re-rendering. React reuses the DOM and adds interactivity. Mismatches cause hydration errors and performance issues.", code:"// Server sends HTML, client hydrates\nhydrateRoot(document.getElementById('root'), <App />);\n// Client takes over without re-rendering"},
+  {q:"What is the difference between client-side and server-side rendering?", d:"Medium", a:"<strong>CSR</strong>: browser downloads JS then renders — slower first paint, faster navigation. <strong>SSR</strong>: server sends ready HTML — faster first paint, server cost. <strong>SSG</strong>: pre-rendered at build — fastest, less dynamic.", code:"// SSR: Next.js getServerSideProps\nexport async function getServerSideProps() {\n  const data = await fetchData();\n  return { props: { data } };\n}\n// SSG: Next.js getStaticProps (build time)"},
+  {q:"How do you optimize images for the web?", d:"Easy", a:"Use <strong>modern formats</strong> (WebP, AVIF), <strong>responsive sizes</strong> (srcset), <strong>lazy loading</strong>, and proper <strong>width/height</strong> to prevent layout shift. Use CDN for delivery.", code:"&lt;picture&gt;\n  &lt;source type=\"image/avif\" srcset=\"photo.avif\" /&gt;\n  &lt;source type=\"image/webp\" srcset=\"photo.webp\" /&gt;\n  &lt;img src=\"photo.jpg\" width=\"800\" height=\"600\"\n       loading=\"lazy\" alt=\"...\" /&gt;\n&lt;/picture&gt;"},
+  {q:"What is the difference between prefetch and preload?", d:"Medium", a:"<strong>preload</strong>: fetch critical resources for current page now (high priority). <strong>prefetch</strong>: fetch resources for future navigation (low priority). Use preload for current-page needs, prefetch for next-page.", code:"&lt;link rel=\"preload\" href=\"critical.css\" as=\"style\" /&gt;\n&lt;link rel=\"prefetch\" href=\"next-page.js\" as=\"script\" /&gt;"},
+  {q:"What is virtual scrolling?", d:"Hard", a:"Virtual scrolling renders only <strong>visible items</strong> in a long list — the rest are virtual. Dramatically reduces DOM nodes and memory. Libraries: react-window, react-virtuoso.", code:"import { FixedSizeList } from 'react-window';\n\n&lt;FixedSizeList height={600} itemCount={10000} itemSize={50}&gt;\n  {({ index, style }) => (\n    &lt;div style={style}&gt;Row {index}&lt;/div&gt;\n  )}\n&lt;/FixedSizeList&gt;"},
 ],
 };
 
@@ -572,15 +695,16 @@ let activeTab = 'HTML';
 let activeFilter = 'all';
 let expanded = new Set();
 let viewed = new Set();
+let bookmarked = new Set();
 
 function toggleTheme() {
   const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  const next = isDark ? 'light' : 'dark';
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
   updateThemeButton(next);
   renderTabs();
+  renderStats();
   updateSection();
 }
 
@@ -588,42 +712,44 @@ function updateThemeButton(theme) {
   const icon = document.getElementById('theme-icon');
   const label = document.getElementById('theme-label');
   if (theme === 'dark') {
-    icon.textContent = '🌙';
+    icon.innerHTML = '&#127769;';
     label.textContent = 'Dark';
   } else {
-    icon.textContent = '☀️';
+    icon.innerHTML = '&#9728;';
     label.textContent = 'Light';
   }
 }
 
 function tabClass(t) {
-  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react', TypeScript:'active-ts' };
+  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react', TypeScript:'active-ts', Performance:'active-perf' };
   return map[t] || '';
 }
 
 function renderStats() {
-  const bar = document.getElementById('stats-bar');
-  if (!bar) return;
-  bar.innerHTML = TABS.map(t => `
-    <div class="stat">
-      <span class="stat-num" style="color:${getColor(t)}">${DATA[t].length}</span>
+  const grid = document.getElementById('stats-grid');
+  if (!grid) return;
+  const total = Object.values(DATA).reduce((a, arr) => a + arr.length, 0);
+  grid.innerHTML = TABS.map(t => {
+    const c = getColor(t);
+    const viewedInCat = DATA[t].filter((_, i) => viewed.has(t+'-'+i)).length;
+    const pct = DATA[t].length ? Math.round((viewedInCat / DATA[t].length) * 100) : 0;
+    return `<div class="stat-card" style="--stat-color:${c}">
+      <span class="stat-num" style="color:${c}">${DATA[t].length}</span>
       <span class="stat-lbl">${t}</span>
-    </div>
-  `).join('') + `
-    <div class="stat" style="margin-left:auto;">
-      <span class="stat-num" id="viewed-count" style="color:var(--accent)">0</span>
-      <span class="stat-lbl">Viewed</span>
-    </div>
-  `;
+      <div class="stat-bar-mini"><div class="stat-bar-fill" style="width:${pct}%;background:${c}"></div></div>
+    </div>`;
+  }).join('') + `<div class="stat-card" style="--stat-color:var(--accent)">
+    <span class="stat-num" style="color:var(--accent)" id="viewed-count">${viewed.size}</span>
+    <span class="stat-lbl">Viewed</span>
+    <div class="stat-bar-mini"><div class="stat-bar-fill" id="stat-viewed-fill" style="width:${Math.round((viewed.size/total)*100)}%;background:var(--accent)"></div></div>
+  </div>`;
 }
 
 function renderTabs() {
   document.getElementById('tabs').innerHTML = TABS.map(t => {
     const isActive = t === activeTab;
     return `<button class="tab${isActive ? ' '+tabClass(t) : ''}" onclick="setTab('${t}')">
-      <span class="dot" style="background:${getColor(t)}"></span>
-      ${t}
-      <span class="cnt">${DATA[t].length}</span>
+      <span class="dot" style="background:${getColor(t)}"></span>${t}<span class="cnt">${DATA[t].length}</span>
     </button>`;
   }).join('');
 }
@@ -638,7 +764,7 @@ function setTab(t) {
 
 function setFilter(f) {
   activeFilter = f;
-  ['all','Easy','Medium','Hard'].forEach(k => {
+  ['all','Easy','Medium','Hard','bookmarked'].forEach(k => {
     const el = document.getElementById(`f-${k}`);
     if(el) el.classList.toggle('inactive', k !== f);
   });
@@ -654,9 +780,11 @@ function updateSection() {
 
 function renderCards() {
   const q = document.getElementById('search').value.toLowerCase();
-  const items = DATA[activeTab].filter(item => {
+  const items = DATA[activeTab].filter((item, i) => {
     const matchSearch = !q || item.q.toLowerCase().includes(q) || item.a.toLowerCase().includes(q);
-    const matchFilter = activeFilter === 'all' || item.d === activeFilter;
+    const matchFilter = activeFilter === 'all' ? true :
+      activeFilter === 'bookmarked' ? bookmarked.has(activeTab+'-'+i) :
+      item.d === activeFilter;
     return matchSearch && matchFilter;
   });
 
@@ -673,39 +801,46 @@ function renderCards() {
   }
   emptyEl.style.display = 'none';
 
-  const tabKey = activeTab.toLowerCase().replace('javascript','js').replace('typescript','ts');
+  const tabKey = activeTab.toLowerCase().replace('javascript','js').replace('typescript','ts').replace('performance','perf');
 
-  container.innerHTML = items.map((item, i) => {
+  container.innerHTML = items.map((item, idx) => {
+    const i = DATA[activeTab].indexOf(item);
     const key = `${activeTab}-${i}`;
     const isOpen = expanded.has(key);
+    const isBookmarked = bookmarked.has(key);
     const diffClass = item.d === 'Easy' ? 'diff-easy' : item.d === 'Medium' ? 'diff-med' : 'diff-hard';
     const openClass = isOpen ? `open-${tabKey}` : '';
-    const delay = `animation-delay:${i * 0.035}s`;
+    const delay = `animation-delay:${idx * 0.03}s`;
 
     return `<div class="qcard${isOpen ? ' expanded ' + openClass : ''}" style="${delay}" id="card-${key}">
       <div class="qheader" onclick="toggle('${key}')">
-        <div class="qnum">${String(i+1).padStart(2,'0')}</div>
+        <div class="qnum">${String(idx+1).padStart(2,'0')}</div>
         <div class="qtitle">${item.q}</div>
         <div class="qmeta">
           <span class="diff ${diffClass}">${item.d}</span>
+          <button class="bookmark-btn${isBookmarked ? ' bookmarked' : ''}" onclick="toggleBookmark(event, '${key}')">
+            <svg width="14" height="14" fill="${isBookmarked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
           <div class="chevron">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
           </div>
         </div>
       </div>
-      ${isOpen ? `<div class="qbody">
-        <div class="answer-text">${item.a}</div>
-        ${item.code ? `<div class="code-block">
-          <div class="code-header">
-            <span class="code-lang">code example</span>
-            <button class="copy-btn" onclick="copyCode(event, '${key}')">
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-              copy
-            </button>
-          </div>
-          <pre id="code-${key}">${item.code}</pre>
-        </div>` : ''}
-      </div>` : ''}
+      <div class="qbody">
+        <div class="qbody-inner">
+          <div class="answer-text">${item.a}</div>
+          ${item.code ? `<div class="code-block">
+            <div class="code-header">
+              <span class="code-lang">code example</span>
+              <button class="copy-btn" onclick="copyCode(event, '${key}')">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                copy
+              </button>
+            </div>
+            <pre id="code-${key}">${item.code}</pre>
+          </div>` : ''}
+        </div>
+      </div>
     </div>`;
   }).join('');
 }
@@ -720,6 +855,14 @@ function toggle(key) {
   }
   renderCards();
   updateProgress();
+  renderStats();
+}
+
+function toggleBookmark(event, key) {
+  event.stopPropagation();
+  if(bookmarked.has(key)) bookmarked.delete(key);
+  else bookmarked.add(key);
+  renderCards();
 }
 
 function updateViewedCount() {
@@ -728,7 +871,7 @@ function updateViewedCount() {
 }
 
 function updateProgress() {
-  const total = Object.values(DATA).reduce((acc, arr) => acc + arr.length, 0);
+  const total = Object.values(DATA).reduce((a, arr) => a + arr.length, 0);
   const pct = Math.round((viewed.size / total) * 100);
   const el = document.getElementById('progress');
   const txt = document.getElementById('progress-text');
@@ -752,17 +895,34 @@ function copyCode(event, key) {
   });
 }
 
-document.getElementById('search').addEventListener('input', () => {
+function clearSearch() {
+  document.getElementById('search').value = '';
+  document.getElementById('search-wrap').classList.remove('has-value');
+  expanded.clear();
+  renderCards();
+}
+
+const searchInput = document.getElementById('search');
+searchInput.addEventListener('input', () => {
+  document.getElementById('search-wrap').classList.toggle('has-value', searchInput.value.length > 0);
   expanded.clear();
   renderCards();
 });
+
+// Sticky bar shadow on scroll
+const stickyBar = document.getElementById('sticky-bar');
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  stickyBar.classList.toggle('scrolled', window.scrollY > 100);
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
 
 // Init
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeButton(savedTheme);
 
-const total = Object.values(DATA).reduce((acc, arr) => acc + arr.length, 0);
+const total = Object.values(DATA).reduce((a, arr) => a + arr.length, 0);
 document.getElementById('progress-text').textContent = `0 / ${total} viewed`;
 
 setFilter('all');
