@@ -35,6 +35,8 @@
     --ts-dim: rgba(37,99,235,0.08);
     --perf: #6d28d9;
     --perf-dim: rgba(109,40,217,0.08);
+    --mfe: #0891b2;
+    --mfe-dim: rgba(8,145,178,0.08);
     --easy: #16a34a;
     --easy-dim: rgba(22,163,74,0.08);
     --med: #d97706;
@@ -77,6 +79,8 @@
     --ts-dim: rgba(91,141,245,0.1);
     --perf: #a78bfa;
     --perf-dim: rgba(167,139,250,0.1);
+    --mfe: #22d3ee;
+    --mfe-dim: rgba(34,211,238,0.1);
     --easy: #4ade80;
     --easy-dim: rgba(74,222,128,0.1);
     --med: #fb923c;
@@ -271,6 +275,7 @@
   .tab.active-react{ border-color: var(--react);background: var(--react-dim);color: var(--react); }
   .tab.active-ts   { border-color: var(--ts);   background: var(--ts-dim);   color: var(--ts); }
   .tab.active-perf { border-color: var(--perf); background: var(--perf-dim); color: var(--perf); }
+  .tab.active-mfe { border-color: var(--mfe); background: var(--mfe-dim); color: var(--mfe); }
 
   .filters { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .filter-lbl { font-size: 11px; color: var(--text-dim); font-family: var(--font-mono); }
@@ -320,11 +325,11 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
     box-shadow: var(--shadow-sm);
   }
-  .qcard:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); transform: translateY(-1px); }
-  .qcard.expanded { transform: none; box-shadow: var(--shadow-md); }
+  .qcard:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .qcard.expanded { transform: none; box-shadow: var(--shadow-lg); border-color: var(--border-md); }
 
   .qcard.open-html  { border-left: 3px solid var(--html); }
   .qcard.open-css   { border-left: 3px solid var(--css); }
@@ -332,6 +337,7 @@
   .qcard.open-react { border-left: 3px solid var(--react); }
   .qcard.open-ts    { border-left: 3px solid var(--ts); }
   .qcard.open-perf  { border-left: 3px solid var(--perf); }
+  .qcard.open-mfe   { border-left: 3px solid var(--mfe); }
 
   .qheader {
     display: flex; align-items: center; gap: 12px;
@@ -374,7 +380,7 @@
   .chevron {
     width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
     border-radius: 7px; color: var(--text-dim);
-    transition: transform 0.25s ease, background 0.15s;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.15s;
     flex-shrink: 0;
   }
   .qcard.expanded .chevron { transform: rotate(180deg); }
@@ -383,13 +389,20 @@
   /* Answer */
   .qbody {
     max-height: 0; overflow: hidden;
-    transition: max-height 0.35s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .qcard.expanded .qbody { max-height: 1200px; }
 
   .qbody-inner {
     padding: 0 16px 16px 58px;
     border-top: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+  }
+  .qcard.expanded .qbody-inner {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .answer-text {
@@ -492,7 +505,7 @@
         <input type="text" id="search" placeholder="Search questions..." autocomplete="off" />
         <button class="search-clear" id="search-clear" onclick="clearSearch()">&times;</button>
       </div>
-      <div class="tabs" id="tabs"></div>
+      <!-- tabs moved below the search area for better layout -->
       <button class="theme-toggle" onclick="toggleTheme()">
         <span class="toggle-icon" id="theme-icon">&#9728;</span>
         <span id="theme-label">Light</span>
@@ -511,6 +524,9 @@
       <span class="pill pill-all" id="f-bookmarked" onclick="setFilter('bookmarked')">Bookmarked</span>
     </div>
   </div>
+
+    <!-- Tabs moved here so they sit below the search/questions area -->
+    <div class="tabs" id="tabs" aria-label="Category tabs" style="margin-bottom:12px"></div>
 
   <div class="progress-wrap">
     <div class="progress-meta">
@@ -540,9 +556,9 @@
 </button>
 
 <script>
-const TABS = ['HTML','CSS','JavaScript','React','TypeScript','Performance'];
-const COLORS = { HTML:'#e85d1a', CSS:'#1e6fd9', JavaScript:'#b8890e', React:'#0794b8', TypeScript:'#2563eb', Performance:'#6d28d9' };
-const DARK_COLORS = { HTML:'#ff7444', CSS:'#5b9cf5', JavaScript:'#f7ca48', React:'#5dd3f3', TypeScript:'#5b8df5', Performance:'#a78bfa' };
+const TABS = ['HTML','CSS','JavaScript','React','TypeScript','Performance','Micro Frontend'];
+const COLORS = { HTML:'#e85d1a', CSS:'#1e6fd9', JavaScript:'#b8890e', React:'#0794b8', TypeScript:'#2563eb', Performance:'#6d28d9', 'Micro Frontend':'#0891b2' };
+const DARK_COLORS = { HTML:'#ff7444', CSS:'#5b9cf5', JavaScript:'#f7ca48', React:'#5dd3f3', TypeScript:'#5b8df5', Performance:'#a78bfa', 'Micro Frontend':'#22d3ee' };
 
 function getColor(tab) {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? DARK_COLORS[tab] : COLORS[tab];
@@ -689,6 +705,25 @@ Performance: [
   {q:"What is the difference between prefetch and preload?", d:"Medium", a:"<strong>preload</strong>: fetch critical resources for current page now (high priority). <strong>prefetch</strong>: fetch resources for future navigation (low priority). Use preload for current-page needs, prefetch for next-page.", code:"&lt;link rel=\"preload\" href=\"critical.css\" as=\"style\" /&gt;\n&lt;link rel=\"prefetch\" href=\"next-page.js\" as=\"script\" /&gt;"},
   {q:"What is virtual scrolling?", d:"Hard", a:"Virtual scrolling renders only <strong>visible items</strong> in a long list — the rest are virtual. Dramatically reduces DOM nodes and memory. Libraries: react-window, react-virtuoso.", code:"import { FixedSizeList } from 'react-window';\n\n&lt;FixedSizeList height={600} itemCount={10000} itemSize={50}&gt;\n  {({ index, style }) => (\n    &lt;div style={style}&gt;Row {index}&lt;/div&gt;\n  )}\n&lt;/FixedSizeList&gt;"},
 ],
+'Micro Frontend': [
+  {q:"What is Micro Frontend architecture?", d:"Medium", a:"Micro Frontend (MFE) architecture enables <strong>independent deployment of features</strong> by vertically slicing the application among multiple teams. Each team can develop, test, and deploy their feature independently — like a shopping mall where each store is managed separately.", code:"// Horizontal split: frontend/backend/qa teams\n// Vertical split: each team owns a feature end-to-end"},
+  {q:"What is Module Federation?", d:"Medium", a:"Module Federation is a Webpack 5 feature that enables <strong>runtime code sharing</strong> between independently built applications. A 'host' app can dynamically load 'remote' modules from other builds at runtime, not build time.", code:"// webpack.config.js (remote)\nnew ModuleFederationPlugin({\n  name: 'checkout',\n  filename: 'remoteEntry.js',\n  exposes: { './CheckoutButton': './src/Button' },\n  shared: ['react', 'react-dom']\n})"},
+  {q:"What is the difference between host and remote in Module Federation?", d:"Easy", a:"<strong>Host</strong>: the main application shell that loads remote modules. Handles routing, auth, and global layout. <strong>Remote</strong>: an independently deployed module that exposes components or routes. Both roles can exist in the same app.", code:"// Host consumes remotes\nremotes: {\n  checkout: 'checkout@https://cdn.example.com/remoteEntry.js'\n}\n\n// Remote exposes modules\nexposes: { './CheckoutButton': './src/Button' }"},
+  {q:"What is an application shell (or host)?", d:"Easy", a:"The <strong>application shell</strong> (host/container) is the initial app code served to the client. It bootstraps the application, handles routing, manages global auth, and <strong>composes the micro frontends</strong>. It should be thin — no feature logic.", code:"// Shell responsibilities:\n// - Authentication\n// - Top-level routing\n// - Global styles/themes\n// - Loading and orchestrating remotes"},
+  {q:"How do you share dependencies between micro frontends?", d:"Medium", a:"Use the <strong>shared</strong> configuration in Module Federation. Dependencies marked as shared are loaded only once. Use <strong>singleton: true</strong> for libraries like React that must have only one instance. Use <strong>requiredVersion</strong> to enforce version constraints.", code:"shared: {\n  react: { singleton: true, requiredVersion: '18.x' },\n  'react-dom': { singleton: true },\n  lodash: { eager: false }\n}"},
+  {q:"What is singleton mode in Module Federation shared dependencies?", d:"Hard", a:"<strong>singleton: true</strong> ensures only one version of a dependency is loaded in the shared scope. Critical for libraries like React that break with multiple instances. If versions differ, the <strong>higher version</strong> is used. Without singleton, each app loads its own copy.", code:"shared: {\n  react: { singleton: true, requiredVersion: '18.2.0' }\n  // If host has 18.2.0 and remote expects 18.1.0,\n  // both use 18.2.0 (the higher version)\n}"},
+  {q:"What challenges do Micro Frontends introduce?", d:"Medium", a:"MFEs solve organizational challenges but introduce: <strong>bundle size increase</strong> (redundant code), <strong>version mismatches</strong>, <strong>inter-app communication complexity</strong>, <strong>routing complexity</strong>, <strong>shared state management</strong>, and <strong>testing integration</strong>. Requires governance and tooling.", code:"// Common pitfalls:\n// - Different React versions -> errors\n// - Duplication of libraries -> large bundles\n// - CSS conflicts between apps\n// - Debugging across team boundaries"},
+  {q:"What is Micro Frontend Anarchy?", d:"Hard", a:"MFE Anarchy occurs when multiple MFEs use <strong>different frameworks</strong> (React, Vue, Angular) or styling approaches in a single app. Technically possible but leads to huge bundles, reduced team mobility, and complex debugging. Standardize tech stack across MFEs.", code:"// Anti-pattern:\n// MFE 1: React + styled-components\n// MFE 2: Vue + Tailwind\n// MFE 3: Angular + SCSS\n// Result: massive bundle, CSS conflicts"},
+  {q:"How do you handle routing between micro frontends?", d:"Medium", a:"Two types: <strong>internal routing</strong> within an MFE (handled like any SPA) and <strong>cross-MFE routing</strong> (hard links). The shell manages browser history and loads the appropriate MFE. Libraries like <strong>single-spa</strong> help coordinate routing.", code:"// Shell handles top-level routes\n<Route path=\"/checkout/*\" component={CheckoutMFE} />\n<Route path=\"/catalog/*\" component={CatalogMFE} />\n\n// Each MFE handles its internal routes"},
+  {q:"How do micro frontends communicate with each other?", d:"Hard", a:"<strong>Minimize inter-MFE communication</strong> — it violates independent deployability. When needed: <strong>shared modules</strong> for state/methods, <strong>custom events</strong>, <strong>URL parameters</strong>, or <strong>postMessage</strong> for iframe-based MFEs. Prefer unidirectional data flow.", code:"// Option 1: Shared module\nexport const cartSubject = new BehaviorSubject([]);\n\n// Option 2: Custom events\nwindow.dispatchEvent(new CustomEvent('cart-updated', { detail: items }));\n\n// Option 3: Props from shell (controlled)"},
+  {q:"How do you handle global state in Micro Frontends?", d:"Hard", a:"Keep global state <strong>minimal</strong>. Avoid Redux for the entire app. Options: <strong>shell-managed state</strong> passed as props, <strong>shared Observable streams</strong> (RxJS), <strong>browser storage</strong> for cross-tab state, or <strong>BFF (Backend for Frontend)</strong> for server-state. Each MFE manages its own local state.", code:"// Shared observable pattern\nconst user$ = new BehaviorSubject(null);\n\n// Shell provides to MFEs\nconst MFE = lazy(() => import('checkout/mfe').then(m => ({\n  default: (props) => <mfe.default {...props} user$={user$} />\n})));"},
+  {q:"What is single-spa?", d:"Medium", a:"<strong>single-spa</strong> is a framework that orchestrates multiple micro frontends. Handles routing, lazy loading, and lifecycle (mount/unmount). Framework-agnostic — works with React, Vue, Angular. Alternative to raw Module Federation.", code:"import { registerApplication, start } from 'single-spa';\n\nregisterApplication({\n  name: '@org/checkout',\n  app: () => System.import('https://cdn.../checkout.js'),\n  activeWhen: '/checkout'\n});\nstart();"},
+  {q:"How do you migrate a monolith to Micro Frontends?", d:"Hard", a:"Phase 0: <strong>Assess</strong> feature boundaries. Phase 1: Create <strong>thin shell</strong> with routing and Module Federation. Phase 2: <strong>Extract one feature</strong> as a remote. Phase 3: <strong>Test with feature flags</strong>, monitor errors. Phase 4: <strong>Iterate</strong> — extract remaining features. <strong>Never rip everything out at once.</strong>", code:"// Migration steps:\n// 1. Identify independent features (auth, catalog, checkout)\n// 2. Build shell with routing + Module Federation\n// 3. Extract first MFE behind feature flag\n// 4. Monitor bundle size, errors, performance\n// 5. Repeat for each feature"},
+  {q:"How do you test Micro Frontend architecture?", d:"Medium", a:"Each MFE has its own <strong>unit and e2e tests</strong>. Additionally, build <strong>integration tests</strong> that exercise the shell + MFEs together. Contract testing helps catch breaking changes. Use <strong>feature flags</strong> to safely deploy changes.", code:"// Testing pyramid for MFE:\n// 1. Unit tests per MFE (vitest/jest)\n// 2. Integration tests (shell + MFEs)\n// 3. Contract tests for exposed modules\n// 4. E2E tests (Playwright/Cypress)"},
+  {q:"What is the difference between build-time and runtime integration?", d:"Medium", a:"<strong>Build-time integration</strong>: MFEs are npm packages, bundled at build. Tighter coupling, version locked. <strong>Runtime integration</strong>: MFEs loaded dynamically at runtime. Independent deploys, but adds complexity. Module Federation is runtime integration.", code:"// Build-time: npm package\nimport { CheckoutButton } from '@org/checkout-mfe';\n\n// Runtime: Module Federation\nconst CheckoutButton = React.lazy(() => import('checkout/Button'));"},
+  {q:"How do you handle CSS isolation in Micro Frontends?", d:"Hard", a:"CSS conflicts are a common MFE problem. Solutions: <strong>CSS Modules</strong> (scoped class names), <strong>CSS-in-JS</strong> (styled-components), <strong>Shadow DOM</strong> (true encapsulation), <strong>CSS prefixes/namespaces</strong>, or <strong>Tailwind with prefixes</strong>. Standardize approach across MFEs.", code:"// Option 1: CSS Modules (scoped)\nimport styles from './Button.module.css';\n\n// Option 2: Shadow DOM (true isolation)\nconst shadow = element.attachShadow({ mode: 'open' });\nshadow.innerHTML = '&lt;style&gt;p{color:red}&lt;/style&gt;&lt;p&gt;Hi&lt;/p&gt;';\n\n// Option 3: CSS-in-JS\nconst Button = styled.button\`color: red;\`"},
+  {q:"Should micro frontends share a backend?", d:"Medium", a:"MFEs pair well with <strong>microservices</strong> — each team owns their MFE and its backend service. Avoid a shared monolithic backend. Each MFE can have its own BFF (Backend for Frontend). Share infrastructure (auth, API gateway) but not data layers.", code:"// Ideal: team owns vertical slice\n// Team A: Catalog MFE + Catalog Microservice\n// Team B: Checkout MFE + Checkout Microservice + Payment Gateway\n\n// Avoid: All MFEs hitting one monolithic API"},
+],
 };
 
 let activeTab = 'HTML';
@@ -721,7 +756,7 @@ function updateThemeButton(theme) {
 }
 
 function tabClass(t) {
-  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react', TypeScript:'active-ts', Performance:'active-perf' };
+  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react', TypeScript:'active-ts', Performance:'active-perf', 'Micro Frontend':'active-mfe' };
   return map[t] || '';
 }
 
@@ -801,7 +836,7 @@ function renderCards() {
   }
   emptyEl.style.display = 'none';
 
-  const tabKey = activeTab.toLowerCase().replace('javascript','js').replace('typescript','ts').replace('performance','perf');
+  const tabKey = activeTab.toLowerCase().replace('javascript','js').replace('typescript','ts').replace('performance','perf').replace('micro frontend','mfe').replace(' ','');
 
   container.innerHTML = items.map((item, idx) => {
     const i = DATA[activeTab].indexOf(item);
@@ -846,7 +881,26 @@ function renderCards() {
 }
 
 function toggle(key) {
-  if(expanded.has(key)) {
+  // If the DOM card exists, toggle its expanded class directly
+  const el = document.getElementById('card-' + key);
+  if (el) {
+    const wasOpen = el.classList.contains('expanded');
+    if (wasOpen) {
+      el.classList.remove('expanded');
+      expanded.delete(key);
+    } else {
+      el.classList.add('expanded');
+      expanded.add(key);
+      viewed.add(key);
+      updateViewedCount();
+    }
+    updateProgress();
+    renderStats();
+    return;
+  }
+
+  // Fallback when card not present in DOM (e.g. after filters changed)
+  if (expanded.has(key)) {
     expanded.delete(key);
   } else {
     expanded.add(key);
