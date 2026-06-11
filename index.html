@@ -505,7 +505,7 @@
         <input type="text" id="search" placeholder="Search questions..." autocomplete="off" />
         <button class="search-clear" id="search-clear" onclick="clearSearch()">&times;</button>
       </div>
-      <div class="tabs" id="tabs"></div>
+      <!-- tabs moved below the search area for better layout -->
       <button class="theme-toggle" onclick="toggleTheme()">
         <span class="toggle-icon" id="theme-icon">&#9728;</span>
         <span id="theme-label">Light</span>
@@ -524,6 +524,9 @@
       <span class="pill pill-all" id="f-bookmarked" onclick="setFilter('bookmarked')">Bookmarked</span>
     </div>
   </div>
+
+    <!-- Tabs moved here so they sit below the search/questions area -->
+    <div class="tabs" id="tabs" aria-label="Category tabs" style="margin-bottom:12px"></div>
 
   <div class="progress-wrap">
     <div class="progress-meta">
@@ -878,7 +881,26 @@ function renderCards() {
 }
 
 function toggle(key) {
-  if(expanded.has(key)) {
+  // If the DOM card exists, toggle its expanded class directly
+  const el = document.getElementById('card-' + key);
+  if (el) {
+    const wasOpen = el.classList.contains('expanded');
+    if (wasOpen) {
+      el.classList.remove('expanded');
+      expanded.delete(key);
+    } else {
+      el.classList.add('expanded');
+      expanded.add(key);
+      viewed.add(key);
+      updateViewedCount();
+    }
+    updateProgress();
+    renderStats();
+    return;
+  }
+
+  // Fallback when card not present in DOM (e.g. after filters changed)
+  if (expanded.has(key)) {
     expanded.delete(key);
   } else {
     expanded.add(key);
