@@ -325,11 +325,11 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
     box-shadow: var(--shadow-sm);
   }
-  .qcard:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); transform: translateY(-1px); }
-  .qcard.expanded { transform: none; box-shadow: var(--shadow-md); }
+  .qcard:hover { border-color: var(--border-md); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .qcard.expanded { transform: none; box-shadow: var(--shadow-lg); border-color: var(--border-md); }
 
   .qcard.open-html  { border-left: 3px solid var(--html); }
   .qcard.open-css   { border-left: 3px solid var(--css); }
@@ -380,7 +380,7 @@
   .chevron {
     width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
     border-radius: 7px; color: var(--text-dim);
-    transition: transform 0.25s ease, background 0.15s;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.15s;
     flex-shrink: 0;
   }
   .qcard.expanded .chevron { transform: rotate(180deg); }
@@ -389,13 +389,20 @@
   /* Answer */
   .qbody {
     max-height: 0; overflow: hidden;
-    transition: max-height 0.35s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .qcard.expanded .qbody { max-height: 1200px; }
 
   .qbody-inner {
     padding: 0 16px 16px 58px;
     border-top: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+  }
+  .qcard.expanded .qbody-inner {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .answer-text {
