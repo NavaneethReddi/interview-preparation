@@ -1,0 +1,20 @@
+{
+  "name": "interview-preparation",
+  "version": "1.0.0",
+  "description": "Frontend interview preparation questions",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "interview",
+    "frontend",
+    "preparation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
