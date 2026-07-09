@@ -1,55 +1,62 @@
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express');
-const cors = require('cors');
 require('dotenv').config();
-const { connectDB } = require('./db');
-const userRoutes = require('./routes/users');
-const config = require('./config');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Prefer MONGO_URI from env, fallback to previous hardcoded URI for convenience
+const uri = 'mongodb+srv://reddynavaneeth6_db_user:DfCWqBNnxkQL8r7M@questionandanswers.kyneui4.mongodb.net/?appName=QuestionandAnswers';
 
-// Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
+// Create a MongoClient with Stable API options
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
 });
 
-// Routes
-app.use('/api/users', userRoutes);
+app.get('/', (req, res) => res.send('Hello World from Express!'));
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
+// GET /api/users - return all users from the sample_mflix.users collection
+app.get('/api/users', async (req, res) => {
+  try {
+    const database = client.db('InterviewQuestions');
+            const users = database.collection('ListOfInterviewQuestions');
+            const allUsers = await users.find({}).toArray();
+                console.log("All Users:", allUsers);
+
+    return res.json({ count: allUsers.length, users: allUsers });
+  } catch (err) {
+    console.error('Error fetching users:', err);
+    return res.status(500).json({ error: 'Failed to fetch users' });
+  }
 });
 
-// Error handler middleware
-app.use((err, req, res, next) => {
-  console.error('Error:', err.message);
-  res.status(err.status || 500).json({
-    error: err.message || 'Internal Server Error',
-    ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
-  });
-});
-
-// Connect to DB and start server
 async function startServer() {
   try {
-    await connectDB();
-    console.log('✓ MongoDB connected');
-    
-    app.listen(config.port, () => {
-      console.log(`✓ Server running on http://localhost:${config.port}`);
-      console.log(`✓ Environment: ${config.nodeEnv}`);
+    await client.connect();
+    await client.db('admin').command({ ping: 1 });
+    console.log('MongoDB connected successfully');
+
+    app.listen(port, () => {
+      console.log(`Server running at http://localhost:${port}`);
     });
-  } catch (err) {
-    console.error('✗ Failed to start server:', err.message);
+  } catch (error) {
+    console.error('Failed to start server:', error.message || error);
     process.exit(1);
   }
 }
 
-startServer();
+process.on('SIGINT', async () => {
+  try {
+    await client.close();
+    console.log('MongoDB connection closed');
+  } finally {
+    process.exit(0);
+  }
+});
 
-module.exports = app;
+startServer();
