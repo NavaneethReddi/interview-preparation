@@ -38,6 +38,8 @@
     --perf-dim: rgba(109,40,217,0.08);
     --mfe: #0891b2;
     --mfe-dim: rgba(8,145,178,0.08);
+    --session: #c2410c;
+    --session-dim: rgba(194,65,12,0.08);
     --easy: #16a34a;
     --easy-dim: rgba(22,163,74,0.08);
     --med: #d97706;
@@ -82,6 +84,8 @@
     --perf-dim: rgba(167,139,250,0.1);
     --mfe: #22d3ee;
     --mfe-dim: rgba(34,211,238,0.1);
+    --session: #fb923c;
+    --session-dim: rgba(251,146,60,0.1);
     --easy: #4ade80;
     --easy-dim: rgba(74,222,128,0.1);
     --med: #fb923c;
@@ -277,6 +281,7 @@
   .tab.active-ts   { border-color: var(--ts);   background: var(--ts-dim);   color: var(--ts); }
   .tab.active-perf { border-color: var(--perf); background: var(--perf-dim); color: var(--perf); }
   .tab.active-mfe { border-color: var(--mfe); background: var(--mfe-dim); color: var(--mfe); }
+  .tab.active-session { border-color: var(--session); background: var(--session-dim); color: var(--session); }
 
   .tab.active-memory { border-color: var(--hard); background: var(--hard-dim); color: var(--hard); }
   .tab.active-nodejs { border-color: #68a063; background: rgba(104,160,99,0.08); color: #68a063; }
@@ -342,6 +347,7 @@
   .qcard.open-ts    { border-left: 3px solid var(--ts); }
   .qcard.open-perf  { border-left: 3px solid var(--perf); }
   .qcard.open-mfe   { border-left: 3px solid var(--mfe); }
+  .qcard.open-session { border-left: 3px solid var(--session); }
   .qcard.open-memory { border-left: 3px solid var(--hard); }
   .qcard.open-nodejs { border-left: 3px solid #68a063; }
 
@@ -562,9 +568,9 @@
 </button>
 
 <script>
-const TABS = ['HTML','CSS','JavaScript','React','TypeScript','Performance','Micro Frontend','Memory Leaks','Node.js'];
-const COLORS = { HTML:'#e85d1a', CSS:'#1e6fd9', JavaScript:'#b8890e', React:'#0794b8', TypeScript:'#2563eb', Performance:'#6d28d9', 'Micro Frontend':'#0891b2', 'Memory Leaks':'#e11d48', 'Node.js':'#68a063' };
-const DARK_COLORS = { HTML:'#ff7444', CSS:'#5b9cf5', JavaScript:'#f7ca48', React:'#5dd3f3', TypeScript:'#5b8df5', Performance:'#a78bfa', 'Micro Frontend':'#22d3ee', 'Memory Leaks':'#ff7b9a', 'Node.js':'#90ee90' };
+const TABS = ['HTML','CSS','JavaScript','React','TypeScript','Performance','Micro Frontend','Memory Leaks','Node.js','Session Hijacking'];
+const COLORS = { HTML:'#e85d1a', CSS:'#1e6fd9', JavaScript:'#b8890e', React:'#0794b8', TypeScript:'#2563eb', Performance:'#6d28d9', 'Micro Frontend':'#0891b2', 'Memory Leaks':'#e11d48', 'Node.js':'#68a063', 'Session Hijacking':'#c2410c' };
+const DARK_COLORS = { HTML:'#ff7444', CSS:'#5b9cf5', JavaScript:'#f7ca48', React:'#5dd3f3', TypeScript:'#5b8df5', Performance:'#a78bfa', 'Micro Frontend':'#22d3ee', 'Memory Leaks':'#ff7b9a', 'Node.js':'#90ee90', 'Session Hijacking':'#fb923c' };
 
 function getColor(tab) {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? DARK_COLORS[tab] : COLORS[tab];
@@ -797,6 +803,32 @@ Performance: [
   {q:"What is the fs module?", d:"Easy", a:"<strong>fs (File System)</strong> module provides file I/O operations. Key methods: readFile, writeFile, unlink, mkdir, readdir. Use async versions to prevent blocking.", code:"const fs = require(\\'fs\\').promises;\\nconst data = await fs.readFile(\\'file.txt\\', \\'utf8\\');\\nawait fs.writeFile(\\'out.txt\\', data);"},
   {q:"What is the path module?", d:"Easy", a:"<strong>path</strong> module provides utilities for working with file and directory paths. Methods: join, resolve, dirname, basename, extname.", code:"const path = require(\\'path\\');\\npath.join(\\'/foo\\', \\'bar\\'); // \\'/foo/bar\\'\\npath.dirname(\\'/foo/bar/file.txt\\'); // \\'/foo/bar\\'\\npath.basename(\\'/foo/bar/file.txt\\'); // \\'file.txt\\'"}
 ],
+'Session Hijacking': [
+  {q:"What is session hijacking?", d:"Easy", a:"Session hijacking is the malicious act of taking control of a user's web session. A session is a series of interactions between a browser and a server, tied together by a unique session token. An attacker steals or manipulates that token to gain unauthorized access. Once they have it, they can masquerade as the legitimate user.", code:""},
+  {q:"Why is session hijacking a serious threat?", d:"Easy", a:"A large share of daily activity — banking, shopping, social media — runs over the web. Hijacking a session can lead to fraud, identity theft, and breach of confidential communications. For organizations, it can expose customer data, erode trust, and cause financial and reputational damage.", code:""},
+  {q:"How does session hijacking work at a high level?", d:"Medium", a:"An attacker uses a captured, brute-forced, or reverse-engineered session ID to take over a legitimate user's active session. After hijacking, they often get full access to the user's data and can perform actions on their behalf.", code:""},
+  {q:"What are the three primary techniques for hijacking sessions?", d:"Medium", a:"<strong>1. Brute force</strong> — try many session IDs until one works.<br><strong>2. Calculate</strong> — predict IDs when generation is non-random.<br><strong>3. Steal</strong> — intercept the session ID via network sniffing, malware, referrer leakage, or XSS.", code:"// Brute force example (guessing IDs):\n// http://www.somesite.com/view/VW30422101518909\n// http://www.somesite.com/view/VW30422101520803\n// http://www.somesite.com/view/VW30422101522507"},
+  {q:"How can session IDs be stolen?", d:"Medium", a:"Common methods include: sniffing network traffic, trojans on client machines, leaking IDs through the HTTP Referer header (e.g. in query strings), and Cross-Site Scripting (XSS) that exfiltrates cookies or tokens.", code:""},
+  {q:"What is a referrer-based session hijacking attack?", d:"Hard", a:"The attacker tricks a user into visiting a hostile site. The browser may send a Referer header containing the session ID from a previous page (e.g. webmail). The attacker's server logs that Referer and steals the ID.", code:"GET /index.html HTTP/1.0\nHost: www.hostile.com\nReferrer: www.mywebmail.com/viewmsg.asp?msgid=438933&SID=2343X32VA92"},
+  {q:"How does XSS enable session hijacking?", d:"Medium", a:"In an XSS attack, malicious script runs in the victim's browser. That script can read session cookies or tokens and send them to the attacker, effectively stealing the session without needing network access to the user's traffic.", code:""},
+  {q:"What is the difference between active and passive session hijacking?", d:"Medium", a:"<strong>Active</strong> hijacking: the attacker intercepts a session token and uses it immediately for unauthorized access.<br><strong>Passive</strong> hijacking: the attacker monitors and collects session data without using it right away.", code:""},
+  {q:"What are common session hijacking techniques?", d:"Medium", a:"<strong>Session sniffing</strong> — capture valid tokens from network traffic.<br><strong>Cross-Site Scripting (XSS)</strong> — inject scripts to steal session cookies.<br><strong>Session fixation</strong> — force the user to use a session ID the attacker already knows, then hijack after login.", code:""},
+  {q:"What is session fixation?", d:"Medium", a:"The attacker sets or fixes a session ID before the user authenticates. After the user logs in with that same ID, the attacker uses the now-authenticated session. Prevention includes regenerating the session ID after successful login.", code:""},
+  {q:"What role do session tokens play in hijacking?", d:"Medium", a:"Session tokens identify and maintain state across requests so users don't re-login on every page. They're often stored in cookies. Weak generation, predictable IDs, or insecure storage make hijacking easier.", code:""},
+  {q:"What impact can session hijacking have on individuals?", d:"Easy", a:"Unauthorized access to personal accounts, exposure of sensitive information, and financial loss. Users may not notice until unusual activity appears on their accounts.", code:""},
+  {q:"What impact can session hijacking have on organizations?", d:"Medium", a:"Breaches of confidential data, loss of customer trust, regulatory fines, legal exposure, and long-term brand damage. A single incident can affect customer loyalty for years.", code:""},
+  {q:"How can you detect session hijacking?", d:"Medium", a:"Watch for unusual account activity and abnormal session patterns. Tools include Intrusion Detection Systems (IDS) for token misuse and anomaly detection for irregular session behavior.", code:""},
+  {q:"What session activity signals a possible hijack?", d:"Medium", a:"Unexpected changes in session duration or location, multiple concurrent sessions from different IP addresses, and scripted or automated session patterns that don't match normal user behavior.", code:""},
+  {q:"How can users help prevent session hijacking?", d:"Easy", a:"Avoid public Wi-Fi for sensitive tasks (or use a VPN), keep software updated, recognize phishing, and always log out — especially on shared computers.", code:""},
+  {q:"How can developers and organizations prevent session hijacking?", d:"Hard", a:"Use HTTPS everywhere, secure cookie flags (HttpOnly, Secure, SameSite), strong session management, MFA, regular patches, and secure coding to reduce XSS and CSRF.", code:"Set-Cookie: sessionId=abc123; HttpOnly; Secure; SameSite=Strict; Path=/"},
+  {q:"What security measures should developers implement?", d:"Hard", a:"<strong>Strong session management</strong> — unpredictable IDs, short timeouts, regeneration after login.<br><strong>Secure coding</strong> — mitigate XSS and related flaws.<br><strong>MFA</strong> — extra layer even if a session is stolen.<br><strong>Custom session handlers</strong> — secure server-side storage and ID rotation.", code:""},
+  {q:"What should you do immediately after a session hijacking incident?", d:"Medium", a:"Terminate affected sessions and invalidate tokens. Force password resets. Close exploited vulnerabilities. Investigate scope and what data was accessed to limit damage and prevent recurrence.", code:""},
+  {q:"What long-term strategies reduce session hijacking risk?", d:"Medium", a:"Regular security audits, continuous monitoring, security awareness training, engagement with security experts, and staying current on threats. Human error (weak passwords, phishing, mishandled tokens) remains a major factor.", code:""},
+  {q:"How does ethical hacking relate to session hijacking defense?", d:"Medium", a:"Ethical hackers perform controlled assessments to find session management weaknesses before attackers do. This must stay within legal boundaries and organizational authorization.", code:""},
+  {q:"How can newer technology help prevent session hijacking?", d:"Hard", a:"Machine learning improves anomaly detection by spotting behavior that deviates from normal. Biometrics (fingerprint, face recognition) add factors that are harder to steal than session cookies alone.", code:""},
+  {q:"Can you describe a real-world session hijacking scenario?", d:"Medium", a:"A notable case involved a major social platform where attackers exploited weak session management to hijack user sessions at scale, gaining unauthorized access to millions of accounts — underscoring the need for secure session design.", code:""},
+  {q:"What related attack types should you study alongside session hijacking?", d:"Easy", a:"Session hijacking often overlaps with other web attacks worth studying: <strong>man-in-the-middle (MITM)</strong>, <strong>phishing</strong>, <strong>CSRF (Cross-Site Request Forgery)</strong>, and <strong>brute force</strong> attacks.", code:""}
+],
 };
 
 let activeTab = 'HTML';
@@ -829,7 +861,7 @@ function updateThemeButton(theme) {
 }
 
 function tabClass(t) {
-  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react', TypeScript:'active-ts', Performance:'active-perf', 'Micro Frontend':'active-mfe', 'Memory Leaks':'active-memory', 'Node.js':'active-nodejs' };
+  const map = { HTML:'active-html', CSS:'active-css', JavaScript:'active-js', React:'active-react', TypeScript:'active-ts', Performance:'active-perf', 'Micro Frontend':'active-mfe', 'Memory Leaks':'active-memory', 'Node.js':'active-nodejs', 'Session Hijacking':'active-session' };
   return map[t] || '';
 }
 
@@ -909,7 +941,7 @@ function renderCards() {
   }
   emptyEl.style.display = 'none';
 
-  const tabKey = activeTab.toLowerCase().replace('javascript','js').replace('typescript','ts').replace('performance','perf').replace('micro frontend','mfe').replace('memory leaks','memory').replace('node.js','nodejs').replace(/ /g,'');
+  const tabKey = activeTab.toLowerCase().replace('javascript','js').replace('typescript','ts').replace('performance','perf').replace('micro frontend','mfe').replace('memory leaks','memory').replace('node.js','nodejs').replace('session hijacking','session').replace(/ /g,'');
 
   container.innerHTML = items.map((item, idx) => {
     const i = DATA[activeTab].indexOf(item);
